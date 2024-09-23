@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Mabry Pro';
+    font-weight: 100;
+    src: url(fonts/MabryPro-Light.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Mabry Pro';
+    font-weight: normal;
+    src: url(fonts/MabryPro-Medium.woff2) format('woff2');
+  }
+  @font-face {
+    font-family: 'Mabry Pro';
+    font-weight: bold;
+    src: url(fonts/MabryPro-Bold.woff2) format('woff2');
+  }
+}
