@@ -56,10 +56,10 @@ function brandStories() {
         end: '+=400',
         scrub: 2,
         markers: {
-          startColor: 'green',
-          endColor: 'green',
-          fontSize: '18px',
-          indent: 50
+          startColor: 'red',
+          endColor: 'red',
+          fontSize: '10px',
+          indent: 0
         }
       }
     })
@@ -106,8 +106,8 @@ function brandStoriesMarquee() {
 
   return tl
 }
-
+// brandStories()
 var brand_stories = gsap.timeline()
-brand_stories.add(brandStories)
 brand_stories.add(brandStoriesMarquee)
+brand_stories.add(brandStories)
 </script>

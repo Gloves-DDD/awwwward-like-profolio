@@ -1,7 +1,11 @@
 <template>
-  <AppHeader />
-  <RouterView />
-  <AppFooter />
+  <div id="smooth-wrapper">
+    <AppHeader />
+    <div id="smooth-content">
+      <RouterView />
+      <AppFooter />
+    </div>
+  </div>
 </template>
 
 <script setup>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="py-5 px-10 sticky top-0 z-10">
+  <nav id="nav_bar" class="py-5 px-10 fixed z-10 border-2 border-red-500">
     <ul class="flex gap-6">
       <li>
         <RouterLink to="/">

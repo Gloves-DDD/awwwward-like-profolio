@@ -23,7 +23,10 @@ onMounted(() => {
     duration: 1,
     scrollTrigger: {
       trigger: '#populartext',
-      start: 'top center'
+      toggleActions: 'play pause',
+      start: 'top 80%',
+      end: '+=100',
+      scrub: 1.5
     }
   })
 })

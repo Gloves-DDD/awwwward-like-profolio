@@ -100,6 +100,7 @@
     </div>
   </div>
 </template>
+
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -122,10 +123,10 @@ function cardsContainer() {
       end: '+=1200',
       scrub: 3,
       markers: {
-        startColor: 'green',
-        endColor: 'green',
-        fontSize: '40px',
-        indent: 50
+        startColor: 'red',
+        endColor: 'red',
+        fontSize: '10px',
+        indent: 0
       }
     }
   }
@@ -244,7 +245,6 @@ function cardsContainer() {
   tl.add(card_6)
   return tl
 }
-
-var cards_container = gsap.timeline()
-cards_container.add(cardsContainer)
+var tl = gsap.timeline()
+tl.add(cardsContainer)
 </script>

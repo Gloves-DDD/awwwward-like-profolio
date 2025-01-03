@@ -78,10 +78,10 @@ function weDo() {
         fastScrollEnd: true,
         anticipatePin: 1,
         markers: {
-          startColor: 'white',
+          startColor: 'red',
           endColor: 'red',
-          fontSize: '18px',
-          indent: 50
+          fontSize: '10px',
+          indent: 0
         }
       }
     })
@@ -121,9 +121,8 @@ function reset() {
     })
   }
 }
-
-var we_do = gsap.timeline()
-we_do.add(weDo)
+var tl = gsap.timeline()
+tl.add(weDo)
 
 onMounted(() => {
   // 0.创建模组异名

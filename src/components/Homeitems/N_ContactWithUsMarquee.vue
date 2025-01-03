@@ -55,9 +55,8 @@ var CWUMparentWidth = 75
 var CWUMchildrenWidth = 8
 
 var CWUMchildrenStyleValue = `width: ${CWUMchildrenWidth}rem; right:-${CWUMchildrenWidth}rem`
-
+var CWUMtl = gsap.timeline()
 onMounted(() => {
-  var CWUMtl = gsap.timeline()
   var CWUM_marquee_container = document.getElementById('contact_with_us_marquee')
   var CWUMchildren = CWUM_marquee_container.children.length
   var CWUMduration = CWUMchildren * 4

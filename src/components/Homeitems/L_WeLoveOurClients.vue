@@ -5,7 +5,7 @@
     class="w-[100vw] h-[50vw] border-4 border-red-400 flex flex-col items-center justify-center"
   >
     <!-- Text Part -->
-    <div id="we_love_our_clients_text_container" class="overflow-hidden">
+    <div id="we_love_our_clients_text_container" class="overflow-hidden border-4 border-cyan-400">
       <p id="we_love_our_clients_text" class="text-[4rem] m-[1rem]">We Love Our Clients</p>
     </div>
 
@@ -50,89 +50,67 @@
 
 <script setup>
 import { gsap } from 'gsap'
-import { onMounted } from 'vue'
-
 var parentWidth = 61
 var childrenWidth = 6
-
 var parentWidthValue = `width: ${parentWidth}rem`
 var childrenStyleValue = `width: ${childrenWidth}rem; left:${parentWidth}rem`
-
 function weLoveOurClients() {
-  var tl = gsap.timeline()
-  var tl_enter = gsap
+  var tl = gsap
     .timeline({
       ease: 'sine.inOut',
       scrollTrigger: {
         trigger: '#we_love_our_clients',
         toggleActions: 'play pause',
         start: 'top center',
-        end: '+=300',
-        scrub: 1,
+        end: '+=900',
+        scrub: 0.5,
         anticipatePin: 1,
         markers: {
           startColor: 'red',
           endColor: 'red',
-          fontSize: '18px',
-          indent: 200
+          fontSize: '10px',
+          indent: 0
         }
       }
     })
-    .to('#background_layer', { background: '#f5f5f5' })
+    // 背景颜色渐变
+    .to('#background_layer', { background: '#f5f5f5', duration: 2 })
+    // text位移入场
     .from(
       '#we_love_our_clients_text',
       {
-        y: '-7rem'
+        y: '-7rem',
+        duration: 3
       },
       '<'
     )
+    // marquee位移入场
     .from(
       '#we_love_our_clients_marquee_container',
       {
         width: '7rem',
-        opacity: 0
+        opacity: 0,
+        duration: 3
       },
       '<'
     )
-
-  var tl_leave = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#we_love_our_clients',
-        toggleActions: 'play pause',
-        start: 'bottom bottom',
-        end: '+=500',
-        scrub: 1,
-        fastScrollEnd: true,
-        anticipatePin: 1,
-        markers: {
-          startColor: 'orange',
-          endColor: 'orange',
-          fontSize: '18px',
-          indent: 200
-        }
-      }
-    })
-    .to('#we_love_our_clients_text', { y: '7rem', duration: 3 })
-    .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 2 }, '<')
-    .to('#background_layer', { background: '#3d7353', duration: 4 }, '<2')
-
-  tl.add(tl_enter)
-  tl.add(tl_leave)
+    // text位移离场
+    .to('#we_love_our_clients_text', { y: '7rem', duration: 4 }, '>3')
+    // marquee位移离场
+    .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 4 }, '<')
+    // 背景渐变
+    .to('#background_layer', { background: '#3d7353', duration: 3 }, '<1')
 
   return tl
 }
-
-onMounted(() => {
-  var tl = gsap.timeline()
+function WLOCmarquee() {
   var marquee_container = document.getElementById('we_love_our_clients_marquee')
   var children = marquee_container.children.length
   var duration = children * 2.4
   var lead = duration / children
   var left = childrenWidth * children - parentWidth + 'rem'
 
-  var marquee = gsap.timeline()
+  var WLOCmarquee = gsap.timeline()
   for (let i = 0; i < children; i++) {
     if (i === 0) {
       var tween_0 = gsap.to(`#element_${i}`, {
@@ -141,7 +119,7 @@ onMounted(() => {
         repeat: -1,
         duration: duration
       })
-      marquee.add(tween_0)
+      WLOCmarquee.add(tween_0)
     } else {
       var tween = gsap.to(`#element_${i}`, {
         ease: 'none',
@@ -149,10 +127,11 @@ onMounted(() => {
         repeat: -1,
         duration: duration
       })
-      marquee.add(tween, `<${lead}`)
+      WLOCmarquee.add(tween, `<${lead}`)
     }
   }
-  tl.add(weLoveOurClients)
-  tl.add(marquee)
-})
+}
+var tl = gsap.timeline()
+tl.add(WLOCmarquee)
+tl.add(weLoveOurClients)
 </script>

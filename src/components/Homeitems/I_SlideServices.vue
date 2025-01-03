@@ -112,6 +112,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+
 function slideContainer() {
   var tl = gsap.timeline().from('#slide_pics_1', {
     opacity: 0,
@@ -123,10 +124,10 @@ function slideContainer() {
       end: '+=800',
       scrub: 1.5,
       markers: {
-        startColor: 'pink',
-        endColor: 'pink',
+        startColor: 'red',
+        endColor: 'red',
         fontSize: '10px',
-        indent: 40
+        indent: 0
       }
     }
   })
@@ -150,10 +151,10 @@ function slideContainer() {
         scrub: 1,
         pin: true,
         markers: {
-          startColor: 'black',
-          endColor: 'black',
+          startColor: 'orange',
+          endColor: 'orange',
           fontSize: '10px',
-          indent: 40
+          indent: 50
         }
       }
     })
@@ -195,10 +196,10 @@ function servicesContainer() {
       end: '+=400',
       scrub: 1,
       markers: {
-        startColor: 'black',
-        endColor: 'black',
+        startColor: 'yellow',
+        endColor: 'yellow',
         fontSize: '10px',
-        indent: 40
+        indent: 100
       }
     }
   })
@@ -215,10 +216,10 @@ function servicesContainer() {
         end: '+=500',
         scrub: 1,
         markers: {
-          startColor: 'pink',
-          endColor: 'pink',
+          startColor: 'green',
+          endColor: 'green',
           fontSize: '10px',
-          indent: 40
+          indent: 150
         }
       }
     })
@@ -228,8 +229,7 @@ function servicesContainer() {
   tl.add(tll)
   return tl
 }
-
-var slide_services = gsap.timeline()
-slide_services.add(servicesContainer)
-slide_services.add(slideContainer)
+var tl = gsap.timeline()
+tl.add(servicesContainer)
+tl.add(slideContainer)
 </script>
