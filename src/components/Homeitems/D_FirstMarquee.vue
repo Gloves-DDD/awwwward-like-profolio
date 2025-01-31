@@ -1,97 +1,95 @@
 <template>
-  <div id="black_marquee_warpper_A" class="border-4 border-orange-300 relative h-[125rem]">
-    <!-- first marquee container / 夜幕Part1 入场动画 -->
+  <div id="black_marquee_warpper" class="border-4 border-orange-300 relative h-auto lg:h-[330vh]">
+    <!-- svg marquee / P1  -->
     <div
-      data-speed="1"
-      id="black_marquee_warpper_AA"
-      class="flex w-[100vw] h-[50vw] items-center justify-center border-4 border-lime-500"
+      id="svg_marquee_container"
+      class="w-screen h-screen lg:p-0 px-[50px] pb-[50px] flex items-center justify-center border-2 border-lime-500"
     >
-      <!-- black_marquee_container -->
-      <svg
-        viewBox="0 0 630 250"
-        xmlns="http://www.w3.org/2000/svg"
-        id="black_marquee_container"
-        class="w-[48rem] h-[22rem] m-auto bg-neutral-800 overflow-hidden rounded-[2.5rem] border-4 border-red-500"
+      <div
+        data-speed="1"
+        id="svg_marquee"
+        class="w-full lg:w-[48rem] h-full lg:h-[24rem] py-[3rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
       >
-        <g id="text_marquee_container">
-          <text
-            x="100%"
-            y="20%"
-            id="first_text"
-            class="uppercase fill-neutral-50 text-[3rem] font-MabryPro font-normal tracking-wider"
-          >
-            ❉ parts that represent a whole
-          </text>
-          <text
-            x="100%"
-            y="20%"
-            id="second_text"
-            class="uppercase fill-neutral-50 text-[3rem] font-MabryPro font-normal tracking-wider"
-          >
-            ❉ parts that represent a whole
-          </text>
-        </g>
-        <g id="color_marquee_container">
-          <line
-            id="first_color"
-            x1="650"
-            y1="100"
-            x2="850"
-            y2="100"
-            stroke-linecap="round"
-            class="stroke-red-600 stroke-[1.5rem]"
-          />
-          <line
-            id="second_color"
-            x1="650"
-            y1="150"
-            x2="850"
-            y2="150"
-            stroke-linecap="round"
-            class="stroke-yellow-600 stroke-[1.5rem]"
-          />
-          <line
-            id="third_color"
-            x1="650"
-            y1="150"
-            x2="850"
-            y2="150"
-            stroke-linecap="round"
-            class="stroke-lime-500 stroke-[1.5rem]"
-          />
-          <line
-            id="forth_color"
-            x1="650"
-            y1="200"
-            x2="850"
-            y2="200"
-            stroke-linecap="round"
-            class="stroke-emerald-700 stroke-[1.5rem]"
-          />
-          <line
-            id="fifth_color"
-            x1="650"
-            y1="200"
-            x2="850"
-            y2="200"
-            stroke-linecap="round"
-            class="stroke-emerald-700 stroke-[1.5rem]"
-          />
-        </g>
-      </svg>
+        <div id="svg_marquee_opacity_warpper" class="h-full border-4">
+          <Vue3Marquee duration="25" class="border-4 border-red-500">
+            <p
+              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[3rem] font-MabryPro font-normal tracking-wider"
+            >
+              ❉ parts that represent a whole
+            </p>
+            <p
+              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[3rem] font-MabryPro font-normal tracking-wider"
+            >
+              ❉ parts that represent a whole
+            </p>
+          </Vue3Marquee>
+          <div class="flex flex-col h-full justify-evenly lg:h-[15rem] border-4 border-blue-500">
+            <Vue3Marquee duration="12" class="m-auto">
+              <span
+                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+              <span
+                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+              <span
+                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+            </Vue3Marquee>
+            <Vue3Marquee duration="20" class="m-auto">
+              <span
+                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+              <span
+                class="bg-yellow-700 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[8rem]"></span>
+              <span
+                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[12rem]"></span
+            ></Vue3Marquee>
+            <Vue3Marquee duration="25" class="m-auto">
+              <span
+                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+              <span
+                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+              <span
+                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+              ></span>
+              <span class="w-[10rem]"></span>
+            </Vue3Marquee>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div id="black_marquee_warpper_AB" class="border-4 border-yellow absolute top-[30rem]">
-      <!-- text after marquee / 夜幕Part2 中段文字-->
-      <div id="text_after_marquee" class="w-full h-[auto] border-4 border-black bg-neutral-800">
-        <div class="p-[4rem]">
+    <div id="text_next_intro_marquee" class="border-4 border-yellow lg:absolute lg:top-[20rem]">
+      <div class="bg-neutral-800 h-[6rem] pt-[2.5rem]">
+        <Vue3Marquee duration="15">
+          <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
+          <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
+        </Vue3Marquee>
+      </div>
+      <!-- text next svg marquee / P2-->
+      <div id="text_next_svg_marquee" class="w-full h-[auto] border-4 border-black bg-neutral-800">
+        <div class="p-[50px] lg:p-[4rem]">
           <p class="uppercase text-white font-MabryPro text-sm">rethink your product story</p>
-          <p class="text-white text-[2rem] tracking-wide leading-[5rem]">
-            with <span class="rounded-full bg-pink-300 px-4 py-2">beautiful designs</span> , bespoke
-            <span class="rounded-full bg-amber-400 px-4 py-2">copywriting</span> , and<br />
-            <span class="rounded-full bg-purple-600 px-4 py-2">powerful visuals</span>
+          <p
+            class="text-white text-[1.3rem] lg:text-[2rem] tracking-wide leading-[3rem] lg:leading-[5rem]"
+          >
+            with<span class="rounded-full lg:bg-pink-300 px-4 py-2">beautiful designs</span>,
+            bespoke <span class="rounded-full lg:bg-amber-400 px-4 py-2">copywriting</span>, and<br />
+            <span class="rounded-full lg:bg-purple-600 px-4 py-2">powerful visuals</span>
             that are fresh and authentic. To achieve this, we start with a
-            <span class="rounded-full bg-red-600 px-4 py-2">discovery</span> phase analyzing your
+            <span class="rounded-full lg:bg-red-600 px-4 py-2">discovery</span>phase analyzing your
             customers, and we work backward to find the most compelling emotional solution.
           </p>
         </div>
@@ -100,32 +98,55 @@
       <!-- black window warpper / 夜幕Part3 离场动画-->
       <div
         id="black_window_warpper"
-        class="w-[100vw] h-[50vw] flex justify-center items-center border-2 border-blue-600 z-10"
+        class="w-screen h-auto lg:h-screen flex justify-center items-center border-blue-600 border-2 z-10"
       >
         <div
           data-speed="1"
           id="black_window_container"
-          class="w-[100vw] h-[50vw] flex justify-evenly items-center bg-neutral-800 border-2 border-pink-600 brightness-100"
+          class="w-full lg:w-screen h-auto lg:h-screen flex flex-col lg:flex-row justify-evenly items-center bg-neutral-800 border-2 border-red-600 brightness-100"
         >
-          <div class="w-[33%] h-[100%] flex items-center">
-            <div
-              id="black_window_left"
-              class="m-auto w-[60%] h-[30%] border-4 rounded-3xl border-red-600 bg-neutral-100"
-            ></div>
+          <!-- Left -->
+          <div id="black_window_left" class="border-4 flex items-center m-3">
+            <p
+              class="text-[1.5rem] text-white font-MabryPro font-normal text-center lg:text-nowrap uppercase"
+            >
+              bits & bobs <br />
+              transform your <br />
+              brand
+            </p>
           </div>
-
-          <div class="w-[33%] h-[100%] flex items-center">
+          <!-- Center -->
+          <div class="w-[40vw] h-screen flex items-center m-3">
             <div
               id="black_window_center"
               class="m-auto w-[100%] h-[100%] border-4 rounded-3xl border-blue-600 bg-neutral-100"
             ></div>
           </div>
-          <div class="w-[33%] h-[100%] flex items-center">
-            <div
-              id="black_window_right"
-              class="m-auto w-[45%] h-[30%] border-4 rounded-3xl border-yellow-400 bg-neutral-100"
-            ></div>
-          </div>
+          <!-- Right -->
+          <svg
+            id="rotate_circle"
+            version="1.1"
+            baseProfile="full"
+            width="200"
+            height="200"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            class="m-3 scale-75 lg:scale-100"
+          >
+            <defs>
+              <path
+                id="path"
+                d="M100,200C44.772,200,0,155.228,0,100S44.772,0,100,0s100,44.772,100,100S155.228,200,100,200"
+                fill="none"
+              />
+            </defs>
+            <use xlink:href="#path" />
+            <text fill="white">
+              <textPath xlink:href="#path" alignment-baseline="before-edge" letter-spacing="6.5px">
+                · · · BRAND STROY TELLING AT ITS BEST
+              </textPath>
+            </text>
+          </svg>
         </div>
       </div>
     </div>
@@ -133,105 +154,51 @@
 </template>
 
 <script setup>
+import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-const markerB1 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '18px',
-  indent: 50
-}
-const markerB2 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '14px',
-  indent: 40
-}
 
-function blackMarqueeContainer() {
+function SVGMarqueeTransition() {
   var tl = gsap
     .timeline({
       ease: 'sine.inOut',
       scrollTrigger: {
-        trigger: '#black_marquee_warpper_AA',
+        trigger: '#svg_marquee_container',
         toggleActions: 'play pause',
         start: 'middle middle',
         end: '+=300',
         pin: true,
-        scrub: 1,
-        markers: markerB1
+        scrub: 1
       }
     })
-    .to('#black_marquee_container', {
+    .to('#svg_marquee', {
       width: '100vw',
-      height: '50vw',
+      height: '100vh',
       borderRadius: 0,
-      duration: 3
+      duration: 5
     })
     .to(
-      '#color_marquee_container',
+      '#svg_marquee_opacity_warpper',
       {
-        opacity: 0
+        opacity: 0,
+        duration: 3
       },
       '<'
     )
-    .from('#text_after_marquee', {
+    .from('#text_next_intro_marquee', {
       opacity: 0,
       duration: 2
     })
-    .to(
-      '#nav_bar',
+    .from(
+      '#text_next_svg_marquee',
       {
-        color: 'white'
+        opacity: 0,
+        duration: 2
       },
       '<'
     )
-  return tl
-}
-function firstMarqueeContainer() {
-  var durationtime = 26
-  var lead = durationtime / 2
-  var tl = gsap
-    .timeline()
-    .to('#first_text', {
-      x: '-203%',
-      ease: 'none',
-      duration: durationtime,
-      repeat: -1
-    })
-    .to(
-      '#second_text',
-      {
-        x: '-203%',
-        ease: 'none',
-        duration: durationtime,
-        repeat: -1
-      },
-      `<${lead}`
-    )
-  return tl
-}
-function secondMarqueeContainer() {
-  var tl = gsap
-    .timeline()
-    .to('#first_color', { ease: 'none', attr: { x1: -210, x2: -10 }, duration: 14, repeat: -1 })
-    .to(
-      '#second_color',
-      { ease: 'none', attr: { x1: -210, x2: -10 }, duration: 10, repeat: -1 },
-      '<2'
-    )
-    .to(
-      '#third_color',
-      { ease: 'none', attr: { x1: -210, x2: -10 }, duration: 10, repeat: -1 },
-      '<5'
-    )
-    .to('#forth_color', { ease: 'none', attr: { x1: -210, x2: -10 }, duration: 8, repeat: -1 }, '<')
-    .to(
-      '#fifth_color',
-      { ease: 'none', attr: { x1: -210, x2: -10 }, duration: 8, repeat: -1 },
-      '<4'
-    )
+
   return tl
 }
 function blackWindowContainer() {
@@ -244,17 +211,14 @@ function blackWindowContainer() {
         start: 'top 90%',
         end: '+=300',
         anticipatePin: 1,
-        scrub: 1,
-        markers: markerB1
+        scrub: 1
       }
     })
-    .from('#black_window_left', { opacity: 0 }, '<')
     .from('#black_window_center', { width: '20rem', height: '110%', y: -30 }, '<')
-    .from('#black_window_right', { width: '5%', height: '5%', opacity: 0 }, '<')
 
   var tll = gsap.timeline().to('#black_window_container', {
-    width: '36rem',
-    height: '18rem',
+    scaleY: 0.5,
+    scaleX: 0.4,
     borderRadius: '2.5rem',
     filter: 'brightness(0)',
     scrollTrigger: {
@@ -264,18 +228,27 @@ function blackWindowContainer() {
       end: '+=500',
       fastScrollEnd: true,
       pin: true,
-      scrub: 0,
-      markers: markerB2
+      scrub: 0
     }
   })
 
   tl.add(tll)
   return tl
 }
-
+function rotateCircle() {
+  var tl = gsap.to('#rotate_circle', {
+    rotate: 360,
+    repeat: -1,
+    duration: 6,
+    ease: 'none'
+  })
+  return tl
+}
 var first_marquee = gsap.timeline()
-first_marquee.add(blackMarqueeContainer)
-first_marquee.add(firstMarqueeContainer)
-first_marquee.add(secondMarqueeContainer)
-first_marquee.add(blackWindowContainer)
+first_marquee.add(rotateCircle)
+const props = defineProps(['mediaQuery1024'])
+if (props.mediaQuery1024.matches) {
+  first_marquee.add(SVGMarqueeTransition)
+  first_marquee.add(blackWindowContainer)
+}
 </script>

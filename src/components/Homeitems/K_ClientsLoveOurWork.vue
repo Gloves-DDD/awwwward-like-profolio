@@ -1,7 +1,7 @@
 <template>
   <div
     id="clients_love_our_work"
-    class="w-[100vw] h-[50vw] flex flex-col items-center relative p-[3rem] border-4"
+    class="w-[100vw] h-[50vw] flex flex-col items-center relative p-[3rem] border-4 border-yellow-500"
   >
     <div class="text-[4rem] leading-[6rem] flex flex-col items-center">
       <p id="clients_first_line" class="tracking-wider">
@@ -116,30 +116,6 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const markerB1 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '18px',
-  indent: 50
-}
-const markerB2 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '14px',
-  indent: 40
-}
-const markerB3 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '10px',
-  indent: 30
-}
-const markerB1S = {
-  startColor: 'blue',
-  endColor: 'blue',
-  fontSize: '18px',
-  indent: 50
-}
 function clientsLoveOurWork() {
   gsap.set('#blue_card', { transformOrigin: 'top' })
   gsap.set('#yellow_card', { transformOrigin: 'top' })
@@ -156,11 +132,10 @@ function clientsLoveOurWork() {
       scrollTrigger: {
         trigger: '#clients_love_our_work',
         toggleActions: 'play pause',
-        start: 'top 70%',
+        start: 'top 90%',
         end: '+=300',
         scrub: 1,
-        anticipatePin: 1,
-        markers: markerB1
+        anticipatePin: 1
       }
     })
     .from('#clients_second_line', {
@@ -172,8 +147,7 @@ function clientsLoveOurWork() {
         start: 'top 70%',
         end: '+=300',
         scrub: 1,
-        anticipatePin: 1,
-        markers: markerB1S
+        anticipatePin: 1
       }
     })
     .from('#blue_card', {
@@ -184,8 +158,7 @@ function clientsLoveOurWork() {
         start: 'top 70%',
         end: '+=300',
         scrub: 1,
-        anticipatePin: 1,
-        markers: markerB1S
+        anticipatePin: 1
       }
     })
 
@@ -201,8 +174,7 @@ function clientsLoveOurWork() {
         scrub: 1,
         fastScrollEnd: true,
         pin: true,
-        anticipatePin: 1,
-        markers: markerB2
+        anticipatePin: 1
       }
     })
     .to('#yellow_card', {
@@ -265,8 +237,7 @@ function clientsLoveOurWork() {
         start: 'bottom 90%',
         end: '+=500',
         scrub: 1,
-        anticipatePin: 1,
-        markers: markerB3
+        anticipatePin: 1
       }
     })
     .to('#clients_first_line', { y: -80, duration: 7 })

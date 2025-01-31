@@ -1,41 +1,44 @@
 <template>
-  <div id="brand_stories" class="w-auto flex flex-col items-center border-4 border-lime-500 p5">
+  <div id="brand_stories" class="w-auto flex flex-col items-center border-4 border-lime-500">
     <div data-speed="1.1" id="brand_stories_text_container" class="translate-y-0 overflow-hidden">
       <p
         id="brand_stories_text_content"
-        class="translate-y-0 text-[4.5rem] tracking-normal leading-[9rem]"
+        class="translate-y-0 text-[2.5rem] lg:text-[4.5rem] tracking-normal leading-[6rem] lg:leading-[9rem]"
       >
         Brand Stories Such As
       </p>
     </div>
-
-    <div
-      class="relative h-[6rem] w-[46rem] font-MabryPro font-thin tracking-[0.1rem] border-b-2 border-black overflow-hidden"
-    >
-      <p
-        id="first_marquee_content_brand_stories"
-        class="absolute left-[100%] text-[3rem] uppercase"
-      >
-        ¯storytellers
-      </p>
-      <p
-        id="second_marquee_content_brand_stories"
-        class="absolute left-[100%] text-[3rem] uppercase"
-      >
-        ¯Flavorizers
-      </p>
-      <p
-        id="third_marquee_content_brand_stories"
-        class="absolute left-[100%] text-[3rem] uppercase"
-      >
-        ¯innovators
-      </p>
-      <p
-        id="forth_marquee_content_brand_stories"
-        class="absolute left-[100%] text-[3rem] uppercase"
-      >
-        ¯Legends
-      </p>
+    <div class="w-[20rem] lg:w-[30rem] pb-5 border-b-2 border-black">
+      <Vue3Marquee duration="70">
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯storytellers
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯ideators
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯innovators
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯weatherizers
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯flavorizers
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯all-around good product havers
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="text-[1.2rem] lg:text-[3rem] font-MabryPro font-thin tracking-wider uppercase">
+          ¯legends
+        </p>
+        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+      </Vue3Marquee>
     </div>
   </div>
 </template>
@@ -44,6 +47,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import { Vue3Marquee } from 'vue3-marquee'
 
 function brandStories() {
   var tl = gsap
@@ -76,38 +80,9 @@ function brandStories() {
 
   return tl
 }
-
-function brandStoriesMarquee() {
-  var durationtime = 24
-  var lead = durationtime / 4
-  var tl = gsap
-    .timeline()
-    .to('#first_marquee_content_brand_stories', {
-      ease: 'none',
-      left: '-150%',
-      duration: durationtime,
-      repeat: -1
-    })
-    .to(
-      '#second_marquee_content_brand_stories',
-      { ease: 'none', left: '-140%', duration: durationtime, repeat: -1 },
-      `<${lead}`
-    )
-    .to(
-      '#third_marquee_content_brand_stories',
-      { ease: 'none', left: '-130%', duration: durationtime, repeat: -1 },
-      `<${lead}`
-    )
-    .to(
-      '#forth_marquee_content_brand_stories',
-      { ease: 'none', left: '-120%', duration: durationtime, repeat: -1 },
-      `<${lead}`
-    )
-
-  return tl
-}
-// brandStories()
 var brand_stories = gsap.timeline()
-brand_stories.add(brandStoriesMarquee)
-brand_stories.add(brandStories)
+const props = defineProps(['mediaQuery1024'])
+if (props.mediaQuery1024.matches) {
+  brand_stories.add(brandStories)
+}
 </script>

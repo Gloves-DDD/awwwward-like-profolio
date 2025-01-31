@@ -15,8 +15,11 @@
     "@vueuse/core": "^10.11.0",
     "gsap": "npm:gsap-trial@^3.12.5",
     "matter-js": "^0.20.0",
+    "poly-decomp": "^0.3.0",
+    "svg-path-parser": "^1.1.0",
     "vue": "^3.4.29",
-    "vue-router": "^4.3.3"
+    "vue-router": "^4.3.3",
+    "vue3-marquee": "^4.2.2"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

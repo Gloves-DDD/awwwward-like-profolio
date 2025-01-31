@@ -1,49 +1,58 @@
 <template>
   <!-- 01 /  INTRO TEXT / 你的用户需要的东西 -->
-  <div data-speed="0.8" id="intro_text" class="flex mx-[8rem] my-[2rem] border-2 border-blue-400">
+  <div
+    data-speed="0.8"
+    id="intro_text"
+    class="lg:grid lg:grid-cols-5 px-[50px] lg:px-[8rem] lg:py-[2rem] sm:pb-[25px] border-2 border-blue-400"
+  >
     <p
       data-speed="1.1"
       id="customers"
-      class="w-[13rem] text-[1.5rem] mt-[2rem] font-MabryPro font-thin tracking-wider"
+      class="lg:col-span-1 text-[3rem] lg:text-[1.5rem] font-MabryPro font-thin lg:tracking-wider border-2 border-red-600 lg:text-center"
     >
       Customers
     </p>
-    <div id="needconnection">
-      <div class="text-[6rem] font-MabryPro font-thin tracking-wider leading-[6rem]">
-        <div class="overflow-hidden">
-          <p id="need" class="-translate-y-[6rem]">Need</p>
+    <div id="" class="lg:col-span-3 border-2 border-red-600">
+      <div
+        class="flex gap-4 lg:block border-2 text-[4rem] lg:text-[6rem] font-MabryPro font-thin tracking-wider lg:leading-[6rem] border-yellow-300"
+      >
+        <div class="border-2 overflow-hidden">
+          <p id="need" class="need_connection">Need</p>
         </div>
-        <div class="overflow-hidden">
-          <p id="connection" class="-translate-y-[6rem]">Connection</p>
+        <div class="border-2 overflow-hidden">
+          <p id="connection" class="need_connection">Connection</p>
         </div>
       </div>
-      <p class="mt-[1rem] text-[1rem] font-MabryPro font-thin uppercase">
+      <p
+        class="p-0 lg:py-[1rem] text-[1rem] font-MabryPro font-thin uppercase border-2 border-green-600"
+      >
         They want to buy brands they love and trust.
       </p>
     </div>
+    <div class="lg:col-span-1"></div>
   </div>
 
   <!-- 02 / INTRO IMG / 简短案例展示-->
   <div
     data-speed="1"
     id="intro_img_group"
-    class="flex h-[40rem] mx-[8rem] mt-[10rem] border-2 border-green-600"
+    class="block lg:flex h-auto lg:h-[40rem] px-[50px] lg:px-[11rem] lg:pt-[10rem] border-2 border-green-600"
   >
     <!-- left_image -->
-    <div class="w-[15rem] h-[22rem] ml-[2rem] flex border-2 border-red-600">
+    <div class="w-full lg:w-[15rem] h-[44rem] lg:h-[22rem] flex border-2 border-red-600">
       <div
         id="intro_left_img"
-        class="w-[15rem] h-[22rem] m-auto border-[0.7rem] border-blue-600 rounded-[2.5rem] bg-blue-100 brightness-100"
+        class="w-full lg:w-[15rem] h-[44rem] lg:h-[22rem] m-auto border-[0.7rem] border-blue-600 rounded-[2.5rem] bg-blue-100 brightness-100"
       ></div>
     </div>
     <!-- right_image -->
     <div
       data-speed="1.2"
-      class="mt-auto ml-auto mr-[3rem] w-[28rem] h-[35rem] flex border-2 border-red-500"
+      class="m-0 lg:mt-auto lg:ml-auto w-full lg:w-[28rem] h-[70rem] lg:h-[35rem] flex border-2 border-red-500"
     >
       <div
         id="intro_right_img"
-        class="w-[28rem] h-[35rem] m-auto border-[0.7rem] border-rose-400 rounded-[3rem] flex relative origin-center bg-pink-50 brightness-100"
+        class="w-full lg:w-[28rem] h-[70rem] lg:h-[35rem] m-auto border-[0.7rem] border-rose-400 rounded-[3rem] flex relative origin-center bg-pink-50 brightness-100"
       >
         <div
           id="intro_img_right_title"
@@ -63,26 +72,11 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-const markerA1 = {
-  startColor: 'red',
-  endColor: 'green',
-  fontSize: '18px',
-  indent: 50
-}
-const markerB1 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '18px',
-  indent: 50
-}
-const markerB2 = {
-  startColor: 'purple',
-  endColor: 'yellow',
-  fontSize: '14px',
-  indent: 40
-}
-
 function introText() {
+  gsap.set('.need_connection', {
+    y: '-10rem'
+  })
+
   var tl = gsap
     .timeline({
       ease: 'sine.inOut',
@@ -91,7 +85,6 @@ function introText() {
         toggleActions: 'play pause',
         start: 'top 90%',
         end: '+=400',
-        markers: markerA1,
         scrub: 1
       }
     })
@@ -123,7 +116,6 @@ function introImg() {
         toggleActions: 'play pause',
         start: 'top 70%',
         end: '+=1000',
-        markers: markerB1,
         scrub: 0
       }
     })
@@ -156,7 +148,6 @@ function introImg() {
         start: 'top 60%',
         end: '+=800',
         fastScrollEnd: true,
-        markers: markerB2,
         scrub: 1
       }
     })
@@ -194,7 +185,10 @@ function introImg() {
   return tlLeft
 }
 
-var next_intro = gsap.timeline()
-next_intro.add(introText)
-next_intro.add(introImg)
+const props = defineProps(['mediaQuery1024'])
+if (props.mediaQuery1024.matches) {
+  var next_intro = gsap.timeline()
+  next_intro.add(introText)
+  next_intro.add(introImg)
+}
 </script>

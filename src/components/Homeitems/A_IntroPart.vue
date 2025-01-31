@@ -2,9 +2,9 @@
   <!-- 01 / 开头文本 + 小箭头 -->
   <div
     id="intro_part"
-    class="bg-red-100 w-full lg:h-[45vw] lg:p-[7rem] h-auto pt-[150px] px-[50px] sm:pb-[25px]"
+    class="bg-red-100 w-full lg:h-[45vw] lg:p-[7rem] h-auto pt-[150px] px-[50px] sm:pb-[25px] border-2 border-red-700"
   >
-    <div class="w-full lg:flex lg:justify-start">
+    <div class="w-full lg:flex lg:justify-start border-2 border-orange-800">
       <p class="leading-tight">
         <span class="lg:block inline tracking-tighter font-normal lg:text-[5rem] text-[2.5rem]">
           Transiformative
@@ -14,19 +14,19 @@
         </span>
         <span class="block font-extralight text-[2rem]"> For Product & Brands </span>
       </p>
-      <div class="border-4 w-full lg:w-auto flex justify-center mt-[15rem] lg:m-0">
+      <div class="border-4 w-full lg:w-auto flex justify-center mt-[15rem] lg:ml-auto lg:my-0">
         <DownArrow class="lg:mt-auto lg:ml-auto" />
       </div>
     </div>
     <div class="w-full mt-[7rem] border-red-700 border-2">
       <video
         data-speed="1"
-        id="test_video"
+        id="intro_video"
         autoplay
         loop
         muted
         src="/src/assets/Clouds.mp4"
-        class="rounded-[50px] object-cover origin-top-left min-w-full static border-2 border-blue-500 lg:w-[28rem] lg:h-[19rem] lg:absolute"
+        class="rounded-[5rem] object-cover origin-top-left min-w-full static"
       ></video>
     </div>
   </div>
@@ -35,19 +35,19 @@
     <div
       data-speed="0.9"
       id="intro_cards_container"
-      class="flex overflow-scroll w-auto m-0 lg:my-[4rem] lg:mx-[8rem] lg:ml-auto lg:w-[20rem] gap-4 lg:gap-0 border-4 border-blue-500"
+      class="overflow-scroll lg:overflow-visible whitespace-nowrap lg:whitespace-normal w-full h-auto m-0 lg:my-[4rem] lg:mx-[8rem] lg:ml-auto lg:w-[20rem] border-4 border-blue-500"
     >
       <div
         id="first_intro_card"
-        class="w-[13rem] h-[17rem] bg-yellow-300 rounded-[2.5rem] static lg:absolute lg:translate-x-20 lg:translate-y-20"
+        class="mx-2 w-[13rem] h-[17rem] bg-yellow-300 rounded-[2.5rem] inline-block lg:absolute lg:translate-x-20 lg:translate-y-20"
       ></div>
       <div
         id="second_intro_card"
-        class="w-[13rem] h-[17rem] bg-green-300 rounded-[2.5rem] static lg:absolute lg:translate-x-10 lg:translate-y-10"
+        class="mx-2 w-[13rem] h-[17rem] bg-green-300 rounded-[2.5rem] inline-block lg:absolute lg:translate-x-10 lg:translate-y-10"
       ></div>
       <div
         id="third_intro_card"
-        class="w-[13rem] h-[17rem] bg-blue-300 rounded-[2.5rem] static lg:absolute"
+        class="mx-2 w-[13rem] h-[17rem] bg-blue-300 rounded-[2.5rem] inline-block lg:absolute"
       ></div>
     </div>
   </div>
@@ -60,12 +60,11 @@ import DownArrow from './items/DownArrow.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 function videoAnimation() {
-  gsap.set('#test_video', {
-    // x: '-1rem',
-    // yPercent: -70,
-    // width: '45rem',
-    // height: '18rem',
-    // borderRadius: 250
+  gsap.set('#intro_video', {
+    position: 'absolute',
+    minWidth: '45rem',
+    height: '18rem',
+    borderRadius: 250
   })
 
   var tl = gsap.timeline({
@@ -78,11 +77,11 @@ function videoAnimation() {
       scrub: 1.5
     }
   })
-  tl.to('#test_video', {
+  tl.to('#intro_video', {
     x: 0,
-    yPercent: 0,
+    yPercent: 60,
     height: '19rem',
-    width: '28rem',
+    minWidth: '28rem',
     borderRadius: 50
   })
   return tl
@@ -127,19 +126,12 @@ function introCards() {
   return tl
 }
 
-const mediaQuery1024 = window.matchMedia('(min-width: 1024px)')
-function queryMatch(x) {
-  if (x.matches) {
-    var intro = gsap.timeline()
-    intro.add(videoAnimation)
-    intro.add(introCards)
-    console.log('Yes! Min-width is 1024px.')
-  } else {
-    console.log('No! Mediaquery is false.')
-  }
+const props = defineProps(['mediaQuery1024'])
+if (props.mediaQuery1024.matches) {
+  var intro = gsap.timeline()
+  intro.add(videoAnimation)
+  intro.add(introCards)
 }
-mediaQuery1024.addEventListener('change', queryMatch)
-queryMatch(mediaQuery1024)
 </script>
 
 <style scoped>

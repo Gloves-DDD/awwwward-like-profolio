@@ -1,11 +1,14 @@
 <template>
   <div
     id="cards_container"
-    class="h-[45vw] w-auto border-2 border-red-600 flex items-center justify-center gap-2"
+    class="h-auto lg:h-screen w-auto px-[50px] overflow-scroll lg:overflow-visible whitespace-nowrap lg:whitespace-normal border-2 border-red-600"
   >
-    <div id="card_1" class="w-[15rem] h-[18rem] bg-yellow-400 rounded-3xl p-[0.5rem]">
+    <div
+      id="card_1"
+      class="w-[15rem] h-[21rem] bg-yellow-400 rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+    >
       <div class="w-[100%] h-1/2 tracking-wider leading-tight">
-        <span class="px-2">Lable</span>
+        <span class="px-2">Card.1</span>
         <div class="mt-10">
           <p class="px-1">
             Web experience<br />
@@ -19,9 +22,12 @@
       <div class="w-[100%] h-1/2 bg-purple-800 rounded-b-2xl"></div>
     </div>
 
-    <div id="card_2" class="w-[15rem] h-[18rem] bg-[#fbe7ab] rounded-3xl p-[0.5rem]">
+    <div
+      id="card_2"
+      class="w-[15rem] h-[21rem] bg-[#fbe7ab] rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+    >
       <div class="w-[100%] h-1/2 tracking-wider leading-tight">
-        <span class="px-2">Lable</span>
+        <span class="px-2">Card.2</span>
         <div class="mt-10">
           <p class="px-1">
             Spreading<br />
@@ -35,9 +41,12 @@
       <div class="w-[100%] h-1/2 bg-gray-300 rounded-b-2xl"></div>
     </div>
 
-    <div id="card_3" class="w-[15rem] h-[18rem] bg-[#ed3902] rounded-3xl p-[0.5rem]">
+    <div
+      id="card_3"
+      class="w-[15rem] h-[21rem] bg-[#ed3902] rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+    >
       <div class="w-[100%] h-1/2 tracking-wider leading-tight text-neutral-100">
-        <span class="px-2">Lable</span>
+        <span class="px-2">Card.3</span>
         <div class="mt-10">
           <p class="px-1">
             A better butter<br />
@@ -51,9 +60,12 @@
       <div class="w-[100%] h-1/2 bg-blue-950 rounded-b-2xl"></div>
     </div>
 
-    <div id="card_4" class="w-[15rem] h-[18rem] bg-neutral-800 rounded-3xl p-[0.5rem]">
+    <div
+      id="card_4"
+      class="w-[15rem] h-[21rem] bg-neutral-800 rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+    >
       <div class="w-[100%] h-1/2 tracking-wider leading-tight text-neutral-100">
-        <span class="px-2">Lable</span>
+        <span class="px-2">Card.4</span>
         <div class="mt-10">
           <p class="px-1">
             Taking a swing at<br />
@@ -67,9 +79,12 @@
       <div class="w-[100%] h-1/2 bg-black rounded-b-2xl"></div>
     </div>
 
-    <div id="card_5" class="w-[15rem] h-[18rem] bg-[#f7d2b0] rounded-3xl p-[0.5rem]">
+    <div
+      id="card_5"
+      class="w-[15rem] h-[21rem] bg-[#f7d2b0] rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+    >
       <div class="w-[100%] h-1/2 tracking-wider leading-tight text-neutral-800">
-        <span class="px-2">Lable</span>
+        <span class="px-2">Card.5</span>
         <div class="mt-10">
           <p class="px-1">
             Friendly, caring,<br />
@@ -83,9 +98,12 @@
       <div class="w-[100%] h-1/2 bg-[#f1b2b2] rounded-b-2xl"></div>
     </div>
 
-    <div id="card_6" class="w-[15rem] h-[18rem] bg-white rounded-3xl p-[0.5rem]">
+    <div
+      id="card_6"
+      class="w-[15rem] h-[21rem] bg-white rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+    >
       <div class="w-[100%] h-1/2 tracking-wider leading-tight">
-        <span class="px-2">Lable</span>
+        <span class="px-2">Card.6</span>
         <div class="mt-10">
           <p class="px-1">
             Their policy is<br />
@@ -107,21 +125,22 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 function cardsContainer() {
-  gsap.set('#card_1', { x: -200, y: -60, rotateZ: -30 })
-  gsap.set('#card_2', { x: -250, y: 60, rotateZ: 60 })
-  gsap.set('#card_3', { x: -300, y: -80, rotateZ: 45 })
-  gsap.set('#card_4', { x: 300, y: 40, rotateZ: -70 })
-  gsap.set('#card_5', { x: 250, y: -100, rotateZ: 75 })
-  gsap.set('#card_6', { x: 200, y: 20, rotateZ: 85 })
+  gsap.set('#cards_container', { position: 'relative' })
+  gsap.set('#card_1', { position: 'absolute', top: 100, left: -100, rotateZ: -30 })
+  gsap.set('#card_2', { position: 'absolute', top: 100, left: 0, rotateZ: 60 })
+  gsap.set('#card_3', { position: 'absolute', top: 100, left: 100, rotateZ: 45 })
+  gsap.set('#card_4', { position: 'absolute', top: 100, left: 1000, rotateZ: -70 })
+  gsap.set('#card_5', { position: 'absolute', top: 100, left: 1100, rotateZ: 75 })
+  gsap.set('#card_6', { position: 'absolute', top: 100, left: 1200, rotateZ: 85 })
 
   var triggerset = {
     ease: 'none',
     scrollTrigger: {
       trigger: '#cards_container',
       toggleActions: 'play pause',
-      start: 'top 70%',
-      end: '+=1200',
-      scrub: 3,
+      start: 'top 80%',
+      end: '+=1000',
+      scrub: 1,
       markers: {
         startColor: 'red',
         endColor: 'red',
@@ -130,14 +149,15 @@ function cardsContainer() {
       }
     }
   }
-  var front = 5,
-    middle = 4,
-    end = 3
+  var front = 2,
+    middle = 3,
+    end = 2
 
   var card_1 = gsap
     .timeline(triggerset)
     .to('#card_1', {
-      x: 100,
+      left: 100,
+      top: 60,
       rotateZ: -5,
       duration: front
     })
@@ -146,14 +166,15 @@ function cardsContainer() {
       duration: middle
     })
     .to('#card_1', {
-      x: -200,
+      left: -200,
       duration: end
     })
 
   var card_2 = gsap
     .timeline(triggerset)
     .to('#card_2', {
-      x: 90,
+      left: 300,
+      top: 180,
       rotateZ: -15,
       duration: front
     })
@@ -162,16 +183,17 @@ function cardsContainer() {
       duration: middle
     })
     .to('#card_2', {
-      x: -500,
-      y: -200,
+      left: -100,
+      top: 100,
       duration: end
     })
 
   var card_3 = gsap
     .timeline(triggerset)
     .to('#card_3', {
-      x: 40,
-      rotateZ: 15,
+      left: 500,
+      top: 30,
+      rotateZ: 30,
       duration: front
     })
     .to('#card_3', {
@@ -179,16 +201,17 @@ function cardsContainer() {
       duration: middle
     })
     .to('#card_3', {
-      x: -500,
-      y: -300,
+      left: 200,
+      top: -100,
       duration: end
     })
 
   var card_4 = gsap
     .timeline(triggerset)
     .to('#card_4', {
-      x: -40,
-      rotateZ: -20,
+      left: 730,
+      top: 110,
+      rotateZ: -40,
       duration: front
     })
     .to('#card_4', {
@@ -196,15 +219,16 @@ function cardsContainer() {
       duration: middle
     })
     .to('#card_4', {
-      x: 500,
-      y: -300,
+      left: 1100,
+      top: -100,
       duration: end
     })
 
   var card_5 = gsap
     .timeline(triggerset)
     .to('#card_5', {
-      x: -90,
+      left: 930,
+      top: 10,
       rotateZ: 3,
       duration: front
     })
@@ -213,25 +237,25 @@ function cardsContainer() {
       duration: middle
     })
     .to('#card_5', {
-      x: 500,
-      y: -200,
+      left: 1300,
+      top: 100,
       duration: end
     })
 
   var card_6 = gsap
     .timeline(triggerset)
     .to('#card_6', {
-      x: -90,
-      rotateZ: 3,
+      left: 1100,
+      rotateZ: 45,
       duration: front
     })
     .to('#card_6', {
-      rotateZ: 42,
+      rotateZ: 35,
       duration: middle
     })
     .to('#card_6', {
-      x: 500,
-      y: -100,
+      left: 1300,
+      top: 100,
       duration: end
     })
 
@@ -245,6 +269,9 @@ function cardsContainer() {
   tl.add(card_6)
   return tl
 }
-var tl = gsap.timeline()
-tl.add(cardsContainer)
+var cards_container = gsap.timeline()
+const props = defineProps(['mediaQuery1024'])
+if (props.mediaQuery1024.matches) {
+  cards_container.add(cardsContainer)
+}
 </script>

@@ -37,13 +37,4 @@ function downArrow() {
 }
 var intro = gsap.timeline()
 intro.add(downArrow)
-// const mediaQuery1024 = window.matchMedia('(min-width: 1024px)')
-// function queryMatch(x) {
-//   if (x.matches) {
-//   } else {
-//     console.log('No! Mediaquery is false.')
-//   }
-// }
-// mediaQuery1024.addEventListener('change', queryMatch)
-// queryMatch(mediaQuery1024)
 </script>
