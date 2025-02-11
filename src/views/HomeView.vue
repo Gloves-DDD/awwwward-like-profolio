@@ -1,25 +1,25 @@
 <template>
   <!-- 01 -->
-  <A_IntroPart :media-query1024="mediaQuery1024" />
+  <A_IntroPart ref="refA" />
 
   <!-- 02 -->
-  <B_IntroNextPart :media-query1024="mediaQuery1024" />
+  <B_IntroNextPart ref="refB" />
 
   <!--03 / explain container / 解释用户需要的东西 -->
-  <C_ExplainContainer :media-query1024="mediaQuery1024" />
+  <C_ExplainContainer ref="refC" />
 
   <!-- 04 -->
-  <D_FirstMarquee :media-query1024="mediaQuery1024" />
+  <D_FirstMarquee ref="refD" />
 
   <!-- 05 / eye grabbing / 我们打造吸引眼球的E-Design -->
-  <E_EyeGrabbing :media-query1024="mediaQuery1024" />
+  <E_EyeGrabbing ref="refE" />
 
   <!-- 06 / CardsContainer / 合作品牌 静态元素 -->
-  <F_CardsContainer :media-query1024="mediaQuery1024" />
+  <F_CardsContainer ref="refF" />
 
   <!-- 07 /  客户的用户需求 -->
   <div
-    class="w-full h-auto p-[25px] lg:h-screen border-2 border-blue-600 flex flex-col items-center justify-center text-center uppercase"
+    class="slide_services w-full h-auto p-[25px] lg:h-screen border-2 border-blue-600 flex flex-col items-center justify-center text-center uppercase"
   >
     <p class="text-[0.7rem] font-MabryPro tracking-wider">the reality</p>
     <p
@@ -33,36 +33,30 @@
   </div>
 
   <!-- 08 / BrandStories / 品牌故事 -->
-  <H_BrandStories :media-query1024="mediaQuery1024" />
+  <H_BrandStories ref="refH" />
 
   <!-- 09 / SlideServices / 具体案例 -->
-  <I_SlideServices :media-query1024="mediaQuery1024" />
+  <I_SlideServices ref="refI" />
 
   <!-- 10 / 我能提供的服务类型 -->
-  <J_WeDo :media-query1024="mediaQuery1024"/>
+  <J_WeDo ref="refJ" />
 
-  <!-- (11) / background_layer -->
-  <div id="background_layer" class="bg-cyan-50 border-4 border-cyan-700">
-    <!-- 12 / ClientsLoveOurWork / 客户对我们的评价 -->
-    <K_ClientsLoveOurWork />
+  <!-- 12 / ClientsLoveOurWork / 客户对我们的评价 -->
+  <K_ClientsLoveOurWork ref="refK" />
 
-    <!-- 13 / WeLoveOurClients  -->
-    <L_WeLoveOurClients />
+  <!-- 13 / WeLoveOurClients  -->
+  <L_WeLoveOurClients ref="refL" />
 
-    <!-- 14 / ContactWithUs -->
-    <M_ContactWithUs />
-
-    <!-- 15 / ContactWithUsMarquee -->
-    <N_ContactWithUsMarquee />
-  </div>
+  <!-- 14 / ContactWithUs -->
+  <M_ContactWithUs ref="refM" />
 </template>
 
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { onMounted } from 'vue'
-
+import { onMounted, onUnmounted, ref } from 'vue'
+import { mediaQuery } from '@/assets/utils/mediaquery'
 import A_IntroPart from '@/components/Homeitems/A_IntroPart.vue'
 import B_IntroNextPart from '@/components/Homeitems/B_IntroNextPart.vue'
 import C_ExplainContainer from '@/components/Homeitems/C_ExplainContainer.vue'
@@ -75,20 +69,50 @@ import J_WeDo from '@/components/Homeitems/J_WeDo.vue'
 import K_ClientsLoveOurWork from '@/components/Homeitems/K_ClientsLoveOurWork.vue'
 import L_WeLoveOurClients from '@/components/Homeitems/L_WeLoveOurClients.vue'
 import M_ContactWithUs from '@/components/Homeitems/M_ContactWithUs.vue'
-import N_ContactWithUsMarquee from '@/components/Homeitems/N_ContactWithUsMarquee.vue'
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-const mediaQuery1024 = window.matchMedia('(min-width: 1024px)')
-if (mediaQuery1024.matches) {
-  onMounted(() => {
+
+const refA = ref(null),
+  refB = ref(null),
+  refC = ref(null),
+  refD = ref(null),
+  refE = ref(null),
+  refF = ref(null),
+  refH = ref(null),
+  refI = ref(null),
+  refJ = ref(null),
+  refK = ref(null),
+  refL = ref(null),
+  refM = ref(null)
+
+let ctx
+onMounted(() => {
+  if (mediaQuery.matches) {
     ScrollSmoother.create({
       smooth: 1,
       effects: true,
       smoothTouch: 0.1,
       speed: 0.65
     })
-  })
-}
+    ctx = gsap.context(() => {
+      gsap.timeline().add(refA.value.videoAnimation()).add(refA.value.introCards())
+      gsap.timeline().add(refB.value.introText()).add(refB.value.introImg())
+      gsap.timeline().add(refC.value.explain())
+      gsap.timeline().add(refD.value.SVGMarqueeTransition()).add(refD.value.blackWindowContainer())
+      gsap.timeline().add(refE.value.eyeGrabbing())
+      gsap.timeline().add(refF.value.cardsContainer())
+      gsap.timeline().add(refH.value.brandStories())
+      gsap.timeline().add(refI.value.slideContainer()).add(refI.value.servicesContainer())
+      gsap.timeline().add(refJ.value.weDo())
+      gsap.timeline().add(refK.value.clientsLoveOurWork())
+      gsap.timeline().add(refL.value.weLoveOurClients())
+      gsap.timeline().add(refM.value.contactWithUs())
+    })
+  }
+})
+onUnmounted(() => {
+  ctx.revert()
+})
 </script>
 
 <style scoped></style>

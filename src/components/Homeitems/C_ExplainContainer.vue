@@ -19,7 +19,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-function explain() {
+const explain = () => {
   var tl = gsap
     .timeline({
       ease: 'sine.inOut',
@@ -37,9 +37,5 @@ function explain() {
 
   return tl
 }
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  var explain_container = gsap.timeline()
-  explain_container.add(explain)
-}
+defineExpose({ explain })
 </script>

@@ -12,7 +12,7 @@
       </p>
     </div>
     <div class="w-[20rem] lg:w-[30rem] m-3 border-b-2 border-black">
-      <Vue3Marquee duration="13">
+      <Vue3Marquee :duration="13">
         <p class="text-[1.2rem] lg:text-[3rem] uppercase">¯content</p>
         <div class="w-[2.5rem] lg:w-[4rem]"></div>
         <p class="text-[1.2rem] lg:text-[3rem] uppercase">¯content</p>
@@ -27,10 +27,10 @@
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-gsap.registerPlugin(ScrollTrigger)
 import { Vue3Marquee } from 'vue3-marquee'
+gsap.registerPlugin(ScrollTrigger)
 
-function eyeGrabbing() {
+const eyeGrabbing = () => {
   var tl = gsap
     .timeline({
       ease: 'sine.inOut',
@@ -55,9 +55,5 @@ function eyeGrabbing() {
 
   return tl
 }
-var eye_grabbing = gsap.timeline()
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  eye_grabbing.add(eyeGrabbing)
-}
+defineExpose({ eyeGrabbing })
 </script>

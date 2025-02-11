@@ -59,7 +59,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DownArrow from './items/DownArrow.vue'
 gsap.registerPlugin(ScrollTrigger)
 
-function videoAnimation() {
+const videoAnimation = () => {
   gsap.set('#intro_video', {
     position: 'absolute',
     minWidth: '45rem',
@@ -86,7 +86,7 @@ function videoAnimation() {
   })
   return tl
 }
-function introCards() {
+const introCards = () => {
   var tl = gsap.timeline({
     ease: 'sine.inOut',
     scrollTrigger: {
@@ -125,13 +125,7 @@ function introCards() {
     )
   return tl
 }
-
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  var intro = gsap.timeline()
-  intro.add(videoAnimation)
-  intro.add(introCards)
-}
+defineExpose({ videoAnimation, introCards })
 </script>
 
 <style scoped>

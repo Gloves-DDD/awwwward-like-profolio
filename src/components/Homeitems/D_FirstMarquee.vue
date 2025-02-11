@@ -11,7 +11,7 @@
         class="w-full lg:w-[48rem] h-full lg:h-[24rem] py-[3rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
       >
         <div id="svg_marquee_opacity_warpper" class="h-full border-4">
-          <Vue3Marquee duration="25" class="border-4 border-red-500">
+          <Vue3Marquee :duration="25" class="border-4 border-red-500">
             <p
               class="uppercase text-neutral-50 text-[1.5rem] lg:text-[3rem] font-MabryPro font-normal tracking-wider"
             >
@@ -24,7 +24,7 @@
             </p>
           </Vue3Marquee>
           <div class="flex flex-col h-full justify-evenly lg:h-[15rem] border-4 border-blue-500">
-            <Vue3Marquee duration="12" class="m-auto">
+            <Vue3Marquee :duration="12" class="m-auto">
               <span
                 class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
               ></span>
@@ -38,7 +38,7 @@
               ></span>
               <span class="w-[10rem]"></span>
             </Vue3Marquee>
-            <Vue3Marquee duration="20" class="m-auto">
+            <Vue3Marquee :duration="20" class="m-auto">
               <span
                 class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
               ></span>
@@ -52,7 +52,7 @@
               ></span>
               <span class="w-[12rem]"></span
             ></Vue3Marquee>
-            <Vue3Marquee duration="25" class="m-auto">
+            <Vue3Marquee :duration="25" class="m-auto">
               <span
                 class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
               ></span>
@@ -73,7 +73,7 @@
 
     <div id="text_next_intro_marquee" class="border-4 border-yellow lg:absolute lg:top-[20rem]">
       <div class="bg-neutral-800 h-[6rem] pt-[2.5rem]">
-        <Vue3Marquee duration="15">
+        <Vue3Marquee :duration="15">
           <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
           <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
         </Vue3Marquee>
@@ -244,11 +244,8 @@ function rotateCircle() {
   })
   return tl
 }
+defineExpose({ SVGMarqueeTransition, blackWindowContainer })
+
 var first_marquee = gsap.timeline()
 first_marquee.add(rotateCircle)
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  first_marquee.add(SVGMarqueeTransition)
-  first_marquee.add(blackWindowContainer)
-}
 </script>

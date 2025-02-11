@@ -72,7 +72,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-function introText() {
+const introText = () => {
   gsap.set('.need_connection', {
     y: '-10rem'
   })
@@ -107,7 +107,7 @@ function introText() {
     )
   return tl
 }
-function introImg() {
+const introImg = () => {
   var tlLeft = gsap
     .timeline({
       ease: 'sine.inOut',
@@ -184,11 +184,5 @@ function introImg() {
   tlLeft.add(tlRight)
   return tlLeft
 }
-
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  var next_intro = gsap.timeline()
-  next_intro.add(introText)
-  next_intro.add(introImg)
-}
+defineExpose({ introText, introImg })
 </script>

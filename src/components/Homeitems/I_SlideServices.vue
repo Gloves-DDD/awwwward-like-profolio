@@ -1,20 +1,19 @@
 <template>
-  <div
-    id="slide_container"
-    class="slide_services border-4 border-blue-600 w-full lg:mt-[5rem] items-center"
-  >
+  <div id="slide_container" class="slide_services border-4 border-blue-600 w-full items-center">
     <!-- container_1 -->
     <div
       id="slide_container_1"
       class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-4 border-yellow-500 bg-pink-50 lg:bg-neutral-50"
     >
       <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
-        <div
+        <img
           id="slide_pics_1"
-          class="rounded-[2rem] w-full aspect-[6/7] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#f4db7d]"
-        ></div>
+          class="rounded-[2rem] w-full aspect-[3/5] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#f4db7d]"
+          src="/src/assets/images/marketing-seo-services/thirdlove.png"
+          alt="thirdlove"
+        />
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500">
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
         <div id="slide_texts_1" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             ThirdLove
@@ -41,12 +40,14 @@
       class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-2 border-orange-500 bg-green-50 lg:bg-neutral-50"
     >
       <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
-        <div
+        <img
           id="slide_pics_2"
-          class="rounded-[2rem] w-full aspect-[6/7] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#ff6a3d]"
-        ></div>
+          class="rounded-[2rem] w-full aspect-[3/5] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#ff6a3d]"
+          src="@/assets/images/marketing-seo-services/d-angelico.png"
+          alt="d-angelico"
+        />
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500">
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
         <div id="slide_texts_2" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             D’Angelico
@@ -73,12 +74,14 @@
       class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-2 border-orange-500 bg-blue-100 lg:bg-neutral-50"
     >
       <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
-        <div
+        <img
           id="slide_pics_3"
           class="rounded-[2rem] w-full aspect-[6/7] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#9daaf2]"
-        ></div>
+          src="/src/assets/images/marketing-seo-services/wimpykid.png"
+          alt="wimpykid"
+        />
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500">
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
         <div id="slide_texts_3" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             Wimpy Kid
@@ -110,7 +113,7 @@
           class="rounded-[2rem] w-full aspect-[6/7] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#741f92]"
         ></div>
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500">
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
         <div id="slide_texts_4" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             Frost King
@@ -150,31 +153,37 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-function slideContainer() {
+const slideContainer = () => {
   gsap.set('#slide_texts_2', { opacity: 0.1 })
   gsap.set('#slide_texts_3', { opacity: 0.1 })
   gsap.set('#slide_texts_4', { opacity: 0.1 })
-  var tl = gsap.timeline().from('#slide_pics_1', {
-    scrollTrigger: {
-      trigger: '#slide_container',
-      toggleActions: 'play pause',
-      start: 'top bottom',
-      end: '+=300'
-    }
-  })
+  var intro_animation = gsap
+    .timeline({
+      ease: 'sine.inOut',
+      scrollTrigger: {
+        trigger: '#slide_container',
+        toggleActions: 'play pause',
+        start: 'top 80%',
+        end: '+=200',
+        scrub: 1
+      }
+    })
+    .from('#slide_pics_1', { opacity: 0 })
+    .to('.slide_services', { backgroundColor: '#f2e0ea' })
+
   gsap.set('#slide_container', { position: 'relative', width: 'full', height: '100vh' })
   gsap.set('#slide_container_1', { position: 'absolute', background: 'none' })
   gsap.set('#slide_container_2', { position: 'absolute', background: 'none', top: '100%' })
   gsap.set('#slide_container_3', { position: 'absolute', background: 'none', top: '100%' })
   gsap.set('#slide_container_4', { position: 'absolute', background: 'none', top: '100%' })
-  var img_containers = gsap
+  var img_containers_animation = gsap
     .timeline({
       ease: 'sine.inOut',
       scrollTrigger: {
         trigger: '#slide_container',
         toggleActions: 'play pause',
         start: 'top top',
-        end: '+=1200',
+        end: '+=1800',
         scrub: 1,
         pin: true
       }
@@ -183,18 +192,21 @@ function slideContainer() {
     .to('#slide_pics_1', { x: -50, y: -50 }, '<')
     .to('#slide_container_2', { top: '0%' }, '<')
     .to('#slide_texts_2', { opacity: 1 }, '<')
+    .to('.slide_services', { backgroundColor: '#e9ece6' }, '<')
     .to('#slide_pics_2', { x: -50, y: -50 })
     .to('#slide_texts_2', { yPercent: -200, opacity: 0 }, '<')
     .to('#slide_container_3', { top: '0%' }, '<')
     .to('#slide_texts_3', { opacity: 1 }, '<')
+    .to('.slide_services', { backgroundColor: '#e7fcfe' }, '<')
     .to('#slide_pics_3', { x: -50, y: -50 })
     .to('#slide_texts_3', { yPercent: -200, opacity: 0 }, '<')
     .to('#slide_container_4', { top: '0%' }, '<')
     .to('#slide_texts_4', { opacity: 1 }, '<')
-  tl.add(img_containers)
-  return tl
+    .to('.slide_services', { backgroundColor: '#edffee' }, '<')
+  intro_animation.add(img_containers_animation)
+  return intro_animation
 }
-function servicesContainer() {
+const servicesContainer = () => {
   var tl = gsap
     .timeline({
       ease: 'none',
@@ -219,10 +231,5 @@ function servicesContainer() {
   return tl
 }
 
-var slide_services = gsap.timeline()
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  slide_services.add(servicesContainer)
-  slide_services.add(slideContainer)
-}
+defineExpose({ slideContainer, servicesContainer })
 </script>

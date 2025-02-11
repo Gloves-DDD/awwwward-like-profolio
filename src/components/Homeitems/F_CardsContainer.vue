@@ -124,7 +124,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
-function cardsContainer() {
+const cardsContainer = () => {
   gsap.set('#cards_container', { position: 'relative' })
   gsap.set('#card_1', { position: 'absolute', top: 100, left: -100, rotateZ: -30 })
   gsap.set('#card_2', { position: 'absolute', top: 100, left: 0, rotateZ: 60 })
@@ -269,9 +269,5 @@ function cardsContainer() {
   tl.add(card_6)
   return tl
 }
-var cards_container = gsap.timeline()
-const props = defineProps(['mediaQuery1024'])
-if (props.mediaQuery1024.matches) {
-  cards_container.add(cardsContainer)
-}
+defineExpose({ cardsContainer })
 </script>
