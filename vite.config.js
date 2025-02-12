@@ -11,5 +11,5 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
   },
-  base: '/profolio/' // 替换为你的仓库名（项目网站）或 '/'（个人网站）
+  base: '/profolio_copy/' // 替换为你的仓库名（项目网站）或 '/'（个人网站）
 })
