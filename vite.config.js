@@ -10,6 +10,5 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
-  },
-  base: '/profolio_copy/' // 替换为你的仓库名（项目网站）或 '/'（个人网站）
+  }
 })
