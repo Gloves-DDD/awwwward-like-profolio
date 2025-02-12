@@ -2,7 +2,7 @@
   <div ref="contact_with_us_container">
     <div
       id="contact_with_us"
-      class="background_layer w-screen h-auto border-4 border-red-400 flex flex-col px-[50px] pt-[50px] lg:px-[10rem] lg:pt-[10rem] lg:pb-[5rem] bg-black"
+      class="background_layer w-screen h-auto border-4 border-red-400 flex flex-col px-[25px] pt-[25px] md:px-[50px] md:pt-[50px] lg:px-[10rem] lg:pt-[10rem] lg:pb-[5rem] bg-black"
     >
       <div class="w-auto h-auto flex justify-center">
         <div
@@ -13,7 +13,9 @@
             id="contact_with_us_inner"
             class="flex flex-col lg:flex-row items-start lg:items-center gap-4"
           >
-            <p class="text-[1.5rem] tracking-wider">Connect with your audience at a core level.</p>
+            <p class="text-[1rem] md:text-[1.5rem] tracking-wider">
+              Connect with your audience at a core level.
+            </p>
             <button
               class="lg:ml-auto bg-black rounded-3xl text-[0.7rem] tracking-wider text-white px-[1rem] py-[0.5rem]"
             >
@@ -32,16 +34,15 @@
       <div class="lg:mt-[3rem]">
         <p
           id="contact_with_us_1"
-          class="text-[1rem] lg:text-[1.5rem] text-neutral-50 tracking-wider w-[40rem] my-[0.5rem]"
+          class="text-[1rem] lg:text-[1.5rem] text-neutral-50 tracking-wider"
         >
           <a class="text-[#f1cece]">eDesign </a> is an award-winning web and digital marketing
           agency.
         </p>
-        <div
-          id="contact_with_us_2"
-          class="text-[2rem] lg:text-[3.5rem] text-neutral-50 tracking-wide my-[2rem] leading-snug"
-        >
-          <p>
+        <div id="contact_with_us_2" class="my-[1rem] lg:my-[2rem]">
+          <p
+            class="text-[1.5rem] md:text-[2rem] lg:text-[3.5rem] text-neutral-50 tracking-wide leading-snug"
+          >
             Our CPG team is ready towowify your brand andtransform your product into an
             emotion-conqueringpowerhouse.
           </p>

@@ -2,20 +2,17 @@
   <!-- WeLoveOurClients  -->
   <div
     id="we_love_our_clients"
-    class="background_layer w-screen h-auto lg:h-screen border-4 border-red-400 flex flex-col items-center justify-center bg-white"
+    class="background_layer w-screen h-auto lg:h-screen p-[25px] lg:p-[50px] border-4 border-red-400 flex flex-col items-center justify-center bg-white"
   >
     <!-- Text Part -->
-    <div
-      id="we_love_our_clients_text_container"
-      class="lg:m-[3rem] overflow-hidden border-4 border-cyan-400"
-    >
-      <p id="we_love_our_clients_text" class="text-[2rem] lg:text-[4rem] m-[1rem]">
+    <div id="we_love_our_clients_text_container" class="mb-[1rem] lg:mb-[4rem] overflow-hidden">
+      <p id="we_love_our_clients_text" class="text-[1.75rem] md:text-[2.5rem] lg:text-[4rem]">
         We Love Our Clients
       </p>
     </div>
 
     <!-- Marquee Part -->
-    <div id="we_love_our_clients_marquee_container" class="w-[80%] mb-[50px]">
+    <div id="we_love_our_clients_marquee_container" class="w-[80%]">
       <Vue3Marquee
         :duration="75"
         class="border-2 border-black rounded-[1.5rem] lg:rounded-[2.5rem]"
@@ -61,10 +58,9 @@ function weLoveOurClients() {
         trigger: '#we_love_our_clients',
         toggleActions: 'play pause',
         start: 'top center',
-        end: '+=800',
-        scrub: 0.5,
-        anticipatePin: 1,
-        markers: true
+        end: '+=600',
+        scrub: 1,
+        anticipatePin: 2
       }
     })
 
@@ -92,7 +88,7 @@ function weLoveOurClients() {
     // marquee位移离场
     .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 4 }, '<')
     // 背景渐变
-    .to('.background_layer', { background: '#3d7353', duration: 3 }, '<')
+    .to('.background_layer', { background: '#3d7353', duration: 5 }, '<')
 
   return tl
 }

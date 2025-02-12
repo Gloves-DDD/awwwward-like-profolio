@@ -1,19 +1,21 @@
 <template>
-  <div id="slide_container" class="slide_services border-4 border-blue-600 w-full items-center">
+  <div id="slide_container" class="slide_services border-4 border-blue-600 w-full">
     <!-- container_1 -->
     <div
       id="slide_container_1"
-      class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-4 border-yellow-500 bg-pink-50 lg:bg-neutral-50"
+      class="w-full h-full p-[25px] md:p-[50px] lg:flex lg:items-center border-4 border-yellow-500 bg-pink-50 lg:bg-neutral-50"
     >
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
+      <!-- picture 1-->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:p-[50px]">
         <img
           id="slide_pics_1"
-          class="rounded-[2rem] w-full aspect-[3/5] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#f4db7d]"
+          class="rounded-[1rem] lg:rounded-[2rem] w-full"
           src="/src/assets/images/marketing-seo-services/thirdlove.png"
           alt="thirdlove"
         />
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
+      <!-- introduction text 1 -->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500">
         <div id="slide_texts_1" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             ThirdLove
@@ -34,20 +36,23 @@
         </div>
       </div>
     </div>
+
     <!-- container_2 -->
     <div
       id="slide_container_2"
-      class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-2 border-orange-500 bg-green-50 lg:bg-neutral-50"
+      class="w-full h-full p-[25px] md:p-[50px] lg:flex lg:items-center border-2 border-orange-500 bg-green-50 lg:bg-neutral-50"
     >
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
+      <!-- picture 2 -->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:p-[50px]">
         <img
           id="slide_pics_2"
-          class="rounded-[2rem] w-full aspect-[3/5] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#ff6a3d]"
+          class="rounded-[1rem] lg:rounded-[2rem] w-full"
           src="@/assets/images/marketing-seo-services/d-angelico.png"
           alt="d-angelico"
         />
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
+      <!-- introduction text 2 -->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500">
         <div id="slide_texts_2" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             D’Angelico
@@ -68,20 +73,23 @@
         </div>
       </div>
     </div>
+
     <!-- container_3 -->
     <div
       id="slide_container_3"
-      class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-2 border-orange-500 bg-blue-100 lg:bg-neutral-50"
+      class="w-full h-full p-[25px] md:p-[50px] lg:flex lg:items-center border-2 border-orange-500 bg-blue-100 lg:bg-neutral-50"
     >
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
+      <!-- picture 3-->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:p-[50px]">
         <img
           id="slide_pics_3"
-          class="rounded-[2rem] w-full aspect-[6/7] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#9daaf2]"
+          class="rounded-[1rem] lg:rounded-[2rem] w-full"
           src="/src/assets/images/marketing-seo-services/wimpykid.png"
           alt="wimpykid"
         />
       </div>
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
+      <!-- introduction text 3 -->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:p-[50px]">
         <div id="slide_texts_3" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             Wimpy Kid
@@ -102,17 +110,22 @@
         </div>
       </div>
     </div>
+
     <!-- container_4 -->
     <div
       id="slide_container_4"
-      class="w-full p-[50px] lg:p-0 lg:flex lg:items-center border-2 border-orange-500 bg-lime-50 lg:bg-neutral-50"
+      class="w-full h-full p-[25px] md:p-[50px] lg:flex lg:items-center border-2 border-orange-500 bg-lime-50 lg:bg-neutral-50"
     >
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pt-[50px]">
-        <div
+      <!-- picture 4-->
+      <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:p-[50px]">
+        <img
           id="slide_pics_4"
-          class="rounded-[2rem] w-full aspect-[6/7] lg:w-[24rem] lg:h-[28rem] ml-auto mr-[2rem] bg-[#741f92]"
-        ></div>
+          class="rounded-[1rem] lg:rounded-[2rem] w-full brightness-0"
+          src="/src/assets/images/marketing-seo-services/wimpykid.png"
+          alt="wimpykid"
+        />
       </div>
+      <!-- introduction text 4 -->
       <div class="w-auto lg:w-1/2 border-4 border-green-500 lg:pr-[50px]">
         <div id="slide_texts_4" class="py-[10px] border-4 border-red-400">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
@@ -138,7 +151,7 @@
 
   <div
     id="services_container"
-    class="slide_services border-4 border-b-black border-x-0 border-t-0 w-full overflow-hidden px-[50px] pt-[50px] bg-neutral-800 flex justify-center"
+    class="slide_services border-4 border-b-black border-x-0 border-t-0 w-full overflow-hidden p-[25px] md:p-[50px] bg-neutral-800 flex justify-center"
   >
     <p
       id="service_text"
@@ -215,7 +228,8 @@ const servicesContainer = () => {
         toggleActions: 'play pause',
         start: 'top 80%',
         end: '+=400',
-        scrub: 1
+        scrub: 1,
+        anticipatePin: 1
       }
     })
     .fromTo(

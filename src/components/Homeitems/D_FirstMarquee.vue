@@ -1,17 +1,17 @@
 <template>
-  <div id="black_marquee_warpper" class="border-4 border-orange-300 relative h-auto lg:h-[330vh]">
-    <!-- svg marquee / P1  -->
+  <div id="black_marquee_warpper" class="relative h-auto lg:h-[330vh]">
+    <!-- marquee转场前 / P1  -->
     <div
       id="svg_marquee_container"
-      class="w-screen h-screen lg:p-0 px-[50px] pb-[50px] flex items-center justify-center border-2 border-lime-500"
+      class="w-full lg:w-screen h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-0 flex items-center justify-center border-2 border-lime-500"
     >
       <div
         data-speed="1"
         id="svg_marquee"
-        class="w-full lg:w-[48rem] h-full lg:h-[24rem] py-[3rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
+        class="w-full lg:w-[48rem] h-auto lg:h-[24rem] py-[2rem] md:py-[3rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
       >
-        <div id="svg_marquee_opacity_warpper" class="h-full border-4">
-          <Vue3Marquee :duration="25" class="border-4 border-red-500">
+        <div id="svg_marquee_opacity_warpper" class="h-full">
+          <Vue3Marquee :duration="25" class="h-auto">
             <p
               class="uppercase text-neutral-50 text-[1.5rem] lg:text-[3rem] font-MabryPro font-normal tracking-wider"
             >
@@ -23,7 +23,7 @@
               ❉ parts that represent a whole
             </p>
           </Vue3Marquee>
-          <div class="flex flex-col h-full justify-evenly lg:h-[15rem] border-4 border-blue-500">
+          <div class="flex flex-col h-full justify-evenly lg:h-[15rem]">
             <Vue3Marquee :duration="12" class="m-auto">
               <span
                 class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
@@ -71,42 +71,44 @@
       </div>
     </div>
 
-    <div id="text_next_intro_marquee" class="border-4 border-yellow lg:absolute lg:top-[20rem]">
+    <!-- marquee转场后 / P2-->
+    <div id="text_next_intro_marquee" class="lg:absolute lg:top-[20rem]">
       <div class="bg-neutral-800 h-[6rem] pt-[2.5rem]">
         <Vue3Marquee :duration="15">
           <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
           <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
         </Vue3Marquee>
       </div>
-      <!-- text next svg marquee / P2-->
-      <div id="text_next_svg_marquee" class="w-full h-[auto] border-4 border-black bg-neutral-800">
+      <div id="text_next_svg_marquee" class="w-full h-auto border-4 border-black bg-neutral-800">
         <div class="p-[50px] lg:p-[4rem]">
           <p class="uppercase text-white font-MabryPro text-sm">rethink your product story</p>
           <p
             class="text-white text-[1.3rem] lg:text-[2rem] tracking-wide leading-[3rem] lg:leading-[5rem]"
           >
-            with<span class="rounded-full lg:bg-pink-300 px-4 py-2">beautiful designs</span>,
-            bespoke <span class="rounded-full lg:bg-amber-400 px-4 py-2">copywriting</span>, and<br />
-            <span class="rounded-full lg:bg-purple-600 px-4 py-2">powerful visuals</span>
+            with<span class="lg:rounded-full lg:bg-pink-300 lg:px-4 lg:py-2">beautiful designs</span
+            >, bespoke
+            <span class="lg:rounded-full lg:bg-amber-400 lg:px-4 lg:py-2">copywriting</span>, and<br />
+            <span class="lg:rounded-full lg:bg-purple-600 lg:px-4 lg:py-2">powerful visuals</span>
             that are fresh and authentic. To achieve this, we start with a
-            <span class="rounded-full lg:bg-red-600 px-4 py-2">discovery</span>phase analyzing your
-            customers, and we work backward to find the most compelling emotional solution.
+            <span class="lg:rounded-full lg:bg-red-600 lg:px-4 lg:py-2">discovery</span>phase
+            analyzing your customers, and we work backward to find the most compelling emotional
+            solution.
           </p>
         </div>
       </div>
 
-      <!-- black window warpper / 夜幕Part3 离场动画-->
+      <!-- black window warpper 离场 / P3 -->
       <div
         id="black_window_warpper"
-        class="w-screen h-auto lg:h-screen flex justify-center items-center border-blue-600 border-2 z-10"
+        class="w-screen h-auto lg:h-screen flex justify-center items-center z-10"
       >
         <div
           data-speed="1"
           id="black_window_container"
-          class="w-full lg:w-screen h-auto lg:h-screen flex flex-col lg:flex-row justify-evenly items-center bg-neutral-800 border-2 border-red-600 brightness-100"
+          class="w-full lg:w-screen h-auto lg:h-screen flex flex-col lg:flex-row justify-evenly items-center bg-neutral-800 brightness-100"
         >
           <!-- Left -->
-          <div id="black_window_left" class="border-4 flex items-center m-3">
+          <div id="black_window_left" class="flex items-center m-3 w-[1/3]">
             <p
               class="text-[1.5rem] text-white font-MabryPro font-normal text-center lg:text-nowrap uppercase"
             >
@@ -116,10 +118,10 @@
             </p>
           </div>
           <!-- Center -->
-          <div class="w-[40vw] h-screen flex items-center m-3">
+          <div class="w-[15rem] lg:w-[1/3] h-auto aspect-[1/2] flex items-center m-3">
             <div
               id="black_window_center"
-              class="m-auto w-[100%] h-[100%] border-4 rounded-3xl border-blue-600 bg-neutral-100"
+              class="m-auto w-[100%] h-[100%] rounded-3xl bg-neutral-100"
             ></div>
           </div>
           <!-- Right -->
@@ -131,7 +133,7 @@
             height="200"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            class="m-3 scale-75 lg:scale-100"
+            class="m-3 scale-75 lg:scale-100 w-[1/3]"
           >
             <defs>
               <path

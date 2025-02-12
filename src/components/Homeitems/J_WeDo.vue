@@ -3,43 +3,19 @@
     <!-- 转场前-文本元素 -->
     <div
       id="we_do_list"
-      class="transition_group slide_services w-full h-full px-[50px] py-[3rem] lg:absolute lg:left-0 lg:top-0 z-10 flex flex-col justify-evenly bg-neutral-800"
+      class="transition_group slide_services w-full h-full p-[25px] md:p-[50px] lg:absolute lg:left-0 lg:top-0 z-10 flex flex-col justify-evenly bg-neutral-800"
     >
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
+      <div
+        v-for="item in what_we_do"
+        :key="item.id"
+        class="p-[0.5rem] md:p-[1rem] lg:px-[2rem] border-b-2 border-black"
       >
-        rebranding
-      </p>
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
-      >
-        Product Campaigns & Promotions
-      </p>
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
-      >
-        Social Engagement Programs
-      </p>
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
-      >
-        Creative & Content Development
-      </p>
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
-      >
-        Website Design & Development
-      </p>
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
-      >
-        Customer Loyalty Programs
-      </p>
-      <p
-        class="font-MabryPro font-thin text-white uppercase text-[1.6rem] border-b-2 border-neutral-700 tracking-widest leading-[4rem] pl-[2rem]"
-      >
-        Mobile Experience & Games
-      </p>
+        <p
+          class="font-MabryPro font-thin text-white uppercase text-[0.75rem] md:text-[1.25rem] lg:text-[2rem] border-neutral-700 tracking-widest md:leading-[2rem] lg:leading-[2rem]"
+        >
+          {{ item }}
+        </p>
+      </div>
     </div>
     <div
       v-if="mediaQuery.matches"
@@ -69,10 +45,14 @@
       <img
         src="/src/assets/images/we-do-imgs/edesign-logo.svg"
         alt="edesign-logo"
-        class="h-[9rem]"
+        class="h-[7rem] lg:h-[9rem]"
       />
-      <div class="text-[3rem] font-MabryPro font-normal p-[25px]">Crush Your KPIs</div>
-      <div>
+      <div class="p-[25px] lg:p-[50px]">
+        <p class="text-[1.5rem] md:text-[2rem] lg:text-[3rem] font-MabryPro font-normal">
+          Crush Your KPIs
+        </p>
+      </div>
+      <div class="w-full">
         <Vue3Marquee v-if="marqueeIsLoaded" :duration="40">
           <!-- 1 -->
           <div class="flex flex-col items-center mr-[2rem]">
@@ -151,6 +131,15 @@ import { svg, logo_body } from '@/assets/utils/svg.js'
 import { mediaQuery } from '@/assets/utils/mediaquery'
 
 gsap.registerPlugin(ScrollTrigger)
+const what_we_do = [
+  'rebranding',
+  'Product Campaigns & Promotions',
+  'Social Engagement Programs',
+  'Creative & Content Development',
+  'Website Design & Development',
+  'Customer Loyalty Programs',
+  'Mobile Experience & Games'
+]
 var we_do_bodies = []
 var screen_width = window.innerWidth
 var screen_height = window.innerHeight
@@ -436,13 +425,16 @@ const marqueeIsLoaded = ref(false)
 let observer
 onMounted(() => {
   observer = new IntersectionObserver((entries) => {
-    if (entries[0].isIntersecting) {
-      matterJsCanvas()
-      observer.unobserve(we_do_container.value)
-    }
-    if (entries[0].isIntersecting && !marqueeIsLoaded.value) {
-      marqueeIsLoaded.value = true
-      observer.unobserve(we_do_container.value)
+    if (mediaQuery.matches) {
+      if (entries[0].isIntersecting) {
+        matterJsCanvas()
+        observer.unobserve(we_do_container.value)
+      }
+    } else {
+      if (entries[0].isIntersecting && !marqueeIsLoaded.value) {
+        marqueeIsLoaded.value = true
+        observer.unobserve(we_do_container.value)
+      }
     }
   })
   observer.observe(we_do_container.value)

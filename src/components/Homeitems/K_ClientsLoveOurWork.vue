@@ -28,7 +28,11 @@
       >
         <!-- hero -->
         <div class="flex justify-center order-1 lg:order-2 flex-1 border-4 border-red-600">
-          <div class="bg-neutral-100 w-[3rem] h-[3rem] rounded-full mr-2"></div>
+          <img
+            src="/src/assets/images/clients-love-our-work/Roland-Nichols.png"
+            alt="Roland-Nichols"
+            class="rounded-full p-[10px]"
+          />
           <div class="flex flex-col text-[0.8rem] leading-tight">
             <p class="font-MabryPro font-bold tracking-wide">Roland Nichols</p>
             <p class="tracking-tight opacity-50">Marketing Manager</p>
@@ -65,8 +69,14 @@
         class="mb-[30px] p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#f9d83f] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center border-4"
       >
         <!-- hero -->
-        <div class="flex justify-center order-1 lg:order-2 flex-1 border-4 border-red-600">
-          <div class="bg-neutral-100 w-[3rem] h-[3rem] rounded-full mr-2"></div>
+        <div
+          class="flex justify-center items-center order-1 lg:order-2 flex-1 border-4 border-red-600"
+        >
+          <img
+            src="/src/assets/images/clients-love-our-work/Shaelyn-Germain-Dupre.png"
+            alt="Shaelyn-Germain-Dupre"
+            class="rounded-full p-[10px]"
+          />
           <div class="flex flex-col text-[0.8rem] leading-tight">
             <p class="font-MabryPro font-bold tracking-wide">Shaelyn Germain-Dupre</p>
             <p class="tracking-tight opacity-50">Global Engagement Manager</p>
@@ -103,8 +113,14 @@
         class="p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#abd373] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center border-4"
       >
         <!-- hero -->
-        <div class="flex justify-center order-1 lg:order-2 flex-1 border-4 border-red-600">
-          <div class="bg-neutral-100 w-[3rem] h-[3rem] rounded-full mr-2"></div>
+        <div
+          class="flex justify-center items-center order-1 lg:order-2 flex-1 border-4 border-red-600"
+        >
+          <img
+            src="/src/assets/images/clients-love-our-work/Chandler-Gotschlich.png"
+            alt="Chandler Gotschlich"
+            class="rounded-full p-[10px]"
+          />
           <div class="flex flex-col text-[0.8rem] leading-tight">
             <p class="font-MabryPro font-bold tracking-wide">Chandler Gotschlich</p>
             <p class="tracking-tight opacity-50">Associate Director of Marketing</p>
