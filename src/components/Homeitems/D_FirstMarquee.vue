@@ -80,7 +80,7 @@
         </Vue3Marquee>
       </div>
       <div id="text_next_svg_marquee" class="w-full h-auto border-4 border-black bg-neutral-800">
-        <div class="p-[50px] lg:p-[4rem]">
+        <div class="p-[25px] md:p-[50px] lg:p-[4rem]">
           <p class="uppercase text-white font-MabryPro text-sm">rethink your product story</p>
           <p
             class="text-white text-[1.3rem] lg:text-[2rem] tracking-wide leading-[3rem] lg:leading-[5rem]"
