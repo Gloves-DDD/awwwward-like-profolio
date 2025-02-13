@@ -3,18 +3,18 @@
   <div
     data-speed="0.8"
     id="intro_text"
-    class="lg:grid lg:grid-cols-5 px-[50px] lg:px-[8rem] lg:py-[2rem] sm:pb-[25px] border-2 border-blue-400"
+    class="lg:grid lg:grid-cols-5 px-[25px] md:px-[50px] lg:px-[8rem] lg:py-[2rem] sm:pb-[25px] border-2 border-blue-400"
   >
     <p
       data-speed="1.1"
       id="customers"
-      class="lg:col-span-1 text-[3rem] lg:text-[1.5rem] font-MabryPro font-thin lg:tracking-wider border-2 border-red-600 lg:text-center"
+      class="lg:col-span-1 text-[2rem] md:text-[3rem] lg:text-[1.5rem] font-MabryPro font-thin lg:tracking-wider border-2 border-red-600 lg:text-center"
     >
       Customers
     </p>
     <div id="" class="lg:col-span-3 border-2 border-red-600">
       <div
-        class="flex gap-4 lg:block border-2 text-[4rem] lg:text-[6rem] font-MabryPro font-thin tracking-wider lg:leading-[6rem] border-yellow-300"
+        class="flex lg:block border-2 text-[2rem] md:text-[3.5rem] lg:text-[6rem] font-MabryPro font-thin tracking-wider lg:leading-[6rem] border-yellow-300"
       >
         <div class="border-2 overflow-hidden">
           <p id="need" class="need_connection">Need</p>
