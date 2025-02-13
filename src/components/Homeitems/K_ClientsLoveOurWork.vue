@@ -1,7 +1,7 @@
 <template>
   <div
     id="clients_love_our_work"
-    class="background_layer h-auto lg:w-screen lg:h-screen flex flex-col items-center p-[50px] lg:p-[2rem] bg-cyan-50 border-4 border-yellow-500"
+    class="background_layer h-auto lg:w-screen lg:h-screen flex flex-col items-center p-[25px] md:p-[50px] lg:p-[2rem] bg-cyan-50 border-4 border-yellow-500"
   >
     <div
       class="text-[2.5rem] lg:text-[4rem] leading-[4rem] lg:leading-[6rem] flex flex-col items-center border-4 border-red-400"
