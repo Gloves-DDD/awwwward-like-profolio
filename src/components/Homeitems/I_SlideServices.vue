@@ -10,7 +10,7 @@
         <img
           :id="`slide_pics_${slide_container_items[0].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
-          :src="`${slide_container_items[0].src}`"
+          src="/src/assets/images/marketing-seo-services/thirdlove.png"
           :alt="slide_container_items[0].name"
         />
       </div>
@@ -44,7 +44,7 @@
         <img
           :id="`slide_pics_${slide_container_items[1].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
-          :src="slide_container_items[1].src"
+          src="/src/assets/images/marketing-seo-services/d-angelico.png"
           :alt="slide_container_items[1].name"
         />
       </div>
@@ -78,7 +78,7 @@
         <img
           :id="`slide_pics_${slide_container_items[2].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
-          :src="slide_container_items[2].src"
+          src="/src/assets/images/marketing-seo-services/wimpykid.png"
           :alt="slide_container_items[2].name"
         />
       </div>
@@ -112,7 +112,7 @@
         <img
           :id="`slide_pics_${slide_container_items[3].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto brightness-0"
-          :src="slide_container_items[3].src"
+          src="/src/assets/images/marketing-seo-services/wimpykid.png"
           :alt="slide_container_items[3].name"
         />
       </div>
