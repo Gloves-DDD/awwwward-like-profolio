@@ -1,7 +1,7 @@
 <template>
   <!-- 01 /  INTRO TEXT / 你的用户需要的东西 -->
   <div
-    data-speed="0.8"
+    data-speed="0.9"
     id="intro_text"
     class="lg:grid lg:grid-cols-5 px-[25px] md:px-[50px] lg:px-[8rem] lg:py-[2rem] sm:pb-[25px] border-2 border-blue-400"
   >
@@ -36,33 +36,28 @@
   <div
     data-speed="1"
     id="intro_img_group"
-    class="block lg:flex h-auto lg:h-[40rem] px-[50px] lg:px-[11rem] lg:pt-[10rem] border-2 border-green-600"
+    class="block lg:flex h-auto lg:h-[140vh] lg:px-[11rem] border-4 border-green-600"
   >
     <!-- left_image -->
-    <div class="w-full lg:w-[15rem] h-[44rem] lg:h-[22rem] flex border-2 border-red-600">
+    <div
+      class="p-[25px] md:p-[50px] w-full lg:w-[15rem] lg:h-[22rem] aspect-square lg:aspect-auto flex border-2 border-red-600"
+    >
       <div
         id="intro_left_img"
-        class="w-full lg:w-[15rem] h-[44rem] lg:h-[22rem] m-auto border-[0.7rem] border-blue-600 rounded-[2.5rem] bg-blue-100 brightness-100"
+        class="w-full lg:w-[15rem] h-full lg:h-[22rem] m-auto border-[0.7rem] border-blue-600 rounded-[2.5rem] bg-blue-100 brightness-100"
       ></div>
     </div>
     <!-- right_image -->
     <div
       data-speed="1.2"
-      class="m-0 lg:mt-auto lg:ml-auto w-full lg:w-[28rem] h-[70rem] lg:h-[35rem] flex border-2 border-red-500"
+      class="m-0 lg:mt-auto lg:ml-auto w-full lg:w-[28rem] flex border-2 border-red-500"
     >
-      <div
+      <img
+        src="/src/assets/images/brands-big-component/d-angelico.png"
         id="intro_right_img"
-        class="w-full lg:w-[28rem] h-[70rem] lg:h-[35rem] m-auto border-[0.7rem] border-rose-400 rounded-[3rem] flex relative origin-center bg-pink-50 brightness-100"
-      >
-        <div
-          id="intro_img_right_title"
-          class="w-[10rem] h-[5rem] border-[0.7rem] border-pink-200 rounded-[1rem] m-[2rem] mr-auto absolute left-2"
-        ></div>
-        <div
-          id="intro_img_right_lable"
-          class="w-[5rem] h-[5rem] border-[0.7rem] border-pink-200 rounded-[1rem] m-[2rem] ml-auto absolute right-2"
-        ></div>
-      </div>
+        class="w-full m-auto rounded-none lg:rounded-[3rem] origin-center brightness-100"
+        alt=""
+      />
     </div>
   </div>
 </template>
@@ -108,7 +103,8 @@ const introText = () => {
   return tl
 }
 const introImg = () => {
-  var tlLeft = gsap
+  var tl = gsap.timeline()
+  var tl_left_img = gsap
     .timeline({
       ease: 'sine.inOut',
       scrollTrigger: {
@@ -135,11 +131,7 @@ const introImg = () => {
       },
       '>4'
     )
-
-  gsap.set('#intro_img_right_title', { width: 0, height: 0, opacity: 0 })
-  gsap.set('#intro_img_right_lable', { width: 0, height: 0, opacity: 0 })
-
-  var tlRight = gsap
+  var tl_right_img = gsap
     .timeline({
       ease: 'sine.inOut',
       scrollTrigger: {
@@ -158,18 +150,6 @@ const introImg = () => {
       immediateRender: false,
       duration: 3
     })
-    .fromTo(
-      '#intro_img_right_title',
-      { width: '0rem', height: '0rem', opacity: 0 },
-      { width: '10rem', height: '5rem', opacity: 1 },
-      '>0.2'
-    )
-    .fromTo(
-      '#intro_img_right_lable',
-      { width: '0rem', height: '0rem', opacity: 0 },
-      { width: '5rem', height: '5rem', opacity: 1 },
-      '>0.2'
-    )
     .to(
       '#intro_right_img',
       {
@@ -181,8 +161,9 @@ const introImg = () => {
       },
       '>4'
     )
-  tlLeft.add(tlRight)
-  return tlLeft
+  tl.add(tl_left_img)
+  tl.add(tl_right_img)
+  return tl
 }
 defineExpose({ introText, introImg })
 </script>
