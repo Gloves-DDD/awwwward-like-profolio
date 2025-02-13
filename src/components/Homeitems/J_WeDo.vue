@@ -179,6 +179,7 @@ const weDo = () => {
     })
     .to('.transition_group', {
       scale: 0.01,
+      opacity: 0,
       duration: 8,
       onStart: () => {
         reset()
