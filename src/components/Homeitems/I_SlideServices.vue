@@ -10,7 +10,7 @@
         <img
           :id="`slide_pics_${slide_container_items[0].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
-          :src="slide_container_items[0].src"
+          :src="`${slide_container_items[0].src}`"
           :alt="slide_container_items[0].name"
         />
       </div>
