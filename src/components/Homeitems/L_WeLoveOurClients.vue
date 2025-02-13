@@ -34,21 +34,21 @@ import { gsap } from 'gsap'
 import { Vue3Marquee } from 'vue3-marquee'
 
 const imgs = [
-  '/src/assets/images/we-love-our-clients/brickfielder.png',
-  '/src/assets/images/we-love-our-clients/d-angelico.png',
-  '/src/assets/images/we-love-our-clients/fastmail.png',
-  '/src/assets/images/we-love-our-clients/frost-king.png',
-  '/src/assets/images/we-love-our-clients/gummi-fun-mix.png',
-  '/src/assets/images/we-love-our-clients/nivea.png',
-  '/src/assets/images/we-love-our-clients/sabra.png',
-  '/src/assets/images/we-love-our-clients/sour-jacks.png',
-  '/src/assets/images/we-love-our-clients/sun-maid.png',
-  '/src/assets/images/we-love-our-clients/thirdlove.png',
-  '/src/assets/images/we-love-our-clients/vetnique.png',
-  '/src/assets/images/we-love-our-clients/villa-yambol.png',
-  '/src/assets/images/we-love-our-clients/welch.png',
-  '/src/assets/images/we-love-our-clients/wimpy-kid.png',
-  '/src/assets/images/we-love-our-clients/yen-press.png'
+  '/we-love-our-clients/brickfielder.png',
+  '/we-love-our-clients/d-angelico.png',
+  '/we-love-our-clients/fastmail.png',
+  '/we-love-our-clients/frost-king.png',
+  '/we-love-our-clients/gummi-fun-mix.png',
+  '/we-love-our-clients/nivea.png',
+  '/we-love-our-clients/sabra.png',
+  '/we-love-our-clients/sour-jacks.png',
+  '/we-love-our-clients/sun-maid.png',
+  '/we-love-our-clients/thirdlove.png',
+  '/we-love-our-clients/vetnique.png',
+  '/we-love-our-clients/villa-yambol.png',
+  '/we-love-our-clients/welch.png',
+  '/we-love-our-clients/wimpy-kid.png',
+  '/we-love-our-clients/yen-press.png'
 ]
 function weLoveOurClients() {
   var tl = gsap
