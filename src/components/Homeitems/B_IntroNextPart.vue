@@ -40,7 +40,7 @@
   >
     <!-- left_image -->
     <div
-      class="p-[25px] md:p-[50px] w-full lg:w-[15rem] lg:h-[22rem] aspect-square lg:aspect-auto flex border-2 border-red-600"
+      class="p-[25px] md:p-[50px] lg:p-0 w-full lg:w-[15rem] lg:h-[22rem] aspect-square lg:aspect-auto flex border-2 border-red-600"
     >
       <div
         id="intro_left_img"
@@ -103,66 +103,42 @@ const introText = () => {
   return tl
 }
 const introImg = () => {
-  var tl = gsap.timeline()
-  var tl_left_img = gsap
+  var tl = gsap
     .timeline({
       ease: 'sine.inOut',
       scrollTrigger: {
         trigger: '#intro_img_group',
         toggleActions: 'play pause',
-        start: 'top 70%',
-        end: '+=1000',
-        scrub: 0
+        start: 'top 80%',
+        end: '+=1200',
+        scrub: 1
       }
     })
     .from('#intro_left_img', {
       opacity: 0,
-      height: 0,
-      duration: 5
+      height: 0
     })
+    .from(
+      '#intro_right_img',
+      {
+        scale: 0.7
+      },
+      '>1'
+    )
     .to(
       '#intro_left_img',
       {
-        width: '11rem',
-        height: '15rem',
+        scale: 0.7,
         filter: 'brightness(0)',
-        borderRadius: 25,
-        duration: 6
+        borderRadius: 25
       },
-      '>4'
+      '>1'
     )
-  var tl_right_img = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#intro_right_img',
-        toggleActions: 'play pause',
-        start: 'top 60%',
-        end: '+=800',
-        fastScrollEnd: true,
-        scrub: 1
-      }
+    .to('#intro_right_img', {
+      scale: 0.7,
+      filter: 'brightness(0)',
+      borderRadius: 50
     })
-    .from('#intro_right_img', {
-      opacity: 0,
-      width: '20rem',
-      height: '24rem',
-      immediateRender: false,
-      duration: 3
-    })
-    .to(
-      '#intro_right_img',
-      {
-        width: '22rem',
-        height: '28rem',
-        filter: 'brightness(0)',
-        borderRadius: 50,
-        duration: 4
-      },
-      '>4'
-    )
-  tl.add(tl_left_img)
-  tl.add(tl_right_img)
   return tl
 }
 defineExpose({ introText, introImg })

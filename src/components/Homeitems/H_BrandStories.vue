@@ -58,13 +58,7 @@ const brandStories = () => {
         toggleActions: 'play pause',
         start: 'top 90%',
         end: '+=400',
-        scrub: 2,
-        markers: {
-          startColor: 'red',
-          endColor: 'red',
-          fontSize: '10px',
-          indent: 0
-        }
+        scrub: 1
       }
     })
     .from('#brand_stories_text_content', {

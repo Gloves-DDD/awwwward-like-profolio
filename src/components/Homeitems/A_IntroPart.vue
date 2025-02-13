@@ -4,9 +4,7 @@
     id="intro_part"
     class="bg-red-100 w-full h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-[7rem] border-2 border-red-700"
   >
-    <div
-      class="w-full mt-[100px] lg:mt-[150px] lg:flex lg:justify-start border-2 border-orange-800"
-    >
+    <div class="w-full mt-[50px] lg:flex lg:justify-start border-2 border-orange-800">
       <p class="leading-tight">
         <span class="lg:block inline tracking-tighter font-normal lg:text-[5rem] text-[2.5rem]">
           Transiformative

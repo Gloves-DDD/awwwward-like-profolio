@@ -124,7 +124,7 @@
 <script setup>
 import Matter from 'matter-js'
 import decomp from 'poly-decomp'
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
 import { svg, logo_body } from '@/assets/utils/svg.js'

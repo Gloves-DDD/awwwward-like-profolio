@@ -140,7 +140,7 @@
 
   <div
     id="services_container"
-    class="slide_services border-4 border-b-black border-x-0 border-t-0 w-full overflow-hidden p-[25px] md:p-[50px] bg-neutral-800 flex justify-center"
+    class="border-4 border-b-black border-x-0 border-t-0 w-full overflow-hidden p-[25px] md:p-[50px] bg-neutral-800 flex justify-center"
   >
     <p
       id="service_text"
@@ -151,7 +151,7 @@
   </div>
 </template>
 <script setup>
-import gsap from 'gsap'
+import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 const slide_container_items = [
@@ -193,7 +193,10 @@ const slide_container_items = [
     background: 'bg-lime-50'
   }
 ]
+
 const slideContainer = () => {
+  gsap.set('.slide_services', { backgroundColor: '#f5f5f5' })
+
   gsap.set('#slide_texts_2', { opacity: 0.1 })
   gsap.set('#slide_texts_3', { opacity: 0.1 })
   gsap.set('#slide_texts_4', { opacity: 0.1 })
@@ -215,8 +218,8 @@ const slideContainer = () => {
   gsap.set('#slide_container', { width: 'full', height: '100vh' })
   gsap.set('#slide_container_1', { background: 'none' })
   gsap.set('#slide_container_2', { background: 'none' })
-  gsap.set('#slide_container_3', { background: 'none' })
-  gsap.set('#slide_container_4', { background: 'none' })
+  gsap.set('#slide_container_3', { background: 'none', yPercent: -100 })
+  gsap.set('#slide_container_4', { background: 'none', yPercent: -200 })
   var img_containers_animation = gsap
     .timeline({
       ease: 'sine.inOut',
@@ -227,57 +230,37 @@ const slideContainer = () => {
         end: '+=1800',
         scrub: 1,
         pin: true,
-        anticipatePin: 1
+        anticipatePin: 1,
+        markers: true
       }
     })
-    .to('#slide_texts_1', { yPercent: -200, opacity: 0 })
+    .to('#slide_texts_1', { yPercent: -100, opacity: 0 })
     .to('#slide_pics_1', { x: -50, y: -50 }, '<')
 
     .to('#slide_container_2', { yPercent: -100 }, '<')
     .to('#slide_texts_2', { opacity: 1 }, '<')
     .to('.slide_services', { backgroundColor: '#e9ece6' }, '<')
 
-    .to('#slide_texts_2', { yPercent: -200, opacity: 0 })
+    .to('#slide_texts_2', { yPercent: -100, opacity: 0 })
     .to('#slide_pics_2', { x: -50, y: -50 }, '<')
 
     .to('#slide_container_3', { yPercent: -200 }, '<')
     .to('#slide_texts_3', { opacity: 1 }, '<')
     .to('.slide_services', { backgroundColor: '#e7fcfe' }, '<')
 
-    .to('#slide_texts_3', { yPercent: -200, opacity: 0 })
+    .to('#slide_texts_3', { yPercent: -100, opacity: 0 })
     .to('#slide_pics_3', { x: -50, y: -50 }, '<')
 
     .to('#slide_container_4', { yPercent: -300 }, '<')
     .to('#slide_texts_4', { opacity: 1 }, '<')
     .to('.slide_services', { backgroundColor: '#edffee' }, '<')
+
+    .to('.slide_services', {
+      backgroundColor: '#262626',
+      duration: 0.1
+    })
   intro_animation.add(img_containers_animation)
   return intro_animation
 }
-const servicesContainer = () => {
-  var tl = gsap
-    .timeline({
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#services_container',
-        toggleActions: 'play pause',
-        start: 'top bottom',
-        end: '+=400',
-        scrub: 1,
-        anticipatePin: 1
-      }
-    })
-    .fromTo(
-      '.slide_services',
-      {
-        backgroundColor: '#f5f5f5'
-      },
-      {
-        backgroundColor: '#262626'
-      }
-    )
-    .from('#service_text', { y: 200, opacity: 0 }, '<')
-  return tl
-}
-
-defineExpose({ slideContainer, servicesContainer })
+defineExpose({ slideContainer })
 </script>
