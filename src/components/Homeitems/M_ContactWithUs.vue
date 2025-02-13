@@ -101,13 +101,13 @@ onUnmounted(() => {
 })
 
 const logo_imgs = [
-  { src: '/src/assets/images/cpg-contact-section/css-design-awards.png', id: '13' },
-  { src: '/src/assets/images/cpg-contact-section/davey-awards.png', id: '20' },
-  { src: '/src/assets/images/cpg-contact-section/forbes.png', id: '06' },
-  { src: '/src/assets/images/cpg-contact-section/fwa.png', id: '02' },
-  { src: '/src/assets/images/cpg-contact-section/the-webby-awards.png', id: '02' },
-  { src: '/src/assets/images/cpg-contact-section/w.png', id: '05' },
-  { src: '/src/assets/images/cpg-contact-section/w3.png', id: '25' }
+  { src: '/cpg-contact-section/css-design-awards.png', id: '13' },
+  { src: '/cpg-contact-section/davey-awards.png', id: '20' },
+  { src: '/cpg-contact-section/forbes.png', id: '06' },
+  { src: '/cpg-contact-section/fwa.png', id: '02' },
+  { src: '/cpg-contact-section/the-webby-awards.png', id: '02' },
+  { src: '/cpg-contact-section/w.png', id: '05' },
+  { src: '/cpg-contact-section/w3.png', id: '25' }
 ]
 function contactWithUs() {
   var tl = gsap
