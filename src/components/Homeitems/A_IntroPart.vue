@@ -2,9 +2,11 @@
   <!-- 01 / 开头文本 + 小箭头 -->
   <div
     id="intro_part"
-    class="bg-red-100 w-full lg:h-[45vw] lg:p-[7rem] h-auto pt-[150px] px-[50px] sm:pb-[25px] border-2 border-red-700"
+    class="bg-red-100 w-full h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-[7rem] border-2 border-red-700"
   >
-    <div class="w-full lg:flex lg:justify-start border-2 border-orange-800">
+    <div
+      class="w-full mt-[100px] lg:mt-[150px] lg:flex lg:justify-start border-2 border-orange-800"
+    >
       <p class="leading-tight">
         <span class="lg:block inline tracking-tighter font-normal lg:text-[5rem] text-[2.5rem]">
           Transiformative
@@ -26,12 +28,12 @@
         loop
         muted
         src="/src/assets/Clouds.mp4"
-        class="rounded-[5rem] object-cover origin-top-left min-w-full static"
+        class="rounded-[1rem] md:rounded-[3rem] lg:rounded-[5rem] object-cover origin-top-left min-w-full static"
       ></video>
     </div>
   </div>
 
-  <div id="" class="w-full lg:h-[30rem] flex border-4 border-red-400 p-[50px] lg:p-0">
+  <div id="" class="w-full lg:h-[30rem] flex border-4 border-red-400 p-[25px] md:p-[50px] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"

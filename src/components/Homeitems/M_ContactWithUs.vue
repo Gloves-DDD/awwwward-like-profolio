@@ -2,7 +2,7 @@
   <div ref="contact_with_us_container">
     <div
       id="contact_with_us"
-      class="background_layer w-screen h-auto border-4 border-red-400 flex flex-col px-[25px] pt-[25px] md:px-[50px] md:pt-[50px] lg:px-[10rem] lg:pt-[10rem] lg:pb-[5rem] bg-black"
+      class="background_layer w-screen h-auto flex flex-col p-[25px] md:p-[50px] lg:px-[10rem] lg:pt-[10rem] lg:pb-[5rem] bg-neutral-800"
     >
       <div class="w-auto h-auto flex justify-center">
         <div
