@@ -18,20 +18,19 @@
         <DownArrow class="lg:mt-auto lg:ml-auto" />
       </div>
     </div>
-    <div class="w-full mt-[7rem] border-red-700 border-2">
-      <video
-        data-speed="1"
-        id="intro_video"
-        autoplay
-        loop
-        muted
-        src="/src/assets/Clouds.mp4"
-        class="rounded-[1rem] md:rounded-[3rem] lg:rounded-[5rem] object-cover origin-top-left min-w-full static"
-      ></video>
-    </div>
+
+    <video
+      id="intro_video"
+      data-speed="1"
+      autoplay
+      loop
+      muted
+      src="/src/assets/Clouds.mp4"
+      class="w-full lg:w-[48rem] lg:h-[16rem] mt-[7rem] origin-top-left static rounded-[1rem] md:rounded-[3rem] lg:rounded-[10rem] object-cover"
+    ></video>
   </div>
 
-  <div id="" class="w-full lg:h-[30rem] flex border-4 border-red-400 p-[25px] md:p-[50px] lg:p-0">
+  <div class="w-full lg:h-[30rem] flex border-4 border-red-400 p-[25px] md:p-[50px] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"
@@ -39,16 +38,34 @@
     >
       <div
         id="first_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] bg-yellow-300 rounded-[2.5rem] inline-block lg:absolute lg:translate-x-20 lg:translate-y-20"
-      ></div>
+        class="w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-yellow-300 rounded-[1.5rem] inline-flex lg:absolute flex-col items-center lg:translate-x-20 lg:translate-y-20"
+      >
+        <img src="/src/assets/images/cards_component/frostking-logo.png" alt class="h-[3rem]" />
+
+        <a class="mt-auto p-[.2rem] text-[.75rem] uppercase bg-white underline rounded-md"
+          >www.frostking.com</a
+        >
+      </div>
       <div
         id="second_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] bg-green-300 rounded-[2.5rem] inline-block lg:absolute lg:translate-x-10 lg:translate-y-10"
-      ></div>
+        class="w-[13rem] h-[17rem] pt-[1.25rem] pb-[1.5rem] bg-green-300 rounded-[1.5rem] inline-flex lg:absolute flex-col items-center lg:translate-x-10 lg:translate-y-10"
+      >
+        <img src="/src/assets/images/cards_component/popweaver-logo.png" alt class="" />
+
+        <a class="mt-auto p-[.2rem] text-[.75rem] uppercase bg-white underline rounded-md"
+          >www.popweaver.com</a
+        >
+      </div>
       <div
         id="third_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] bg-blue-300 rounded-[2.5rem] inline-block lg:absolute"
-      ></div>
+        class="w-[13rem] h-[17rem] pt-[2.5rem] pb-[1.5rem] bg-blue-300 rounded-[1.5rem] inline-flex lg:absolute flex-col items-center"
+      >
+        <img src="/src/assets/images/cards_component/fastmail-logo.png" alt class="h-[1.5rem]" />
+
+        <a class="mt-auto p-[.2rem] text-[.75rem] uppercase bg-white underline rounded-md"
+          >www.fastmail.com</a
+        >
+      </div>
     </div>
   </div>
 </template>
@@ -60,13 +77,6 @@ import DownArrow from './items/DownArrow.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 const videoAnimation = () => {
-  gsap.set('#intro_video', {
-    position: 'absolute',
-    minWidth: '45rem',
-    height: '18rem',
-    borderRadius: 250
-  })
-
   var tl = gsap.timeline({
     ease: 'sine.inOut',
     scrollTrigger: {
@@ -78,10 +88,9 @@ const videoAnimation = () => {
     }
   })
   tl.to('#intro_video', {
-    x: 0,
-    yPercent: 60,
-    height: '19rem',
-    minWidth: '28rem',
+    yPercent: 50,
+    height: '20rem',
+    width: '30rem',
     borderRadius: 50
   })
   return tl
