@@ -14,7 +14,7 @@
     </p>
     <div id="" class="lg:col-span-3 border-2 border-red-600">
       <div
-        class="flex lg:block border-2 text-[2rem] md:text-[3.5rem] lg:text-[6rem] font-MabryPro font-thin tracking-wider lg:leading-[6rem] border-yellow-300"
+        class="flex flex-col md:flex-row lg:block border-2 text-[2rem] md:text-[3.5rem] lg:text-[6rem] font-MabryPro font-thin tracking-wider lg:leading-[6rem] border-yellow-300"
       >
         <div class="border-2 overflow-hidden">
           <p id="need" class="need_connection">Need</p>
