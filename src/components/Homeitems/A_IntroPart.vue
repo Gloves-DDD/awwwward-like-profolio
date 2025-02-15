@@ -59,7 +59,7 @@
       </div>
       <div
         id="third_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-blue-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center"
+        class="mx-2 w-[13rem] h-[17rem] pt-[1.5rem] pb-[1.5rem] bg-blue-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center"
       >
         <img src="/src/assets/images/cards_component/fastmail-logo.png" alt class="h-[1.5rem]" />
 
