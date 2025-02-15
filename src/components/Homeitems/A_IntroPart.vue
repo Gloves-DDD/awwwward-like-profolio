@@ -1,5 +1,5 @@
 <template>
-  <!-- 01 / 开头文本 + 小箭头 -->
+  <!-- 开头文本 -->
   <div
     id="intro_part"
     class="bg-red-100 w-full h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-[7rem] border-2 border-red-700"
@@ -14,6 +14,7 @@
         </span>
         <span class="block font-extralight text-[2rem]"> For Product & Brands </span>
       </p>
+      <!-- 小组件 -->
       <div class="border-4 w-full lg:w-auto flex justify-center mt-[15rem] lg:ml-auto lg:my-0">
         <DownArrow class="lg:mt-auto lg:ml-auto" />
       </div>
@@ -30,15 +31,15 @@
     ></video>
   </div>
 
-  <div class="w-full lg:h-[30rem] flex border-4 border-red-400 p-[25px] md:p-[50px] lg:p-0">
+  <div class="w-full h-auto lg:h-[30rem] flex border-4 border-red-400 p-[25px] md:p-[50px] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"
-      class="overflow-scroll lg:overflow-visible whitespace-nowrap lg:whitespace-normal w-full h-auto m-0 lg:my-[4rem] lg:mx-[8rem] lg:ml-auto lg:w-[20rem] border-4 border-blue-500"
+      class="flex overflow-x-scroll lg:overflow-visible whitespace-nowrap lg:whitespace-normal w-full h-auto m-0 lg:my-[4rem] lg:mx-[8rem] lg:ml-auto lg:w-[20rem] border-4 border-blue-500"
     >
       <div
         id="first_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-yellow-300 rounded-[1.5rem] inline-flex lg:absolute flex-col items-center lg:translate-x-20 lg:translate-y-20"
+        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-yellow-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center lg:translate-x-20 lg:translate-y-20"
       >
         <img src="/src/assets/images/cards_component/frostking-logo.png" alt class="h-[3rem]" />
 
@@ -48,7 +49,7 @@
       </div>
       <div
         id="second_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[1.25rem] pb-[1.5rem] bg-green-300 rounded-[1.5rem] inline-flex lg:absolute flex-col items-center lg:translate-x-10 lg:translate-y-10"
+        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-green-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center lg:translate-x-10 lg:translate-y-10"
       >
         <img src="/src/assets/images/cards_component/popweaver-logo.png" alt class="" />
 
@@ -58,7 +59,7 @@
       </div>
       <div
         id="third_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[2.5rem] pb-[1.5rem] bg-blue-300 rounded-[1.5rem] inline-flex lg:absolute flex-col items-center"
+        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-blue-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center"
       >
         <img src="/src/assets/images/cards_component/fastmail-logo.png" alt class="h-[1.5rem]" />
 
