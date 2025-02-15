@@ -290,12 +290,13 @@ const clientsLoveOurWork = () => {
     .to('#blue_card', { top: '-6rem', duration: 5 })
     .to('#yellow_card', { top: '-3rem', duration: 5 }, '<')
 
+    // 背景颜色变回正常颜色
+    .to('.background_layer', { background: '#f5f5f5', duration: 3 }, '<')
+
     .to('#blue_card', { top: '-9rem', duration: 7 })
     .to('#yellow_card', { top: '-6rem', duration: 7 }, '<')
     .to('#green_card', { top: '-3rem', duration: 7 }, '<')
 
-    // 背景颜色变回正常颜色
-    .to('.background_layer', { background: '#f5f5f5', duration: 5 }, '<')
     .to('#cards_layer', { y: -60, duration: 5 })
 
   tl_1.add(tl_2)
