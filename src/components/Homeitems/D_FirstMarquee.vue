@@ -108,7 +108,7 @@
           class="w-full lg:w-screen h-auto lg:h-screen flex flex-col lg:flex-row justify-evenly items-center bg-neutral-800 brightness-100"
         >
           <!-- Left -->
-          <div id="black_window_left" class="flex items-center m-3 w-[1/3]">
+          <div id="black_window_left" class="flex items-center">
             <p
               class="text-[1.5rem] text-white font-MabryPro font-normal text-center lg:text-nowrap uppercase"
             >
@@ -118,12 +118,7 @@
             </p>
           </div>
           <!-- Center -->
-          <div class="w-[15rem] lg:w-[1/3] h-auto aspect-[1/2] flex items-center m-3">
-            <div
-              id="black_window_center"
-              class="m-auto w-[100%] h-[100%] rounded-3xl bg-neutral-100"
-            ></div>
-          </div>
+          <CompositionSvgComponent id="black_window_center" />
           <!-- Right -->
           <svg
             id="rotate_circle"
@@ -133,7 +128,7 @@
             height="200"
             xmlns="http://www.w3.org/2000/svg"
             xmlns:xlink="http://www.w3.org/1999/xlink"
-            class="m-3 scale-75 lg:scale-100 w-[1/3]"
+            class="mscale-75 lg:scale-100 m-[2rem]"
           >
             <defs>
               <path
@@ -159,6 +154,7 @@
 import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 function SVGMarqueeTransition() {
@@ -216,11 +212,10 @@ function blackWindowContainer() {
         scrub: 1
       }
     })
-    .from('#black_window_center', { width: '20rem', height: '110%', y: -30 }, '<')
+    .from('#black_window_center', { scale: 1.2 }, '<')
 
   var tll = gsap.timeline().to('#black_window_container', {
-    scaleY: 0.5,
-    scaleX: 0.4,
+    scale: 0.5,
     borderRadius: '2.5rem',
     filter: 'brightness(0)',
     scrollTrigger: {

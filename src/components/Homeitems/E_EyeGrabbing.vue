@@ -1,5 +1,4 @@
 <template>
-  <CompositionSvgComponent />
   <div
     id="eye_grabbing"
     class="w-full p-[25px] md:p-[50px] flex flex-col items-center text-[2rem] lg:text-[6rem] tracking-normal lg:tracking-wider leading-[3rem] lg:leading-[9rem] border-4 border-lime-500"
@@ -30,7 +29,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Vue3Marquee } from 'vue3-marquee'
 import EyeComponent from './items/EyeComponent.vue'
-import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
+
 gsap.registerPlugin(ScrollTrigger)
 
 const eyeGrabbing = () => {

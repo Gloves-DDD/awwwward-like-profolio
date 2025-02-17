@@ -1,44 +1,34 @@
 <template>
   <div
     ref="container"
-    class="relative mx-auto border-2 border-gray-200 rounded-lg shadow-lg overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100"
+    class="relative rounded-lg overflow-hidden border-4 border-neutral-600"
     :style="{ width: `${width}px`, height: `${height}px` }"
   >
     <svg :viewBox="`0 0 ${width} ${height}`" class="w-full h-full cursor-pointer">
-      <!-- 顶部图形（保留位置） -->
-      <g :transform="`translate(${topPosition}, 50)`">
-        <circle cx="50" cy="50" r="50" class="fill-[#FF6B6B] transition-all duration-200" />
+      <!-- 1 顶部图形（保留位置） -->
+      <g :transform="`translate(${topPosition}, 100)`">
+        <circle cx="50" cy="50" r="110" class="fill-[#de85b1]" />
+        <circle cx="50" cy="105" r="55" class="fill-[#9747ff]" />
       </g>
 
-      <!-- 中间棍棒（固定在中心，根据光标X轴旋转） -->
-      <g :transform="`translate(${width / 2} ${height / 2})`">
-        <rect
-          x="-125"
-          y="-10"
-          width="250"
-          height="40"
-          rx="20"
-          :transform="`rotate(${stickRotation})`"
-          class="transition-transform duration-150"
-        />
+      <!-- 2 中间棍棒（固定在中心，根据光标X轴旋转） -->
+      <g :transform="`translate(${width / 2} ${(height * 8) / 20})`">
+        <rect x="-125" y="0" width="250" height="46" rx="23" id="stick" class="fill-[#ff5938]" />
       </g>
-      <g :transform="`translate(${width / 2} ${(height * 4) / 6})`">
-        <image
-          :transform="`rotate(${stickRotation})`"
-          x="-100"
-          y="-50"
-          width="200"
-          href="/src/assets/images/we-do-imgs/ellipse_1.svg"
-        />
+      <!-- 3 三角形 -->
+      <g :transform="`translate(${width / 2} ${(height * 11) / 20})`">
+        <image x="-100" y="-50" width="200" href="/src/assets/images/we-do-imgs/triangle_1.svg" />
       </g>
 
-      <!-- 固定底部图形（颜色变化） -->
+      <!-- 4 固定底部图形（颜色变化） -->
       <g :transform="`translate(${width / 2 - 50}, ${height - 150})`">
         <rect
-          width="100"
-          height="100"
+          x="-60"
+          y="-10"
+          width="220"
+          height="120"
           :fill="currentColor"
-          rx="15"
+          rx="60"
           class="transition-colors duration-300"
         />
       </g>
@@ -71,7 +61,7 @@ const props = defineProps({
   maxRotation: {
     // 最大旋转角度
     type: Number,
-    default: 5
+    default: 10
   }
 })
 
@@ -79,7 +69,7 @@ const emit = defineEmits(['color-change'])
 
 // 响应式状态
 const container = ref(null)
-const topPosition = ref(props.width / 2 - 50)
+const topPosition = ref(props.width / 2)
 const stickRotation = ref(0) // 棍棒旋转角度
 const currentColor = ref('#FFE66D')
 
@@ -117,7 +107,12 @@ const handleMouseMove = (e) => {
       props.maxRotation, // 右边顺时针
       e.clientX
     )
-
+    gsap.set('#stick', { transformOrigin: 'center' })
+    gsap.to('#stick', {
+      rotate: stickRotation.value,
+      duration: 2,
+      ease: 'power2.out'
+    })
     // 底部颜色变化（固定位置）
     const colorValue = gsap.utils.mapRange(
       0,
