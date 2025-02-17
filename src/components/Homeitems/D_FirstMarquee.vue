@@ -108,7 +108,7 @@
           class="w-full lg:w-screen h-auto lg:h-screen flex flex-col lg:flex-row justify-evenly items-center bg-neutral-800 brightness-100"
         >
           <!-- Left -->
-          <div id="black_window_left" class="flex items-center">
+          <div id="black_window_left" class="flex items-center my-[2rem]">
             <p
               class="text-[1.5rem] text-white font-MabryPro font-normal text-center lg:text-nowrap uppercase"
             >
