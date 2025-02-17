@@ -17,17 +17,15 @@
       </p>
     </div>
 
-    <div
-      id="cards_layer"
-      class="w-full lg:w-[54rem] lg:h-[24rem] flex flex-col justify-center m-4 border-4 border-yellow-400"
-    >
+    <!-- cards part -->
+    <div id="cards_layer" class="w-full lg:w-[54rem] lg:h-[24rem] flex flex-col justify-center m-4">
       <!-- 1 blue card -->
       <div
         id="blue_card"
-        class="mb-[30px] p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#73c7ff] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center border-4"
+        class="mb-[30px] lg:m-0 p-[30px] lg:py-[1rem] lg:px-[3rem] bg-[#73c7ff] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center"
       >
         <!-- hero -->
-        <div class="flex justify-center order-1 lg:order-2 flex-1 border-4 border-red-600">
+        <div class="flex justify-center order-1 lg:order-2 flex-1 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Roland-Nichols.png"
             alt="Roland-Nichols"
@@ -41,7 +39,7 @@
         </div>
         <!-- comment -->
         <div
-          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center border-4 border-yellow-500 m-2 lg:my-10"
+          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center m-[.5rem] lg:mt-[3rem]"
         >
           <p
             class="bg-white rounded-[0.5rem] p-1 text-[1rem] lg:text-[1.5rem] tracking-wide lg:leading-tight"
@@ -51,7 +49,7 @@
         </div>
 
         <!-- button -->
-        <div class="flex justify-center order-3 flex-1 border-4 border-blue-500">
+        <div class="flex justify-center order-3 flex-1 lg:mt-[3.5rem]">
           <a
             class="h-[2.5rem] bg-black rounded-3xl flex items-center align-middle py-[1rem] px-[1.5rem]"
           >
@@ -66,12 +64,10 @@
       <!-- 2 yellow card -->
       <div
         id="yellow_card"
-        class="mb-[30px] p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#f9d83f] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center border-4"
+        class="mb-[30px] p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#f9d83f] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center"
       >
         <!-- hero -->
-        <div
-          class="flex justify-center items-center order-1 lg:order-2 flex-1 border-4 border-red-600"
-        >
+        <div class="flex justify-center items-center order-1 lg:order-2 flex-1 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Shaelyn-Germain-Dupre.png"
             alt="Shaelyn-Germain-Dupre"
@@ -85,7 +81,7 @@
         </div>
         <!-- comment -->
         <div
-          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center border-4 border-yellow-500 m-2 lg:my-10"
+          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center m-[.5rem] lg:mt-[3rem]"
         >
           <p
             class="bg-white rounded-[0.5rem] p-1 text-[1rem] lg:text-[1.5rem] tracking-wide lg:leading-tight"
@@ -95,7 +91,7 @@
         </div>
 
         <!-- button -->
-        <div class="flex justify-center order-3 flex-1 border-4 border-blue-500">
+        <div class="flex justify-center order-3 flex-1 lg:mt-[3.5rem]">
           <a
             class="h-[2.5rem] bg-black rounded-3xl flex items-center align-middle py-[1rem] px-[1.5rem]"
           >
@@ -110,12 +106,10 @@
       <!-- 3 green card -->
       <div
         id="green_card"
-        class="p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#abd373] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center border-4"
+        class="p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#abd373] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center"
       >
         <!-- hero -->
-        <div
-          class="flex justify-center items-center order-1 lg:order-2 flex-1 border-4 border-red-600"
-        >
+        <div class="flex justify-center items-center order-1 lg:order-2 flex-1 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Chandler-Gotschlich.png"
             alt="Chandler Gotschlich"
@@ -129,7 +123,7 @@
         </div>
         <!-- comment -->
         <div
-          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center border-4 border-yellow-500 m-2 lg:my-10"
+          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center m-[.5rem] lg:mt-[3rem]"
         >
           <p
             class="bg-white rounded-[0.5rem] p-1 text-[1rem] lg:text-[1.5rem] tracking-wide lg:leading-tight"
@@ -140,7 +134,7 @@
         </div>
 
         <!-- button -->
-        <div class="flex justify-center order-3 flex-1 border-4 border-blue-500">
+        <div class="flex justify-center order-3 flex-1 lg:mt-[3.5rem]">
           <a
             class="h-[2.5rem] bg-black rounded-3xl flex items-center align-middle py-[1rem] px-[1.5rem]"
           >
@@ -284,14 +278,13 @@ const clientsLoveOurWork = () => {
     })
     .to('#clients_first_line', { y: -80, duration: 7 })
     .to('#clients_second_line', { y: -90, duration: 7 }, '<2')
+    // 背景颜色变回正常颜色
+    .to('.background_layer', { background: '#f5f5f5', duration: 3 }, '<')
 
     .to('#blue_card', { top: '-3rem', duration: 5 }, '<1')
 
     .to('#blue_card', { top: '-6rem', duration: 5 })
     .to('#yellow_card', { top: '-3rem', duration: 5 }, '<')
-
-    // 背景颜色变回正常颜色
-    .to('.background_layer', { background: '#f5f5f5', duration: 3 }, '<')
 
     .to('#blue_card', { top: '-9rem', duration: 7 })
     .to('#yellow_card', { top: '-6rem', duration: 7 }, '<')
