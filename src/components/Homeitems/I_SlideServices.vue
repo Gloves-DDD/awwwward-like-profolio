@@ -16,10 +16,7 @@
       </div>
       <!-- introduction text 1 -->
       <div class="w-auto lg:w-1/2 flex items-center">
-        <div
-          :id="`slide_texts_${slide_container_items[0].id}`"
-          class="py-[10px] border-4 border-red-400"
-        >
+        <div :id="`slide_texts_${slide_container_items[0].id}`" class="py-[10px]">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             {{ slide_container_items[0].name }}
           </p>
@@ -50,10 +47,7 @@
       </div>
       <!-- introduction text 2 -->
       <div class="w-auto lg:w-1/2 flex items-center">
-        <div
-          :id="`slide_texts_${slide_container_items[1].id}`"
-          class="py-[10px] border-4 border-red-400"
-        >
+        <div :id="`slide_texts_${slide_container_items[1].id}`" class="py-[10px]">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             {{ slide_container_items[1].name }}
           </p>
@@ -84,10 +78,7 @@
       </div>
       <!-- introduction text 3 -->
       <div class="w-auto lg:w-1/2 flex items-center">
-        <div
-          :id="`slide_texts_${slide_container_items[2].id}`"
-          class="py-[10px] border-4 border-red-400"
-        >
+        <div :id="`slide_texts_${slide_container_items[2].id}`" class="py-[10px]">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             {{ slide_container_items[2].name }}
           </p>
@@ -118,10 +109,7 @@
       </div>
       <!-- introduction text 4 -->
       <div class="w-auto lg:w-1/2 flex items-center">
-        <div
-          :id="`slide_texts_${slide_container_items[3].id}`"
-          class="py-[10px] border-4 border-red-400"
-        >
+        <div :id="`slide_texts_${slide_container_items[3].id}`" class="py-[10px]">
           <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
             {{ slide_container_items[3].name }}
           </p>

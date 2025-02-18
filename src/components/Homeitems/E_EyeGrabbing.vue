@@ -6,7 +6,7 @@
     <div class="overflow-hidden transition-all">
       <p id="first_text_content" class="translate-y-0">We <span class="font-thin">Design</span></p>
     </div>
-    <div class="overflow-hidden flex items-center gap-4">
+    <div class="overflow-hidden flex items-center lg:gap-4">
       <p class="second_text_content translate-y-0">Eye</p>
       <EyeComponent class="second_text_content translate-y-0" />
       <p class="second_text_content translate-y-0">Grabbing</p>

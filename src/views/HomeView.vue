@@ -19,7 +19,7 @@
 
   <!-- 07 /  客户的用户需求 -->
   <div
-    class="slide_services w-full h-auto p-[25px] lg:h-screen border-2 border-blue-600 flex flex-col items-center justify-center text-center uppercase"
+    class="slide_services w-full h-auto p-[25px] lg:h-screen flex flex-col items-center justify-center text-center uppercase"
   >
     <p class="text-[0.7rem] font-MabryPro tracking-wider">the reality</p>
     <p

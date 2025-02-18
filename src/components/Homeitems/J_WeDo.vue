@@ -19,13 +19,10 @@
     </div>
     <div
       v-if="mediaQuery.matches"
-      class="absolute top-0 left-0 z-0 border-4 border-red-500 flex justify-center items-center"
+      class="absolute top-0 left-0 z-0 flex justify-center items-center"
     >
       <!-- 转场中 logo -->
-      <div
-        id="logo_warpper"
-        class="transition_group border-4 border-green-500 overflow-hidden w-screen h-screen"
-      >
+      <div id="logo_warpper" class="transition_group overflow-hidden w-screen h-screen">
         <img
           id="bg_logo"
           src="/src/assets/images/logo_img/edesign-logo.svg"
@@ -34,9 +31,7 @@
         />
       </div>
       <!-- 转场后 Canvas -->
-      <div
-        class="absolute w-screen h-screen left-0 top-0 -z-10 border-4 border-green-500 flex justify-center items-center"
-      >
+      <div class="absolute w-screen h-screen left-0 top-0 -z-10 flex justify-center items-center">
         <canvas id="canvas" width="100vw" height="auto"></canvas>
       </div>
     </div>

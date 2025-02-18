@@ -12,7 +12,14 @@
         <rect x="2" y="200" width="10" height="50" rx="5" class="fill-neutral-400" />
         <rect :x="width - 12" y="200" width="10" height="100" rx="5" class="fill-neutral-400" />
         <rect x="5" :width="width - 10" :height="height" rx="40" class="fill-neutral-700" />
-        <rect x="20" y="15" :width="width - 40" :height="height - 28" rx="35" class="fill-black" />
+        <rect
+          x="20"
+          y="15"
+          :width="width - 40"
+          :height="height - 28"
+          rx="35"
+          class="fill-neutral-900"
+        />
       </g>
       <!-- 1 顶部图形（保留位置） -->
       <g id="circle_group" transform="translate(100, 100)">
