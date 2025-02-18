@@ -6,7 +6,7 @@
   >
     <svg :viewBox="`0 0 ${width} ${height}`" class="w-full h-full cursor-pointer">
       <!-- 1 顶部图形（保留位置） -->
-      <g :transform="`translate(${topPosition}, 100)`">
+      <g id="circle_group" transform="translate(100, 100)">
         <circle cx="50" cy="50" r="110" class="fill-[#de85b1]" />
         <circle cx="50" cy="105" r="55" class="fill-[#9747ff]" />
       </g>
@@ -88,7 +88,7 @@ const handleMouseMove = (e) => {
   if (animationFrame) cancelAnimationFrame(animationFrame)
 
   animationFrame = requestAnimationFrame(() => {
-    // 顶部水平移动（保留位置）
+    // 1 顶部水平移动（保留位置）
     topPosition.value =
       gsap.utils.mapRange(
         0,
@@ -98,8 +98,13 @@ const handleMouseMove = (e) => {
         e.clientX
       ) +
       (props.width / 2 - 50)
+    gsap.to('#circle_group', {
+      translateX: topPosition.value,
+      duration: 3,
+      ease: 'power2.out'
+    })
 
-    // 棍棒旋转（根据X轴位置）
+    // 2 棍棒旋转（根据X轴位置）
     stickRotation.value = gsap.utils.mapRange(
       0,
       window.innerWidth,
@@ -113,7 +118,8 @@ const handleMouseMove = (e) => {
       duration: 2,
       ease: 'power2.out'
     })
-    // 底部颜色变化（固定位置）
+
+    // 4 底部颜色变化（固定位置）
     const colorValue = gsap.utils.mapRange(
       0,
       window.innerWidth,
