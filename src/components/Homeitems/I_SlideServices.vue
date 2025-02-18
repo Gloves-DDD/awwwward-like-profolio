@@ -1,12 +1,12 @@
 <template>
-  <div id="slide_container" class="slide_services border-4 border-blue-600">
+  <div id="slide_container" class="slide_services">
     <!-- container_1 -->
     <div
       :id="`slide_container_${slide_container_items[0].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center border-4 border-yellow-500 lg:bg-neutral-50 ${slide_container_items[0].background}`"
+      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center lg:bg-neutral-50 ${slide_container_items[0].background}`"
     >
       <!-- picture 1-->
-      <div class="lg:h-full border-4 border-green-500 lg:p-[50px] flex justify-center flex-col">
+      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
         <img
           :id="`slide_pics_${slide_container_items[0].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
@@ -15,7 +15,7 @@
         />
       </div>
       <!-- introduction text 1 -->
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 flex items-center">
+      <div class="w-auto lg:w-1/2 flex items-center">
         <div
           :id="`slide_texts_${slide_container_items[0].id}`"
           class="py-[10px] border-4 border-red-400"
@@ -37,10 +37,10 @@
     <!-- container_2 -->
     <div
       :id="`slide_container_${slide_container_items[1].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center border-4 border-yellow-500 lg:bg-neutral-50 ${slide_container_items[1].background}`"
+      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center  lg:bg-neutral-50 ${slide_container_items[1].background}`"
     >
       <!-- picture 2-->
-      <div class="lg:h-full border-4 border-green-500 lg:p-[50px] flex justify-center flex-col">
+      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
         <img
           :id="`slide_pics_${slide_container_items[1].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
@@ -49,7 +49,7 @@
         />
       </div>
       <!-- introduction text 2 -->
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 flex items-center">
+      <div class="w-auto lg:w-1/2 flex items-center">
         <div
           :id="`slide_texts_${slide_container_items[1].id}`"
           class="py-[10px] border-4 border-red-400"
@@ -71,10 +71,10 @@
     <!-- container_3 -->
     <div
       :id="`slide_container_${slide_container_items[2].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center border-4 border-yellow-500 lg:bg-neutral-50 ${slide_container_items[2].background}`"
+      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center  lg:bg-neutral-50 ${slide_container_items[2].background}`"
     >
       <!-- picture 3-->
-      <div class="lg:h-full border-4 border-green-500 lg:p-[50px] flex justify-center flex-col">
+      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
         <img
           :id="`slide_pics_${slide_container_items[2].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
@@ -83,7 +83,7 @@
         />
       </div>
       <!-- introduction text 3 -->
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 flex items-center">
+      <div class="w-auto lg:w-1/2 flex items-center">
         <div
           :id="`slide_texts_${slide_container_items[2].id}`"
           class="py-[10px] border-4 border-red-400"
@@ -105,10 +105,10 @@
     <!-- container_4 -->
     <div
       :id="`slide_container_${slide_container_items[3].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center border-4 border-yellow-500 lg:bg-neutral-50 ${slide_container_items[3].background}`"
+      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center  lg:bg-neutral-50 ${slide_container_items[3].background}`"
     >
       <!-- picture 4-->
-      <div class="lg:h-full border-4 border-green-500 lg:p-[50px] flex justify-center flex-col">
+      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
         <img
           :id="`slide_pics_${slide_container_items[3].id}`"
           class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto brightness-0"
@@ -117,7 +117,7 @@
         />
       </div>
       <!-- introduction text 4 -->
-      <div class="w-auto lg:w-1/2 border-4 border-green-500 flex items-center">
+      <div class="w-auto lg:w-1/2 flex items-center">
         <div
           :id="`slide_texts_${slide_container_items[3].id}`"
           class="py-[10px] border-4 border-red-400"

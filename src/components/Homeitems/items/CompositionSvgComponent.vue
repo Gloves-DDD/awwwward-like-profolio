@@ -1,10 +1,19 @@
 <template>
   <div
     ref="container"
-    class="relative rounded-lg overflow-hidden border-4 border-neutral-600"
+    class="relative overflow-hidden"
     :style="{ width: `${width}px`, height: `${height}px` }"
   >
     <svg :viewBox="`0 0 ${width} ${height}`" class="w-full h-full cursor-pointer">
+      <!-- border -->
+      <g>
+        <rect x="2" y="80" width="10" height="28" rx="5" class="fill-neutral-400" />
+        <rect x="2" y="140" width="10" height="50" rx="5" class="fill-neutral-400" />
+        <rect x="2" y="200" width="10" height="50" rx="5" class="fill-neutral-400" />
+        <rect :x="width - 12" y="200" width="10" height="100" rx="5" class="fill-neutral-400" />
+        <rect x="5" :width="width - 10" :height="height" rx="40" class="fill-neutral-700" />
+        <rect x="20" y="15" :width="width - 40" :height="height - 28" rx="35" class="fill-black" />
+      </g>
       <!-- 1 顶部图形（保留位置） -->
       <g id="circle_group" transform="translate(100, 100)">
         <circle cx="50" cy="50" r="110" class="fill-[#de85b1]" />
@@ -23,12 +32,13 @@
       <!-- 4 固定底部图形（颜色变化） -->
       <g :transform="`translate(${width / 2 - 50}, ${height - 150})`">
         <rect
+          id="color_changer"
           x="-60"
           y="-10"
           width="220"
           height="120"
-          :fill="currentColor"
           rx="60"
+          fill="#ba67d8"
           class="transition-colors duration-300"
         />
       </g>
@@ -43,7 +53,7 @@ import { gsap } from 'gsap'
 const props = defineProps({
   width: {
     type: Number,
-    default: 300
+    default: 340
   },
   height: {
     type: Number,
@@ -71,14 +81,10 @@ const emit = defineEmits(['color-change'])
 const container = ref(null)
 const topPosition = ref(props.width / 2)
 const stickRotation = ref(0) // 棍棒旋转角度
-const currentColor = ref('#FFE66D')
+const currentColor = ref('#ba67d8')
 
 // 计算属性
 const maxTopMovement = computed(() => props.width * 0.2)
-const hueRange = computed(() => ({
-  min: 40,
-  max: 360
-}))
 
 let animationFrame = null
 
@@ -120,15 +126,14 @@ const handleMouseMove = (e) => {
     })
 
     // 4 底部颜色变化（固定位置）
-    const colorValue = gsap.utils.mapRange(
-      0,
-      window.innerWidth,
-      hueRange.value.min,
-      hueRange.value.max,
-      e.clientX
-    )
-    currentColor.value = `hsl(${colorValue}, 70%, 60%)`
-
+    const rValue = gsap.utils.mapRange(0, window.innerWidth, 151, 222, e.clientX)
+    const gValue = gsap.utils.mapRange(0, window.innerWidth, 71, 133, e.clientX)
+    const bValue = gsap.utils.mapRange(0, window.innerWidth, 255, 177, e.clientX)
+    currentColor.value = `rgb(${rValue}, ${gValue}, ${bValue})`
+    gsap.to('#color_changer', {
+      fill: currentColor.value,
+      ease: 'sine.inOut'
+    })
     emit('color-change', currentColor.value)
   })
 }

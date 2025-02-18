@@ -120,30 +120,7 @@
           <!-- Center -->
           <CompositionSvgComponent id="black_window_center" />
           <!-- Right -->
-          <svg
-            id="rotate_circle"
-            version="1.1"
-            baseProfile="full"
-            width="200"
-            height="200"
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            class="mscale-75 lg:scale-100 m-[2rem]"
-          >
-            <defs>
-              <path
-                id="path"
-                d="M100,200C44.772,200,0,155.228,0,100S44.772,0,100,0s100,44.772,100,100S155.228,200,100,200"
-                fill="none"
-              />
-            </defs>
-            <use xlink:href="#path" />
-            <text fill="white">
-              <textPath xlink:href="#path" alignment-baseline="before-edge" letter-spacing="6.5px">
-                · · · BRAND STROY TELLING AT ITS BEST
-              </textPath>
-            </text>
-          </svg>
+          <RotateLogoComponent id="rotate_circle" />
         </div>
       </div>
     </div>
@@ -155,6 +132,7 @@ import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
+import RotateLogoComponent from './items/RotateLogoComponent.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 function SVGMarqueeTransition() {
@@ -232,17 +210,5 @@ function blackWindowContainer() {
   tl.add(tll)
   return tl
 }
-function rotateCircle() {
-  var tl = gsap.to('#rotate_circle', {
-    rotate: 360,
-    repeat: -1,
-    duration: 6,
-    ease: 'none'
-  })
-  return tl
-}
 defineExpose({ SVGMarqueeTransition, blackWindowContainer })
-
-var first_marquee = gsap.timeline()
-first_marquee.add(rotateCircle)
 </script>
