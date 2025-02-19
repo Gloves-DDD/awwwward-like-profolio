@@ -3,66 +3,66 @@
     <!-- marquee转场前 / P1  -->
     <div
       id="svg_marquee_container"
-      class="w-full lg:w-screen h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-0 flex items-center justify-center border-2 border-lime-500"
+      class="w-full lg:w-screen h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-0 flex items-center justify-center"
     >
       <div
         data-speed="1"
         id="svg_marquee"
-        class="w-full lg:w-[48rem] h-auto lg:h-[24rem] py-[2rem] md:py-[3rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
+        class="w-full lg:w-screen h-auto lg:h-screen lg:scale-50 pt-[1rem] pb-[2rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
       >
-        <div id="svg_marquee_opacity_warpper" class="h-full">
-          <Vue3Marquee :duration="25" class="h-auto">
+        <div id="svg_marquee_opacity_warpper" class="h-full md:pb-[1rem] lg:pb-[6rem]">
+          <Vue3Marquee id="represent_marquee" :duration="25">
             <p
-              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[3rem] font-MabryPro font-normal tracking-wider"
+              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[6rem] font-MabryPro font-normal tracking-wider"
             >
               ❉ parts that represent a whole
             </p>
             <p
-              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[3rem] font-MabryPro font-normal tracking-wider"
+              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[6rem] font-MabryPro font-normal tracking-wider"
             >
               ❉ parts that represent a whole
             </p>
           </Vue3Marquee>
-          <div class="flex flex-col h-full justify-evenly lg:h-[15rem]">
-            <Vue3Marquee :duration="12" class="m-auto">
+          <div id="color_marquee" class="flex flex-col h-full justify-evenly">
+            <Vue3Marquee :duration="16">
               <span
-                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
-              <span class="w-[10rem]"></span>
+              <span class="w-[15rem]"></span>
               <span
-                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
-              <span class="w-[10rem]"></span>
+              <span class="w-[15rem]"></span>
               <span
-                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
-              <span class="w-[10rem]"></span>
+              <span class="w-[15rem]"></span>
             </Vue3Marquee>
-            <Vue3Marquee :duration="20" class="m-auto">
+            <Vue3Marquee :duration="20">
               <span
-                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
-              <span class="w-[10rem]"></span>
+              <span class="w-[15rem]"></span>
               <span
-                class="bg-yellow-700 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-yellow-700 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
-              <span class="w-[8rem]"></span>
+              <span class="w-[15rem]"></span>
               <span
-                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
-              <span class="w-[12rem]"></span
+              <span class="w-[15rem]"></span
             ></Vue3Marquee>
-            <Vue3Marquee :duration="25" class="m-auto">
+            <Vue3Marquee :duration="25">
               <span
-                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
               <span class="w-[10rem]"></span>
               <span
-                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
               <span class="w-[10rem]"></span>
               <span
-                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:h-[2rem] lg:w-[15rem]"
+                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
               ></span>
               <span class="w-[10rem]"></span>
             </Vue3Marquee>
@@ -72,11 +72,12 @@
     </div>
 
     <!-- marquee转场后 / P2-->
-    <div id="text_next_intro_marquee" class="lg:absolute lg:top-[20rem]">
-      <div class="bg-neutral-800 h-[6rem] pt-[2.5rem]">
+    <div id="text_next_intro_marquee" class="lg:absolute lg:top-[27rem]">
+      <div v-show="!mediaQuery.matches" class="bg-neutral-800 h-[6rem] pt-[2.5rem]">
         <Vue3Marquee :duration="15">
-          <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
-          <p class="uppercase text-[2rem] text-white">❉ parts that represent a whole</p>
+          <p class="uppercase text-[2rem] text-white mr-[4rem]">❉ parts that represent a whole</p>
+          <p class="uppercase text-[2rem] text-white mr-[4rem]">❉ parts that represent a whole</p>
+          <p class="uppercase text-[2rem] text-white mr-[4rem]">❉ parts that represent a whole</p>
         </Vue3Marquee>
       </div>
       <div id="text_next_svg_marquee" class="w-full h-auto border-4 border-black bg-neutral-800">
@@ -131,6 +132,7 @@
 import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { mediaQuery } from '@/assets/utils/mediaquery'
 import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
 import RotateLogoComponent from './items/RotateLogoComponent.vue'
 gsap.registerPlugin(ScrollTrigger)
@@ -149,13 +151,12 @@ function SVGMarqueeTransition() {
       }
     })
     .to('#svg_marquee', {
-      width: '100vw',
-      height: '100vh',
+      scale: 1,
       borderRadius: 0,
       duration: 5
     })
     .to(
-      '#svg_marquee_opacity_warpper',
+      '#color_marquee',
       {
         opacity: 0,
         duration: 3
