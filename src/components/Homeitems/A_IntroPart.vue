@@ -2,20 +2,20 @@
   <!-- 开头文本 -->
   <div
     id="intro_part"
-    class="bg-red-100 w-full h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-[7rem] border-2 border-red-700"
+    class="h-auto w-full border-2 border-red-700 bg-red-100 p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]"
   >
-    <div class="w-full mt-[50px] lg:flex lg:justify-start border-2 border-orange-800">
+    <div class="mt-[50px] w-full border-2 border-orange-800 lg:flex lg:justify-start">
       <p class="leading-tight">
-        <span class="lg:block inline tracking-tighter font-normal lg:text-[5rem] text-[2.5rem]">
+        <span class="inline text-[2.5rem] font-normal tracking-tighter lg:block lg:text-[5rem]">
           Transiformative
         </span>
-        <span class="tracking-tighter font-MabryPro font-medium lg:text-[4rem] text-[2.5rem]">
+        <span class="font-MabryPro text-[2.5rem] font-medium tracking-tighter lg:text-[4rem]">
           Experiences
         </span>
-        <span class="block font-extralight text-[2rem]"> For Product & Brands </span>
+        <span class="block text-[2rem] font-extralight"> For Product & Brands </span>
       </p>
       <!-- 小组件 -->
-      <div class="border-4 w-full lg:w-auto flex justify-center mt-[15rem] lg:ml-auto lg:my-0">
+      <div class="mt-[15rem] flex w-full justify-center border-2 lg:my-0 lg:ml-auto lg:w-auto">
         <DownArrow class="lg:mt-auto lg:ml-auto" />
       </div>
     </div>
@@ -27,43 +27,43 @@
       loop
       muted
       src="/src/assets/Clouds.mp4"
-      class="w-full lg:w-[48rem] lg:h-[16rem] mt-[7rem] origin-top-left static rounded-[1rem] md:rounded-[3rem] lg:rounded-[10rem] object-cover"
+      class="static mt-[7rem] w-full origin-top-left rounded-[1rem] object-cover md:rounded-[3rem] lg:h-[16rem] lg:w-[48rem] lg:rounded-[10rem]"
     ></video>
   </div>
 
-  <div class="w-full h-auto lg:h-[30rem] flex border-4 border-red-400 p-[25px] md:p-[50px] lg:p-0">
+  <div class="flex h-auto w-full border-4 border-red-400 p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"
-      class="flex overflow-x-scroll lg:overflow-visible whitespace-nowrap lg:whitespace-normal w-full h-auto m-0 lg:my-[4rem] lg:mx-[8rem] lg:ml-auto lg:w-[20rem] border-4 border-blue-500"
+      class="m-0 flex h-auto w-full overflow-x-scroll border-4 border-blue-500 whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
     >
       <div
         id="first_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-yellow-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center lg:translate-x-20 lg:translate-y-20"
+        class="mx-2 flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-yellow-300 pt-[1rem] pb-[1.5rem] lg:absolute lg:translate-x-20 lg:translate-y-20"
       >
         <img src="/src/assets/images/cards_component/frostking-logo.png" alt class="h-[3rem]" />
 
-        <a class="mt-auto p-[.2rem] text-[.75rem] uppercase bg-white underline rounded-md"
+        <a class="mt-auto rounded-md bg-white p-[.2rem] text-[.75rem] uppercase underline"
           >www.frostking.com</a
         >
       </div>
       <div
         id="second_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[1rem] pb-[1.5rem] bg-green-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center lg:translate-x-10 lg:translate-y-10"
+        class="mx-2 flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-green-300 pt-[1rem] pb-[1.5rem] lg:absolute lg:translate-x-10 lg:translate-y-10"
       >
         <img src="/src/assets/images/cards_component/popweaver-logo.png" alt class="" />
 
-        <a class="mt-auto p-[.2rem] text-[.75rem] uppercase bg-white underline rounded-md"
+        <a class="mt-auto rounded-md bg-white p-[.2rem] text-[.75rem] uppercase underline"
           >www.popweaver.com</a
         >
       </div>
       <div
         id="third_intro_card"
-        class="mx-2 w-[13rem] h-[17rem] pt-[1.5rem] pb-[1.5rem] bg-blue-300 rounded-[1.5rem] shrink-0 flex lg:absolute flex-col items-center"
+        class="mx-2 flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-blue-300 pt-[1.5rem] pb-[1.5rem] lg:absolute"
       >
         <img src="/src/assets/images/cards_component/fastmail-logo.png" alt class="h-[1.5rem]" />
 
-        <a class="mt-auto p-[.2rem] text-[.75rem] uppercase bg-white underline rounded-md"
+        <a class="mt-auto rounded-md bg-white p-[.2rem] text-[.75rem] uppercase underline"
           >www.fastmail.com</a
         >
       </div>

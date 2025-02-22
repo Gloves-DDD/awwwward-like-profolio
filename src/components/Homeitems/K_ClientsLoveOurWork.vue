@@ -1,14 +1,14 @@
 <template>
   <div
     id="clients_love_our_work"
-    class="background_layer h-auto lg:w-screen lg:h-screen flex flex-col items-center p-[25px] md:p-[50px] lg:p-[2rem] bg-cyan-50 border-4 border-yellow-500"
+    class="background_layer flex h-auto flex-col items-center border-4 border-yellow-500 bg-cyan-50 p-[25px] md:p-[50px] lg:h-screen lg:w-screen lg:p-[2rem]"
   >
     <div
-      class="text-[1.75rem] md:text-[2.5rem] lg:text-[4rem] leading-[3rem] md:leading-[4rem] lg:leading-[6rem] flex flex-col items-center"
+      class="flex flex-col items-center text-[1.75rem] leading-[3rem] md:text-[2.5rem] md:leading-[4rem] lg:text-[4rem] lg:leading-[6rem]"
     >
       <p id="clients_first_line" class="tracking-wider">
         Our
-        <span class="font-thin font-MabryPro text-[2.5rem] lg:text-[4.5rem] lg:font-normal"
+        <span class="font-MabryPro text-[2.5rem] font-thin lg:text-[4.5rem] lg:font-normal"
           >Clients</span
         >
       </p>
@@ -18,14 +18,14 @@
     </div>
 
     <!-- cards part -->
-    <div id="cards_layer" class="w-full lg:w-[54rem] lg:h-[24rem] flex flex-col justify-center m-4">
+    <div id="cards_layer" class="m-4 flex w-full flex-col justify-center lg:h-[24rem] lg:w-[54rem]">
       <!-- 1 blue card -->
       <div
         id="blue_card"
-        class="mb-[30px] lg:m-0 p-[30px] lg:py-[1rem] lg:px-[3rem] bg-[#73c7ff] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center"
+        class="mb-[30px] flex flex-col flex-wrap items-center justify-center rounded-[1.5rem] bg-[#73c7ff] p-[30px] lg:m-0 lg:flex-row lg:justify-between lg:rounded-[3rem] lg:px-[3rem] lg:py-[1rem]"
       >
         <!-- hero -->
-        <div class="flex justify-center order-1 lg:order-2 flex-1 lg:mt-[3.5rem]">
+        <div class="order-1 flex flex-1 justify-center lg:order-2 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Roland-Nichols.png"
             alt="Roland-Nichols"
@@ -39,21 +39,21 @@
         </div>
         <!-- comment -->
         <div
-          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center m-[.5rem] lg:mt-[3rem]"
+          class="order-2 m-[.5rem] flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
         >
           <p
-            class="bg-white rounded-[0.5rem] p-1 text-[1rem] lg:text-[1.5rem] tracking-wide lg:leading-tight"
+            class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
           >
             “eDesign Interactive is a leader in design innovation.”
           </p>
         </div>
 
         <!-- button -->
-        <div class="flex justify-center order-3 flex-1 lg:mt-[3.5rem]">
+        <div class="order-3 flex flex-1 justify-center lg:mt-[3.5rem]">
           <a
-            class="h-[2.5rem] bg-black rounded-3xl flex items-center align-middle py-[1rem] px-[1.5rem]"
+            class="flex h-[2.5rem] items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle"
           >
-            <p class="text-white text-[0.7rem] underline font-MabryPro tracking-wider font-thin">
+            <p class="font-MabryPro text-[0.7rem] font-thin tracking-wider text-white underline">
               Read more in Clutch
             </p>
           </a>
@@ -64,10 +64,10 @@
       <!-- 2 yellow card -->
       <div
         id="yellow_card"
-        class="mb-[30px] p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#f9d83f] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center"
+        class="mb-[30px] flex flex-col flex-wrap items-center justify-center rounded-[1.5rem] bg-[#f9d83f] p-[30px] lg:m-0 lg:flex-row lg:justify-between lg:rounded-[3rem] lg:px-[3rem] lg:py-[1rem]"
       >
         <!-- hero -->
-        <div class="flex justify-center items-center order-1 lg:order-2 flex-1 lg:mt-[3.5rem]">
+        <div class="order-1 flex flex-1 items-center justify-center lg:order-2 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Shaelyn-Germain-Dupre.png"
             alt="Shaelyn-Germain-Dupre"
@@ -81,21 +81,21 @@
         </div>
         <!-- comment -->
         <div
-          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center m-[.5rem] lg:mt-[3rem]"
+          class="order-2 m-[.5rem] flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
         >
           <p
-            class="bg-white rounded-[0.5rem] p-1 text-[1rem] lg:text-[1.5rem] tracking-wide lg:leading-tight"
+            class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
           >
             “eDesign Interactive are wonderful, and we love working with them!"
           </p>
         </div>
 
         <!-- button -->
-        <div class="flex justify-center order-3 flex-1 lg:mt-[3.5rem]">
+        <div class="order-3 flex flex-1 justify-center lg:mt-[3.5rem]">
           <a
-            class="h-[2.5rem] bg-black rounded-3xl flex items-center align-middle py-[1rem] px-[1.5rem]"
+            class="flex h-[2.5rem] items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle"
           >
-            <p class="text-white text-[0.7rem] underline font-MabryPro tracking-wider font-thin">
+            <p class="font-MabryPro text-[0.7rem] font-thin tracking-wider text-white underline">
               Read more in Clutch
             </p>
           </a>
@@ -106,10 +106,10 @@
       <!-- 3 green card -->
       <div
         id="green_card"
-        class="p-[30px] lg:py-[1rem] lg:px-[3rem] lg:m-0 bg-[#abd373] rounded-[1.5rem] lg:rounded-[3rem] flex flex-wrap flex-col lg:flex-row justify-center lg:justify-between items-center"
+        class="flex flex-col flex-wrap items-center justify-center rounded-[1.5rem] bg-[#abd373] p-[30px] lg:m-0 lg:flex-row lg:justify-between lg:rounded-[3rem] lg:px-[3rem] lg:py-[1rem]"
       >
         <!-- hero -->
-        <div class="flex justify-center items-center order-1 lg:order-2 flex-1 lg:mt-[3.5rem]">
+        <div class="order-1 flex flex-1 items-center justify-center lg:order-2 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Chandler-Gotschlich.png"
             alt="Chandler Gotschlich"
@@ -123,10 +123,10 @@
         </div>
         <!-- comment -->
         <div
-          class="min-w-full lg:w-auto flex-initial order-2 lg:order-1 flex justify-center m-[.5rem] lg:mt-[3rem]"
+          class="order-2 m-[.5rem] flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
         >
           <p
-            class="bg-white rounded-[0.5rem] p-1 text-[1rem] lg:text-[1.5rem] tracking-wide lg:leading-tight"
+            class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
           >
             "We’ve seen an increase in our site traffic — we’re hitting almost 100,000 viewers per
             month.”
@@ -134,11 +134,11 @@
         </div>
 
         <!-- button -->
-        <div class="flex justify-center order-3 flex-1 lg:mt-[3.5rem]">
+        <div class="order-3 flex flex-1 justify-center lg:mt-[3.5rem]">
           <a
-            class="h-[2.5rem] bg-black rounded-3xl flex items-center align-middle py-[1rem] px-[1.5rem]"
+            class="flex h-[2.5rem] items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle"
           >
-            <p class="text-white text-[0.7rem] underline font-MabryPro tracking-wider font-thin">
+            <p class="font-MabryPro text-[0.7rem] font-thin tracking-wider text-white underline">
               Read more in Clutch
             </p>
           </a>

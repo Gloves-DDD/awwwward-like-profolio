@@ -1,9 +1,9 @@
 <template>
   <button
     id="circle_button"
-    class="w-20 h-20 border-2 border-black rounded-full align-middle justify-center"
+    class="h-20 w-20 justify-center rounded-full border-2 border-black align-middle"
   >
-    <p id="down_arrow" class="text-[3rem] font-light -translate-y-2">↓</p>
+    <p id="down_arrow" class="-translate-y-2 text-[3rem] font-light">↓</p>
   </button>
 </template>
 

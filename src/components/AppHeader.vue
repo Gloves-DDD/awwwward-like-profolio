@@ -1,9 +1,9 @@
 <template>
-  <nav id="nav_bar" class="py-5 px-10 fixed z-10 border-2 border-red-500">
+  <nav id="nav_bar" class="fixed z-10 border-2 border-red-500 px-10 py-5">
     <ul class="flex gap-6">
       <li>
         <RouterLink to="/">
-          <p class="font-bold text-1xl hvr-underline-from-left">Portfolio</p>
+          <p class="text-1xl hvr-underline-from-left font-bold">Portfolio</p>
         </RouterLink>
       </li>
     </ul>

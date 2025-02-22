@@ -2,22 +2,22 @@
   <div ref="contact_with_us_container">
     <div
       id="contact_with_us"
-      class="background_layer w-screen h-auto flex flex-col p-[25px] md:p-[50px] lg:px-[10rem] lg:pt-[10rem] lg:pb-[5rem] bg-neutral-800"
+      class="background_layer flex h-auto w-screen flex-col bg-neutral-800 p-[25px] md:p-[50px] lg:px-[10rem] lg:pt-[10rem] lg:pb-[5rem]"
     >
-      <div class="w-auto h-auto flex justify-center">
+      <div class="flex h-auto w-auto justify-center">
         <div
           id="contact_with_us_outter"
-          class="bg-[#f1cece] rounded-[1.75rem] lg:rounded-[3rem] w-full h-auto flex flex-col justify-center p-[1.5rem]"
+          class="flex h-auto w-full flex-col justify-center rounded-[1.75rem] bg-[#f1cece] p-[1.5rem] lg:rounded-[3rem]"
         >
           <div
             id="contact_with_us_inner"
-            class="flex flex-col lg:flex-row items-start lg:items-center gap-4"
+            class="flex flex-col items-start gap-4 lg:flex-row lg:items-center"
           >
-            <p class="text-[1rem] md:text-[1.5rem] tracking-wider">
+            <p class="text-[1rem] tracking-wider md:text-[1.5rem]">
               Connect with your audience at a core level.
             </p>
             <button
-              class="lg:ml-auto bg-black rounded-3xl text-[0.7rem] tracking-wider text-white px-[1rem] py-[0.5rem]"
+              class="rounded-3xl bg-black px-[1rem] py-[0.5rem] text-[0.7rem] tracking-wider text-white lg:ml-auto"
             >
               Start a project
             </button>
@@ -27,21 +27,21 @@
 
       <p
         id="contact_with_us_container_next_text"
-        class="text-center text-neutral-50 font-MabryPro m-[1.5rem]"
+        class="font-MabryPro m-[1.5rem] text-center text-neutral-50"
       >
         Request a proposal or arrange a call with our team.
       </p>
       <div class="lg:mt-[3rem]">
         <p
           id="contact_with_us_1"
-          class="text-[1rem] lg:text-[1.5rem] text-neutral-50 tracking-wider"
+          class="text-[1rem] tracking-wider text-neutral-50 lg:text-[1.5rem]"
         >
           <a class="text-[#f1cece]">eDesign </a> is an award-winning web and digital marketing
           agency.
         </p>
         <div id="contact_with_us_2" class="my-[1rem] lg:my-[2rem]">
           <p
-            class="text-[1.5rem] md:text-[2rem] lg:text-[3.5rem] text-neutral-50 tracking-wide leading-snug"
+            class="text-[1.5rem] leading-snug tracking-wide text-neutral-50 md:text-[2rem] lg:text-[3.5rem]"
           >
             Our CPG team is ready towowify your brand andtransform your product into an
             emotion-conqueringpowerhouse.
@@ -51,9 +51,9 @@
     </div>
     <div>
       <Vue3Marquee v-if="isLoaded" :duration="40" class="background_layer bg-neutral-800">
-        <div v-for="logo in logo_imgs" :key="logo.id" class="flex mr-[3rem] my-[1rem]">
-          <img :src="logo.src" :alt="logo.id" class="h-[3rem] lg:h-[4rem] mr-[1rem]" />
-          <p class="text-white text-[1.5rem] tracking-wider">{{ logo.id }}</p>
+        <div v-for="logo in logo_imgs" :key="logo.id" class="my-[1rem] mr-[3rem] flex">
+          <img :src="logo.src" :alt="logo.id" class="mr-[1rem] h-[3rem] lg:h-[4rem]" />
+          <p class="text-[1.5rem] tracking-wider text-white">{{ logo.id }}</p>
         </div>
       </Vue3Marquee>
       <div v-else class="text-white">loading...</div>

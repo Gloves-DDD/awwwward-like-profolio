@@ -3,29 +3,29 @@
     <!-- container_1 -->
     <div
       :id="`slide_container_${slide_container_items[0].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center lg:bg-neutral-50 ${slide_container_items[0].background}`"
+      :class="`h-full w-full p-[25px] md:p-[50px] lg:flex lg:justify-center lg:bg-neutral-50 ${slide_container_items[0].background}`"
     >
       <!-- picture 1-->
-      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
+      <div class="flex flex-col justify-center lg:h-full lg:p-[50px]">
         <img
           :id="`slide_pics_${slide_container_items[0].id}`"
-          class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
+          class="aspect-auto h-auto w-full rounded-[1rem] lg:h-full lg:w-auto lg:rounded-[2rem]"
           src="/src/assets/images/marketing-seo-services/thirdlove.png"
           :alt="slide_container_items[0].name"
         />
       </div>
       <!-- introduction text 1 -->
-      <div class="w-auto lg:w-1/2 flex items-center">
+      <div class="flex w-auto items-center lg:w-1/2">
         <div :id="`slide_texts_${slide_container_items[0].id}`" class="py-[10px]">
-          <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
+          <p class="font-MabryPro pt-[5px] text-[.7rem] font-medium tracking-wider uppercase">
             {{ slide_container_items[0].name }}
           </p>
           <p
-            class="py-[25px] text-[1rem] lg:text-[1.5rem] font-MabryPro font-medium uppercase tracking-wider leading-tight"
+            class="font-MabryPro py-[25px] text-[1rem] leading-tight font-medium tracking-wider uppercase lg:text-[1.5rem]"
           >
             {{ slide_container_items[0].slogan }}
           </p>
-          <p class="text-[.8rem] font-MabryPro tracking-wide leading-tight">
+          <p class="font-MabryPro text-[.8rem] leading-tight tracking-wide">
             {{ slide_container_items[0].introduction }}
           </p>
         </div>
@@ -34,29 +34,29 @@
     <!-- container_2 -->
     <div
       :id="`slide_container_${slide_container_items[1].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center  lg:bg-neutral-50 ${slide_container_items[1].background}`"
+      :class="`h-full w-full p-[25px] md:p-[50px] lg:flex lg:justify-center lg:bg-neutral-50 ${slide_container_items[1].background}`"
     >
       <!-- picture 2-->
-      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
+      <div class="flex flex-col justify-center lg:h-full lg:p-[50px]">
         <img
           :id="`slide_pics_${slide_container_items[1].id}`"
-          class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
+          class="aspect-auto h-auto w-full rounded-[1rem] lg:h-full lg:w-auto lg:rounded-[2rem]"
           src="/src/assets/images/marketing-seo-services/d-angelico.png"
           :alt="slide_container_items[1].name"
         />
       </div>
       <!-- introduction text 2 -->
-      <div class="w-auto lg:w-1/2 flex items-center">
+      <div class="flex w-auto items-center lg:w-1/2">
         <div :id="`slide_texts_${slide_container_items[1].id}`" class="py-[10px]">
-          <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
+          <p class="font-MabryPro pt-[5px] text-[.7rem] font-medium tracking-wider uppercase">
             {{ slide_container_items[1].name }}
           </p>
           <p
-            class="py-[25px] text-[1rem] lg:text-[1.5rem] font-MabryPro font-medium uppercase tracking-wider leading-tight"
+            class="font-MabryPro py-[25px] text-[1rem] leading-tight font-medium tracking-wider uppercase lg:text-[1.5rem]"
           >
             {{ slide_container_items[1].slogan }}
           </p>
-          <p class="text-[.8rem] font-MabryPro tracking-wide leading-tight">
+          <p class="font-MabryPro text-[.8rem] leading-tight tracking-wide">
             {{ slide_container_items[1].introduction }}
           </p>
         </div>
@@ -65,29 +65,29 @@
     <!-- container_3 -->
     <div
       :id="`slide_container_${slide_container_items[2].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center  lg:bg-neutral-50 ${slide_container_items[2].background}`"
+      :class="`h-full w-full p-[25px] md:p-[50px] lg:flex lg:justify-center lg:bg-neutral-50 ${slide_container_items[2].background}`"
     >
       <!-- picture 3-->
-      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
+      <div class="flex flex-col justify-center lg:h-full lg:p-[50px]">
         <img
           :id="`slide_pics_${slide_container_items[2].id}`"
-          class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto"
+          class="aspect-auto h-auto w-full rounded-[1rem] lg:h-full lg:w-auto lg:rounded-[2rem]"
           src="/src/assets/images/marketing-seo-services/wimpykid.png"
           :alt="slide_container_items[2].name"
         />
       </div>
       <!-- introduction text 3 -->
-      <div class="w-auto lg:w-1/2 flex items-center">
+      <div class="flex w-auto items-center lg:w-1/2">
         <div :id="`slide_texts_${slide_container_items[2].id}`" class="py-[10px]">
-          <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
+          <p class="font-MabryPro pt-[5px] text-[.7rem] font-medium tracking-wider uppercase">
             {{ slide_container_items[2].name }}
           </p>
           <p
-            class="py-[25px] text-[1rem] lg:text-[1.5rem] font-MabryPro font-medium uppercase tracking-wider leading-tight"
+            class="font-MabryPro py-[25px] text-[1rem] leading-tight font-medium tracking-wider uppercase lg:text-[1.5rem]"
           >
             {{ slide_container_items[2].slogan }}
           </p>
-          <p class="text-[.8rem] font-MabryPro tracking-wide leading-tight">
+          <p class="font-MabryPro text-[.8rem] leading-tight tracking-wide">
             {{ slide_container_items[2].introduction }}
           </p>
         </div>
@@ -96,29 +96,29 @@
     <!-- container_4 -->
     <div
       :id="`slide_container_${slide_container_items[3].id}`"
-      :class="`w-full h-full p-[25px] md:p-[50px] lg:flex lg:justify-center  lg:bg-neutral-50 ${slide_container_items[3].background}`"
+      :class="`h-full w-full p-[25px] md:p-[50px] lg:flex lg:justify-center lg:bg-neutral-50 ${slide_container_items[3].background}`"
     >
       <!-- picture 4-->
-      <div class="lg:h-full lg:p-[50px] flex justify-center flex-col">
+      <div class="flex flex-col justify-center lg:h-full lg:p-[50px]">
         <img
           :id="`slide_pics_${slide_container_items[3].id}`"
-          class="rounded-[1rem] lg:rounded-[2rem] w-full h-auto lg:w-auto lg:h-full aspect-auto brightness-0"
+          class="aspect-auto h-auto w-full rounded-[1rem] brightness-0 lg:h-full lg:w-auto lg:rounded-[2rem]"
           src="/src/assets/images/marketing-seo-services/wimpykid.png"
           :alt="slide_container_items[3].name"
         />
       </div>
       <!-- introduction text 4 -->
-      <div class="w-auto lg:w-1/2 flex items-center">
+      <div class="flex w-auto items-center lg:w-1/2">
         <div :id="`slide_texts_${slide_container_items[3].id}`" class="py-[10px]">
-          <p class="pt-[5px] text-[.7rem] font-MabryPro font-medium uppercase tracking-wider">
+          <p class="font-MabryPro pt-[5px] text-[.7rem] font-medium tracking-wider uppercase">
             {{ slide_container_items[3].name }}
           </p>
           <p
-            class="py-[25px] text-[1rem] lg:text-[1.5rem] font-MabryPro font-medium uppercase tracking-wider leading-tight"
+            class="font-MabryPro py-[25px] text-[1rem] leading-tight font-medium tracking-wider uppercase lg:text-[1.5rem]"
           >
             {{ slide_container_items[3].slogan }}
           </p>
-          <p class="text-[.8rem] font-MabryPro tracking-wide leading-tight">
+          <p class="font-MabryPro text-[.8rem] leading-tight tracking-wide">
             {{ slide_container_items[3].introduction }}
           </p>
         </div>
@@ -128,11 +128,11 @@
 
   <div
     id="services_container"
-    class="border-4 border-b-black border-x-0 border-t-0 w-full overflow-hidden p-[25px] md:p-[50px] bg-neutral-800 flex justify-center"
+    class="flex w-full justify-center overflow-hidden border-4 border-x-0 border-t-0 border-b-black bg-neutral-800 p-[25px] md:p-[50px]"
   >
     <p
       id="service_text"
-      class="uppercase text-[2.5rem] lg:text-[1300%] font-MabryPro font-medium tracking-wider text-neutral-100"
+      class="font-MabryPro text-[2.5rem] font-medium tracking-wider text-neutral-100 uppercase lg:text-[1300%]"
     >
       services
     </p>

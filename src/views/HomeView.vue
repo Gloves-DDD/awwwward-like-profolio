@@ -19,11 +19,11 @@
 
   <!-- 07 /  客户的用户需求 -->
   <div
-    class="slide_services w-full h-auto p-[25px] lg:h-screen flex flex-col items-center justify-center text-center uppercase"
+    class="slide_services flex h-auto w-full flex-col items-center justify-center p-[25px] text-center uppercase lg:h-screen"
   >
-    <p class="text-[0.7rem] font-MabryPro tracking-wider">the reality</p>
+    <p class="font-MabryPro text-[0.7rem] tracking-wider">the reality</p>
     <p
-      class="text-[1rem] md:text-[1.5rem] lg:text-[2rem] font-MabryPro font-normal tracking-wider leading-tight my-[1rem] lg:my-[2rem]"
+      class="font-MabryPro my-[1rem] text-[1rem] leading-tight font-normal tracking-wider md:text-[1.5rem] lg:my-[2rem] lg:text-[2rem]"
     >
       Your audience sees your product as<br />
       more than just a product. It’s<br />
@@ -70,8 +70,8 @@ import K_ClientsLoveOurWork from '@/components/Homeitems/K_ClientsLoveOurWork.vu
 import L_WeLoveOurClients from '@/components/Homeitems/L_WeLoveOurClients.vue'
 import M_ContactWithUs from '@/components/Homeitems/M_ContactWithUs.vue'
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-
+gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollSmoother)
 const refA = ref(null),
   refB = ref(null),
   refC = ref(null),

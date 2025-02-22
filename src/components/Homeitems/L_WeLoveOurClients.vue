@@ -2,10 +2,10 @@
   <!-- WeLoveOurClients  -->
   <div
     id="we_love_our_clients"
-    class="background_layer w-screen h-auto lg:h-screen p-[25px] lg:p-[50px] border-4 border-red-400 flex flex-col items-center justify-center bg-white"
+    class="background_layer flex h-auto w-screen flex-col items-center justify-center border-4 border-red-400 bg-white p-[25px] lg:h-screen lg:p-[50px]"
   >
     <!-- Text Part -->
-    <div id="we_love_our_clients_text_container" class="mb-[1rem] lg:mb-[4rem] overflow-hidden">
+    <div id="we_love_our_clients_text_container" class="mb-[1rem] overflow-hidden lg:mb-[4rem]">
       <p id="we_love_our_clients_text" class="text-[1.75rem] md:text-[2.5rem] lg:text-[4rem]">
         We Love Our Clients
       </p>
@@ -15,13 +15,13 @@
     <div id="we_love_our_clients_marquee_container" class="w-[80%]">
       <Vue3Marquee
         :duration="75"
-        class="border-2 border-black rounded-[1.5rem] lg:rounded-[2.5rem]"
+        class="rounded-[1.5rem] border-2 border-black lg:rounded-[2.5rem]"
       >
         <div v-for="img_src in imgs" :key="img_src.id">
           <img
             :src="img_src"
             :alt="img_src.id"
-            class="mr-[3rem] my-[1rem] lg:my-[1.5rem] h-[1.75rem] lg:h-[2.5rem]"
+            class="my-[1rem] mr-[3rem] h-[1.75rem] lg:my-[1.5rem] lg:h-[2.5rem]"
           />
         </div>
       </Vue3Marquee>

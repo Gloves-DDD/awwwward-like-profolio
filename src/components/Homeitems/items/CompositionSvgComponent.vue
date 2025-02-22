@@ -4,7 +4,7 @@
     class="relative overflow-hidden"
     :style="{ width: `${width}px`, height: `${height}px` }"
   >
-    <svg :viewBox="`0 0 ${width} ${height}`" class="w-full h-full cursor-pointer">
+    <svg :viewBox="`0 0 ${width} ${height}`" class="h-full w-full cursor-pointer">
       <!-- border -->
       <g>
         <rect x="2" y="80" width="10" height="28" rx="5" class="fill-neutral-400" />

@@ -1,17 +1,17 @@
 <template>
-  <div ref="we_do_container" id="we_do" class="lg:w-screen lg:h-screen lg:relative">
+  <div ref="we_do_container" id="we_do" class="lg:relative lg:h-screen lg:w-screen">
     <!-- 转场前-文本元素 -->
     <div
       id="we_do_list"
-      class="transition_group slide_services w-full h-full p-[25px] md:p-[50px] lg:absolute lg:left-0 lg:top-0 z-10 flex flex-col justify-evenly bg-neutral-800"
+      class="transition_group slide_services z-10 flex h-full w-full flex-col justify-evenly bg-neutral-800 p-[25px] md:p-[50px] lg:absolute lg:top-0 lg:left-0"
     >
       <div
         v-for="item in what_we_do"
         :key="item.id"
-        class="p-[0.5rem] md:p-[1rem] lg:px-[2rem] border-b-2 border-black"
+        class="border-b-2 border-black p-[0.5rem] md:p-[1rem] lg:px-[2rem]"
       >
         <p
-          class="font-MabryPro font-thin text-white uppercase text-[0.75rem] md:text-[1.25rem] lg:text-[2rem] border-neutral-700 tracking-widest md:leading-[2rem] lg:leading-[2rem]"
+          class="font-MabryPro border-neutral-700 text-[0.75rem] font-thin tracking-widest text-white uppercase md:text-[1.25rem] md:leading-[2rem] lg:text-[2rem] lg:leading-[2rem]"
         >
           {{ item }}
         </p>
@@ -19,23 +19,23 @@
     </div>
     <div
       v-if="mediaQuery.matches"
-      class="absolute top-0 left-0 z-0 flex justify-center items-center"
+      class="absolute top-0 left-0 z-0 flex items-center justify-center"
     >
       <!-- 转场中 logo -->
-      <div id="logo_warpper" class="transition_group overflow-hidden w-screen h-screen">
+      <div id="logo_warpper" class="transition_group h-screen w-screen overflow-hidden">
         <img
           id="bg_logo"
           src="/src/assets/images/logo_img/edesign-logo.svg"
           alt="logo"
-          class="w-full h-full"
+          class="h-full w-full"
         />
       </div>
       <!-- 转场后 Canvas -->
-      <div class="absolute w-screen h-screen left-0 top-0 -z-10 flex justify-center items-center">
+      <div class="absolute top-0 left-0 -z-10 flex h-screen w-screen items-center justify-center">
         <canvas id="canvas" width="100vw" height="auto"></canvas>
       </div>
     </div>
-    <div v-else class="py-[64px] flex flex-col items-center">
+    <div v-else class="flex flex-col items-center py-[64px]">
       <!-- logo -->
       <img
         src="/src/assets/images/we-do-imgs/edesign-logo.svg"
@@ -43,69 +43,69 @@
         class="h-[7rem] lg:h-[9rem]"
       />
       <div class="p-[25px] lg:p-[50px]">
-        <p class="text-[1.5rem] md:text-[2rem] lg:text-[3rem] font-MabryPro font-normal">
+        <p class="font-MabryPro text-[1.5rem] font-normal md:text-[2rem] lg:text-[3rem]">
           Crush Your KPIs
         </p>
       </div>
       <div class="w-full">
         <Vue3Marquee v-if="marqueeIsLoaded" :duration="40">
           <!-- 1 -->
-          <div class="flex flex-col items-center mr-[2rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[2rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/bottle_1.svg" alt="" class="h-[2.5rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">Purchase Frequency</p>
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Purchase Frequency</p>
           </div>
           <!-- 2 -->
-          <div class="flex flex-col items-center mr-[2rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[2rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/star_1.svg" alt="" class="h-[4rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">Cross-Shopping Rate</p>
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Cross-Shopping Rate</p>
           </div>
           <!-- 3 -->
-          <div class="flex flex-col items-center mr-[2rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[2rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/triangle_1.svg" alt="" class="h-[4rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">Inventory Turnover</p>
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Inventory Turnover</p>
           </div>
           <!-- 4 -->
-          <div class="flex flex-col items-center mr-[4rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[4rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/pack_1.svg" alt="" class="h-[4rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">Brand Loyalty</p>
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Brand Loyalty</p>
           </div>
           <!-- 5  -->
-          <div class="flex flex-col items-center mr-[4rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[4rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/bottle_2.svg" alt="" class="h-[2.5rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">Share of Voice</p>
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Share of Voice</p>
           </div>
           <!-- 6 -->
-          <div class="flex flex-col items-center mr-[4rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[4rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/ellipse_1.svg" alt="" class="h-[4rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">Review Ratings</p>
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Review Ratings</p>
           </div>
           <!-- 7 -->
-          <div class="flex flex-col items-center mr-[4rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[4rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/pack_2.svg" alt="" class="h-[4rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">
               Loyalty Program Subscribers
             </p>
           </div>
           <!-- 8 -->
-          <div class="flex flex-col items-center mr-[4rem]">
-            <div class="flex items-center align-middle h-[5rem]">
+          <div class="mr-[4rem] flex flex-col items-center">
+            <div class="flex h-[5rem] items-center align-middle">
               <img src="/src/assets/images/we-do-imgs/ellipse_2.svg" alt="" class="h-[4rem]" />
             </div>
-            <p class="font-MabryPro font-thin text-[1.5rem] tracking-wide">
+            <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">
               Sales and Market Share
             </p>
           </div>

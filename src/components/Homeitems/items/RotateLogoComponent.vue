@@ -6,7 +6,7 @@
     height="200"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    class="md:scale-[0.8] lg:scale-[1] m-[2rem]"
+    class="m-[2rem] md:scale-[0.8] lg:scale-[1]"
   >
     <!-- 素材定义 -->
     <defs>
@@ -34,7 +34,7 @@
       </textPath>
     </text>
     <use href="#white_logo_path" x="370" y="370" class="scale-[20%]" />
-    <circle cx="100" cy="100" r="35" class="stroke-white fill-none" />
+    <circle cx="100" cy="100" r="35" class="fill-none stroke-white" />
   </svg>
 </template>
 <script setup>

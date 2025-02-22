@@ -2,11 +2,11 @@
   <div
     data-speed="1"
     id="explaincontainer"
-    class="w-auto p-[25px] md:p-[50px] lg:px-[8rem] lg:py-[4rem] border-2 border-rose-400 overflow-hidden"
+    class="w-auto overflow-hidden border-2 border-rose-400 p-[25px] md:p-[50px] lg:px-[8rem] lg:py-[4rem]"
   >
     <p
       id="explain"
-      class="text-center font-MabryPro font-thin lg:font-normal text-[1rem] lg:text-[1.4rem] uppercase tracking-wider leading-tight"
+      class="font-MabryPro text-center text-[1rem] leading-tight font-thin tracking-wider uppercase lg:text-[1.4rem] lg:font-normal"
     >
       Crafting compelling, data-driven brand experiences that connect with audiences’ emotional core
       takes a wealth of research and understanding.

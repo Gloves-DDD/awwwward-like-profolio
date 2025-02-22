@@ -1,9 +1,9 @@
 <template>
-  <div class="rounded-full inline-flex items-center justify-center bg-white">
+  <div class="inline-flex items-center justify-center rounded-full bg-white">
     <svg
       ref="svgEl"
       :viewBox="`0 0 ${size} ${size}`"
-      class="w-[5.625rem] h-[3rem] lg:w-[15rem] lg:h-[8rem]"
+      class="h-[3rem] w-[5.625rem] lg:h-[8rem] lg:w-[15rem]"
     >
       <!-- 眼白 -->
       <ellipse cx="50%" cy="50%" :rx="eyeWidth" :ry="eyeHeight" class="fill-white" />

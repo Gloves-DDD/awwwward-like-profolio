@@ -1,120 +1,120 @@
 <template>
   <div
     id="cards_container"
-    class="h-auto lg:h-screen w-auto px-[50px] overflow-scroll lg:overflow-visible whitespace-nowrap lg:whitespace-normal border-2 border-red-600"
+    class="h-auto w-auto overflow-scroll border-2 border-red-600 px-[50px] whitespace-nowrap lg:h-screen lg:overflow-visible lg:whitespace-normal"
   >
     <div
       id="card_1"
-      class="w-[15rem] h-[21rem] bg-yellow-400 rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-yellow-400 p-[0.5rem]"
     >
-      <div class="w-[100%] h-1/2 tracking-wider leading-tight">
+      <div class="h-1/2 w-[100%] leading-tight tracking-wider">
         <span class="px-2">Card.1</span>
         <div class="mt-10">
           <p class="px-1">
             Web experience<br />
             with character(s).
           </p>
-          <span class="text-[0.7rem] font-bold text-neutral-100 bg-neutral-800 rounded-lg p-1"
+          <span class="rounded-lg bg-neutral-800 p-1 text-[0.7rem] font-bold text-neutral-100"
             >Diary with a Wimpy kid</span
           >
         </div>
       </div>
-      <div class="w-[100%] h-1/2 bg-purple-800 rounded-b-2xl"></div>
+      <div class="h-1/2 w-[100%] rounded-b-2xl bg-purple-800"></div>
     </div>
 
     <div
       id="card_2"
-      class="w-[15rem] h-[21rem] bg-[#fbe7ab] rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-[#fbe7ab] p-[0.5rem]"
     >
-      <div class="w-[100%] h-1/2 tracking-wider leading-tight">
+      <div class="h-1/2 w-[100%] leading-tight tracking-wider">
         <span class="px-2">Card.2</span>
         <div class="mt-10">
           <p class="px-1">
             Spreading<br />
             deliciousness.
           </p>
-          <span class="text-[0.7rem] font-bold text-neutral-100 bg-neutral-800 rounded-lg p-1"
+          <span class="rounded-lg bg-neutral-800 p-1 text-[0.7rem] font-bold text-neutral-100"
             >Sabra</span
           >
         </div>
       </div>
-      <div class="w-[100%] h-1/2 bg-gray-300 rounded-b-2xl"></div>
+      <div class="h-1/2 w-[100%] rounded-b-2xl bg-gray-300"></div>
     </div>
 
     <div
       id="card_3"
-      class="w-[15rem] h-[21rem] bg-[#ed3902] rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-[#ed3902] p-[0.5rem]"
     >
-      <div class="w-[100%] h-1/2 tracking-wider leading-tight text-neutral-100">
+      <div class="h-1/2 w-[100%] leading-tight tracking-wider text-neutral-100">
         <span class="px-2">Card.3</span>
         <div class="mt-10">
           <p class="px-1">
             A better butter<br />
             movie snack.
           </p>
-          <span class="text-[0.7rem] font-bold text-neutral-800 bg-neutral-100 rounded-lg p-1"
+          <span class="rounded-lg bg-neutral-100 p-1 text-[0.7rem] font-bold text-neutral-800"
             >Pop weaver</span
           >
         </div>
       </div>
-      <div class="w-[100%] h-1/2 bg-blue-950 rounded-b-2xl"></div>
+      <div class="h-1/2 w-[100%] rounded-b-2xl bg-blue-950"></div>
     </div>
 
     <div
       id="card_4"
-      class="w-[15rem] h-[21rem] bg-neutral-800 rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-neutral-800 p-[0.5rem]"
     >
-      <div class="w-[100%] h-1/2 tracking-wider leading-tight text-neutral-100">
+      <div class="h-1/2 w-[100%] leading-tight tracking-wider text-neutral-100">
         <span class="px-2">Card.4</span>
         <div class="mt-10">
           <p class="px-1">
             Taking a swing at<br />
             fashion technology.
           </p>
-          <span class="text-[0.7rem] font-bold text-neutral-800 bg-neutral-100 rounded-lg p-1"
+          <span class="rounded-lg bg-neutral-100 p-1 text-[0.7rem] font-bold text-neutral-800"
             >Brickfielder</span
           >
         </div>
       </div>
-      <div class="w-[100%] h-1/2 bg-black rounded-b-2xl"></div>
+      <div class="h-1/2 w-[100%] rounded-b-2xl bg-black"></div>
     </div>
 
     <div
       id="card_5"
-      class="w-[15rem] h-[21rem] bg-[#f7d2b0] rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-[#f7d2b0] p-[0.5rem]"
     >
-      <div class="w-[100%] h-1/2 tracking-wider leading-tight text-neutral-800">
+      <div class="h-1/2 w-[100%] leading-tight tracking-wider text-neutral-800">
         <span class="px-2">Card.5</span>
         <div class="mt-10">
           <p class="px-1">
             Friendly, caring,<br />
             supportive.
           </p>
-          <span class="text-[0.7rem] font-bold text-neutral-800 bg-neutral-100 rounded-lg p-1"
+          <span class="rounded-lg bg-neutral-100 p-1 text-[0.7rem] font-bold text-neutral-800"
             >ThirdLove</span
           >
         </div>
       </div>
-      <div class="w-[100%] h-1/2 bg-[#f1b2b2] rounded-b-2xl"></div>
+      <div class="h-1/2 w-[100%] rounded-b-2xl bg-[#f1b2b2]"></div>
     </div>
 
     <div
       id="card_6"
-      class="w-[15rem] h-[21rem] bg-white rounded-3xl m-[0.5rem] p-[0.5rem] inline-block"
+      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-white p-[0.5rem]"
     >
-      <div class="w-[100%] h-1/2 tracking-wider leading-tight">
+      <div class="h-1/2 w-[100%] leading-tight tracking-wider">
         <span class="px-2">Card.6</span>
         <div class="mt-10">
           <p class="px-1">
             Their policy is<br />
             privacy.
           </p>
-          <span class="text-[0.7rem] font-bold text-neutral-100 bg-neutral-800 rounded-lg p-1"
+          <span class="rounded-lg bg-neutral-800 p-1 text-[0.7rem] font-bold text-neutral-100"
             >Fastmail</span
           >
         </div>
       </div>
-      <div class="w-[100%] h-1/2 bg-[#fee64d] rounded-b-2xl"></div>
+      <div class="h-1/2 w-[100%] rounded-b-2xl bg-[#fee64d]"></div>
     </div>
   </div>
 </template>

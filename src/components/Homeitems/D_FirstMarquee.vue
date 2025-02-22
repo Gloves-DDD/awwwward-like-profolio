@@ -3,66 +3,66 @@
     <!-- marquee转场前 / P1  -->
     <div
       id="svg_marquee_container"
-      class="w-full lg:w-screen h-auto lg:h-screen p-[25px] md:p-[50px] lg:p-0 flex items-center justify-center"
+      class="flex h-auto w-full items-center justify-center p-[25px] md:p-[50px] lg:h-screen lg:w-screen lg:p-0"
     >
       <div
         data-speed="1"
         id="svg_marquee"
-        class="w-full lg:w-screen h-auto lg:h-screen lg:scale-50 pt-[1rem] pb-[2rem] lg:py-[2rem] aspect-[3/2] lg:aspect-auto bg-neutral-800 rounded-[1rem] lg:rounded-[2.5rem]"
+        class="aspect-[3/2] h-auto w-full rounded-[1rem] bg-neutral-800 pt-[1rem] pb-[2rem] lg:aspect-auto lg:h-screen lg:w-screen lg:scale-50 lg:rounded-[2.5rem] lg:py-[2rem]"
       >
         <div id="svg_marquee_opacity_warpper" class="h-full md:pb-[1rem] lg:pb-[6rem]">
           <Vue3Marquee id="represent_marquee" :duration="25">
             <p
-              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[6rem] font-MabryPro font-normal tracking-wider"
+              class="font-MabryPro text-[1.5rem] font-normal tracking-wider text-neutral-50 uppercase lg:text-[6rem]"
             >
               ❉ parts that represent a whole
             </p>
             <p
-              class="uppercase text-neutral-50 text-[1.5rem] lg:text-[6rem] font-MabryPro font-normal tracking-wider"
+              class="font-MabryPro text-[1.5rem] font-normal tracking-wider text-neutral-50 uppercase lg:text-[6rem]"
             >
               ❉ parts that represent a whole
             </p>
           </Vue3Marquee>
-          <div id="color_marquee" class="flex flex-col h-full justify-evenly">
+          <div id="color_marquee" class="flex h-full flex-col justify-evenly">
             <Vue3Marquee :duration="16">
               <span
-                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-pink-400 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[15rem]"></span>
               <span
-                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-pink-400 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[15rem]"></span>
               <span
-                class="bg-pink-400 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-pink-400 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[15rem]"></span>
             </Vue3Marquee>
             <Vue3Marquee :duration="20">
               <span
-                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-red-500 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[15rem]"></span>
               <span
-                class="bg-yellow-700 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-yellow-700 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[15rem]"></span>
               <span
-                class="bg-red-500 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-red-500 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[15rem]"></span
             ></Vue3Marquee>
             <Vue3Marquee :duration="25">
               <span
-                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-green-900 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[10rem]"></span>
               <span
-                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-green-900 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[10rem]"></span>
               <span
-                class="bg-green-900 rounded-full w-[10rem] h-[1rem] lg:w-[25rem] lg:h-[3rem]"
+                class="h-[1rem] w-[10rem] rounded-full bg-green-900 lg:h-[3rem] lg:w-[25rem]"
               ></span>
               <span class="w-[10rem]"></span>
             </Vue3Marquee>
@@ -73,18 +73,18 @@
 
     <!-- marquee转场后 / P2-->
     <div id="text_next_intro_marquee" class="lg:absolute lg:top-[27rem]">
-      <div v-show="!mediaQuery.matches" class="bg-neutral-800 h-[6rem] pt-[2.5rem]">
+      <div v-show="!mediaQuery.matches" class="h-[6rem] bg-neutral-800 pt-[2.5rem]">
         <Vue3Marquee :duration="15">
-          <p class="uppercase text-[2rem] text-white mr-[4rem]">❉ parts that represent a whole</p>
-          <p class="uppercase text-[2rem] text-white mr-[4rem]">❉ parts that represent a whole</p>
-          <p class="uppercase text-[2rem] text-white mr-[4rem]">❉ parts that represent a whole</p>
+          <p class="mr-[4rem] text-[2rem] text-white uppercase">❉ parts that represent a whole</p>
+          <p class="mr-[4rem] text-[2rem] text-white uppercase">❉ parts that represent a whole</p>
+          <p class="mr-[4rem] text-[2rem] text-white uppercase">❉ parts that represent a whole</p>
         </Vue3Marquee>
       </div>
-      <div id="text_next_svg_marquee" class="w-full h-auto border-4 border-black bg-neutral-800">
+      <div id="text_next_svg_marquee" class="h-auto w-full border-4 border-black bg-neutral-800">
         <div class="p-[25px] md:p-[50px] lg:p-[4rem]">
-          <p class="uppercase text-white font-MabryPro text-sm">rethink your product story</p>
+          <p class="font-MabryPro text-sm text-white uppercase">rethink your product story</p>
           <p
-            class="text-white text-[1.3rem] lg:text-[2rem] tracking-wide leading-[3rem] lg:leading-[5rem]"
+            class="text-[1.3rem] leading-[3rem] tracking-wide text-white lg:text-[2rem] lg:leading-[5rem]"
           >
             with<span class="lg:rounded-full lg:bg-pink-300 lg:px-4 lg:py-2">beautiful designs</span
             >, bespoke
@@ -101,17 +101,17 @@
       <!-- black window warpper 离场 / P3 -->
       <div
         id="black_window_warpper"
-        class="w-screen h-auto lg:h-screen flex justify-center items-center z-10"
+        class="z-10 flex h-auto w-screen items-center justify-center lg:h-screen"
       >
         <div
           data-speed="1"
           id="black_window_container"
-          class="w-full lg:w-screen h-auto lg:h-screen flex flex-col lg:flex-row justify-evenly items-center bg-neutral-800 brightness-100"
+          class="flex h-auto w-full flex-col items-center justify-evenly bg-neutral-800 brightness-100 lg:h-screen lg:w-screen lg:flex-row"
         >
           <!-- Left -->
-          <div id="black_window_left" class="flex items-center my-[2rem]">
+          <div id="black_window_left" class="my-[2rem] flex items-center">
             <p
-              class="text-[1.5rem] text-white font-MabryPro font-normal text-center lg:text-nowrap uppercase"
+              class="font-MabryPro text-center text-[1.5rem] font-normal text-white uppercase lg:text-nowrap"
             >
               bits & bobs <br />
               transform your <br />
@@ -135,6 +135,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { mediaQuery } from '@/assets/utils/mediaquery'
 import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
 import RotateLogoComponent from './items/RotateLogoComponent.vue'
+
 gsap.registerPlugin(ScrollTrigger)
 
 function SVGMarqueeTransition() {
@@ -147,7 +148,7 @@ function SVGMarqueeTransition() {
         start: 'middle middle',
         end: '+=300',
         pin: true,
-        scrub: 1
+        scrub: 0.5
       }
     })
     .to('#svg_marquee', {
@@ -165,13 +166,13 @@ function SVGMarqueeTransition() {
     )
     .from('#text_next_intro_marquee', {
       opacity: 0,
-      duration: 2
+      duration: 1
     })
     .from(
       '#text_next_svg_marquee',
       {
         opacity: 0,
-        duration: 2
+        duration: 1
       },
       '<'
     )
