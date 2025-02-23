@@ -31,7 +31,9 @@
     ></video>
   </div>
 
-  <div class="flex h-auto w-full border-4 border-red-400 p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
+  <div
+    class="scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 flex h-auto w-full overflow-y-scroll border-4 border-red-400 p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0"
+  >
     <div
       data-speed="0.9"
       id="intro_cards_container"

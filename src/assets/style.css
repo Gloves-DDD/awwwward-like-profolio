@@ -1,9 +1,10 @@
 @import 'tailwindcss';
 @plugin 'tailwind-scrollbar' {
+  preferredstrategy: 'pseudoelements';
   nocompatible: true;
 }
 
-@layer base {
+/* @layer base {
   @font-face {
     font-family: 'Mabry Pro';
     font-weight: 100;
@@ -19,4 +20,4 @@
     font-weight: bold;
     src: url(fonts/MabryPro-Bold.woff2) format('woff2');
   }
-}
+} */

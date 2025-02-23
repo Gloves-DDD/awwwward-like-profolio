@@ -1,7 +1,4 @@
 export default {
-  content: {
-    files: ['./src/**/*.{html,js,vue}', './index.html']
-  },
   theme: {
     fontFamily: {
       MabryPro: ['Mabry Pro']
