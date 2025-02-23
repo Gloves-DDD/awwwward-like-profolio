@@ -40,7 +40,7 @@
   >
     <!-- left_image -->
     <div
-      class="flex aspect-square w-full border-2 border-red-600 p-[25px] md:p-[50px] lg:aspect-auto lg:h-[22rem] lg:w-[15rem] lg:p-0"
+      class="flex aspect-[2/3] w-full border-2 border-red-600 p-[25px] md:p-[50px] lg:aspect-auto lg:h-[22rem] lg:w-[15rem] lg:p-0"
     >
       <div
         id="intro_left_img"

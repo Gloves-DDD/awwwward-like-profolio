@@ -294,49 +294,41 @@ function matterJsCanvas() {
   Composite.add(engine.world, center_logo_body)
   // wall bodies
   var offset = 1
-  var wallSize = 6
-  var wallbg = 'black'
+  var wallSize = 10
+  var wallbg = 'white'
+  var wall_option = {
+    isStatic: true,
+    render: {
+      fillStyle: wallbg
+    }
+  }
   var wall_top = Bodies.rectangle(
     window.innerWidth / 2,
     -window.innerHeight,
     window.innerWidth + 2 * offset,
     wallSize,
-    {
-      isStatic: true,
-      render: {
-        fillStyle: wallbg
-      }
-    }
+    wall_option
   )
-  var wall_left = Bodies.rectangle(-offset, 0, wallSize, window.innerHeight * 2 + 2 * offset, {
-    isStatic: true,
-    render: {
-      fillStyle: wallbg
-    }
-  })
-  var wall_right = Bodies.rectangle(
-    window.innerWidth + offset - 20,
+  var wall_left = Bodies.rectangle(
+    -offset,
     0,
     wallSize,
     window.innerHeight * 2 + 2 * offset,
-    {
-      isStatic: true,
-      render: {
-        fillStyle: wallbg
-      }
-    }
+    wall_option
+  )
+  var wall_right = Bodies.rectangle(
+    window.innerWidth + offset,
+    0,
+    wallSize,
+    window.innerHeight * 2 + 2 * offset,
+    wall_option
   )
   var wall_bottom = Bodies.rectangle(
     window.innerWidth / 2,
     window.innerHeight + offset,
     window.innerWidth + 2 * offset,
     wallSize,
-    {
-      isStatic: true,
-      render: {
-        fillStyle: wallbg
-      }
-    }
+    wall_option
   )
   var walls = Composite.create({ bodies: [wall_top, wall_left, wall_right, wall_bottom] })
   Composite.add(engine.world, walls)

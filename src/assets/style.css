@@ -3,8 +3,18 @@
   preferredstrategy: 'pseudoelements';
   nocompatible: true;
 }
-
-/* @layer base {
+@theme {
+  --font-display: 'Mabry Pro', 'sans-serif';
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  --font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New',
+    monospace;
+  --font-MabryPro: 'Mabry Pro', 'sans-serif';
+}
+@layer base {
   @font-face {
     font-family: 'Mabry Pro';
     font-weight: 100;
@@ -20,4 +30,26 @@
     font-weight: bold;
     src: url(fonts/MabryPro-Bold.woff2) format('woff2');
   }
-} */
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 15px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

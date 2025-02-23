@@ -27,13 +27,11 @@
       loop
       muted
       src="/src/assets/Clouds.mp4"
-      class="static mt-[7rem] w-full origin-top-left rounded-[1rem] object-cover md:rounded-[3rem] lg:h-[16rem] lg:w-[48rem] lg:rounded-[10rem]"
+      class="static mt-[7rem] aspect-[3/2] w-full origin-top-left rounded-[1rem] object-cover md:rounded-[3rem] lg:h-[16rem] lg:w-[48rem] lg:rounded-[10rem]"
     ></video>
   </div>
 
-  <div
-    class="scrollbar scrollbar-thumb-sky-700 scrollbar-track-sky-300 flex h-auto w-full overflow-y-scroll border-4 border-red-400 p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0"
-  >
+  <div class="flex h-auto w-full border-4 border-red-400 p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"
