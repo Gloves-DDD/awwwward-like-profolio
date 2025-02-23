@@ -57,10 +57,10 @@ function weLoveOurClients() {
       scrollTrigger: {
         trigger: '#we_love_our_clients',
         toggleActions: 'play pause',
-        start: 'top center',
+        start: 'top 40%',
         end: '+=600',
-        scrub: 1,
-        anticipatePin: 2
+        scrub: 0.5,
+        anticipatePin: 1
       }
     })
 
@@ -88,7 +88,7 @@ function weLoveOurClients() {
     // marquee位移离场
     .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 4 }, '<')
     // 背景渐变
-    .to('.background_layer', { background: '#3d7353', duration: 5 }, '<')
+    .to('.background_layer', { background: '#3d7353', duration: 5 }, '<2')
 
   return tl
 }

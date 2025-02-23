@@ -39,7 +39,7 @@
         </div>
         <!-- comment -->
         <div
-          class="order-2 m-[.5rem] flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
+          class="order-2 flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
         >
           <p
             class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
@@ -81,7 +81,7 @@
         </div>
         <!-- comment -->
         <div
-          class="order-2 m-[.5rem] flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
+          class="order-2 flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
         >
           <p
             class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
@@ -123,7 +123,7 @@
         </div>
         <!-- comment -->
         <div
-          class="order-2 m-[.5rem] flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
+          class="order-2 flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
         >
           <p
             class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
@@ -156,6 +156,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
 const clientsLoveOurWork = () => {
+  gsap.set('.background_layer', { background: '#ecfeff' })
   gsap.set('#cards_layer', { position: 'relative' })
   gsap.set('#blue_card', { position: 'absolute', top: '0rem', transformOrigin: 'top' })
   gsap.set('#yellow_card', { position: 'absolute', top: '20rem', transformOrigin: 'top' })
@@ -169,7 +170,7 @@ const clientsLoveOurWork = () => {
         trigger: '#clients_love_our_work',
         toggleActions: 'play pause',
         start: 'top 90%',
-        end: '+=400',
+        end: '+=300',
         scrub: 1,
         anticipatePin: 1
       }
@@ -270,16 +271,17 @@ const clientsLoveOurWork = () => {
       scrollTrigger: {
         trigger: '#clients_love_our_work',
         toggleActions: 'play pause',
-        start: 'bottom 95%',
+        start: 'bottom 70%',
         end: '+=650',
         scrub: 0.1,
-        anticipatePin: 5
+        anticipatePin: 1,
+        markers: true
       }
     })
     .to('#clients_first_line', { y: -80, duration: 7 })
-    .to('#clients_second_line', { y: -90, duration: 7 }, '<2')
+    .to('#clients_second_line', { y: -90, duration: 7 }, '<1')
     // 背景颜色变回正常颜色
-    .to('.background_layer', { background: '#f5f5f5', duration: 3 }, '<')
+    .to('.background_layer', { background: '#f5f5f5', duration: 2 }, '<')
 
     .to('#blue_card', { top: '-3rem', duration: 5 }, '<1')
 
