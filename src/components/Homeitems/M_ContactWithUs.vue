@@ -124,7 +124,8 @@ function contactWithUs() {
     })
     .from('#contact_with_us_outter', {
       opacity: 0,
-      width: '4rem'
+      // width: '4rem'
+      scaleX: 0.1
     })
     .from('#contact_with_us_inner', {
       opacity: 0
