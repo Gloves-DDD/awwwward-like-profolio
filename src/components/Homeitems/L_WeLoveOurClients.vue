@@ -2,7 +2,7 @@
   <!-- WeLoveOurClients  -->
   <div
     id="we_love_our_clients"
-    class="background_layer flex h-auto w-screen flex-col items-center justify-center border-4 border-red-400 bg-white p-[25px] lg:h-screen lg:p-[50px]"
+    class="background_layer flex h-auto w-screen flex-col items-center justify-center bg-white p-[25px] lg:h-screen lg:p-[50px]"
   >
     <!-- Text Part -->
     <div id="we_love_our_clients_text_container" class="mb-[1rem] overflow-hidden lg:mb-[4rem]">

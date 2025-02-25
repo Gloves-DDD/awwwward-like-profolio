@@ -11,7 +11,7 @@
         >
           <div
             id="contact_with_us_inner"
-            class="flex flex-col items-start gap-4 lg:flex-row lg:items-center"
+            class="flex flex-col items-start gap-4 whitespace-nowrap lg:flex-row lg:items-center"
           >
             <p class="text-[1rem] tracking-wider md:text-[1.5rem]">
               Connect with your audience at a core level.

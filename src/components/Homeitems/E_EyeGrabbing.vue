@@ -1,7 +1,7 @@
 <template>
   <div
     id="eye_grabbing"
-    class="flex w-full flex-col items-center border-4 border-lime-500 p-[25px] text-[2rem] leading-[3rem] tracking-normal md:p-[50px] lg:text-[6rem] lg:leading-[9rem] lg:tracking-wider"
+    class="flex w-full flex-col items-center  p-[25px] text-[2rem] leading-[3rem] tracking-normal md:p-[50px] lg:text-[6rem] lg:leading-[9rem] lg:tracking-wider"
   >
     <div class="overflow-hidden transition-all">
       <p id="first_text_content" class="translate-y-0">We <span class="font-thin">Design</span></p>

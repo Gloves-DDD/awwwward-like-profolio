@@ -2,7 +2,7 @@
   <div
     data-speed="1"
     id="explaincontainer"
-    class="w-auto overflow-hidden border-2 border-rose-400 p-[25px] md:p-[50px] lg:px-[8rem] lg:py-[4rem]"
+    class="w-auto overflow-hidden p-[25px] md:p-[50px] lg:px-[8rem] lg:py-[4rem]"
   >
     <p
       id="explain"

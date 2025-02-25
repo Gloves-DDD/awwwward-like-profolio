@@ -194,20 +194,24 @@ function blackWindowContainer() {
     })
     .from('#black_window_center', { scale: 1.2 }, '<')
 
-  var tll = gsap.timeline().to('#black_window_container', {
-    scale: 0.5,
-    borderRadius: '2.5rem',
-    filter: 'brightness(0)',
-    scrollTrigger: {
-      trigger: '#black_window_warpper',
-      toggleActions: 'play pause',
-      start: 'center center',
-      end: '+=500',
-      fastScrollEnd: true,
-      pin: true,
-      scrub: 0
-    }
-  })
+  var tll = gsap.timeline().to(
+    '#black_window_container',
+    {
+      scale: 0.5,
+      borderRadius: '2.5rem',
+      filter: 'brightness(0)',
+      scrollTrigger: {
+        trigger: '#black_window_warpper',
+        toggleActions: 'play pause',
+        start: 'center center',
+        end: '+=500',
+        fastScrollEnd: true,
+        pin: true,
+        scrub: 0
+      }
+    },
+    '<2'
+  )
 
   tl.add(tll)
   return tl

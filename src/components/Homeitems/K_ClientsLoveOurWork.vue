@@ -1,9 +1,10 @@
 <template>
   <div
     id="clients_love_our_work"
-    class="background_layer flex h-auto flex-col items-center border-4 border-yellow-500 bg-cyan-50 p-[25px] md:p-[50px] lg:h-screen lg:w-screen lg:p-[2rem]"
+    class="background_layer flex h-auto flex-col items-center bg-cyan-50 p-[25px] md:p-[50px] lg:h-screen lg:w-screen lg:p-[2rem]"
   >
     <div
+      id="client_lines"
       class="flex flex-col items-center text-[1.75rem] leading-[3rem] md:text-[2.5rem] md:leading-[4rem] lg:text-[4rem] lg:leading-[6rem]"
     >
       <p id="clients_first_line" class="tracking-wider">
@@ -18,14 +19,14 @@
     </div>
 
     <!-- cards part -->
-    <div id="cards_layer" class="m-4 flex w-full flex-col justify-center lg:h-[24rem] lg:w-[54rem]">
+    <div id="cards_layer" class="m-4 flex w-full flex-col justify-center lg:w-[54rem]">
       <!-- 1 blue card -->
       <div
         id="blue_card"
         class="mb-[30px] flex flex-col flex-wrap items-center justify-center rounded-[1.5rem] bg-[#73c7ff] p-[30px] lg:m-0 lg:flex-row lg:justify-between lg:rounded-[3rem] lg:px-[3rem] lg:py-[1rem]"
       >
         <!-- hero -->
-        <div class="order-1 flex flex-1 justify-center lg:order-2 lg:mt-[3.5rem]">
+        <div class="order-1 flex flex-1 items-center justify-center lg:order-2 lg:mt-[3.5rem]">
           <img
             src="/src/assets/images/clients-love-our-work/Roland-Nichols.png"
             alt="Roland-Nichols"
@@ -39,7 +40,7 @@
         </div>
         <!-- comment -->
         <div
-          class="order-2 flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
+          class="order-2 my-5 flex min-w-full flex-initial justify-center lg:order-1 lg:m-0 lg:mt-[3rem] lg:w-auto"
         >
           <p
             class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
@@ -81,7 +82,7 @@
         </div>
         <!-- comment -->
         <div
-          class="order-2 flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
+          class="order-2 my-5 flex min-w-full flex-initial justify-center lg:order-1 lg:m-0 lg:mt-[3rem] lg:w-auto"
         >
           <p
             class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
@@ -123,7 +124,7 @@
         </div>
         <!-- comment -->
         <div
-          class="order-2 flex min-w-full flex-initial justify-center lg:order-1 lg:mt-[3rem] lg:w-auto"
+          class="order-2 my-5 flex min-w-full flex-initial justify-center lg:order-1 lg:m-0 lg:mt-[3rem] lg:w-auto"
         >
           <p
             class="rounded-[0.5rem] bg-white p-1 text-[1rem] tracking-wide lg:text-[1.5rem] lg:leading-tight"
@@ -157,10 +158,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 const clientsLoveOurWork = () => {
   gsap.set('.background_layer', { background: '#ecfeff' })
-  gsap.set('#cards_layer', { position: 'relative' })
-  gsap.set('#blue_card', { position: 'absolute', top: '0rem', transformOrigin: 'top' })
-  gsap.set('#yellow_card', { position: 'absolute', top: '20rem', transformOrigin: 'top' })
-  gsap.set('#green_card', { position: 'absolute', top: '40rem', transformOrigin: 'top' })
+  gsap.set('#blue_card', { yPercent: 0, transformOrigin: 'top' })
+  gsap.set('#yellow_card', { yPercent: 30, transformOrigin: 'top' })
+  gsap.set('#green_card', { yPercent: -70, transformOrigin: 'top' })
 
   // 入场动画
   var tl_1 = gsap
@@ -170,8 +170,7 @@ const clientsLoveOurWork = () => {
         trigger: '#clients_love_our_work',
         toggleActions: 'play pause',
         start: 'top 90%',
-        end: '+=300',
-        scrub: 1,
+        end: '+=400',
         anticipatePin: 1
       }
     })
@@ -187,9 +186,6 @@ const clientsLoveOurWork = () => {
       },
       '<'
     )
-    .from('#blue_card', {
-      top: '5rem'
-    })
 
   // 动画
   var tl_2 = gsap
@@ -203,22 +199,13 @@ const clientsLoveOurWork = () => {
         scrub: 1,
         fastScrollEnd: true,
         pin: true,
-        anticipatePin: 1,
-        markers: true
+        anticipatePin: 1
       }
     })
     //黄色入场
     .to('#yellow_card', {
-      top: '1rem'
+      yPercent: -85
     })
-    .to(
-      //同时绿色待定
-      '#green_card',
-      {
-        top: '20rem'
-      },
-      '<'
-    )
     //同时蓝色缩小
     .to(
       '#blue_card',
@@ -237,7 +224,7 @@ const clientsLoveOurWork = () => {
     )
     //绿色入场
     .to('#green_card', {
-      top: '2rem'
+      yPercent: -180
     })
     //同时蓝色再变小
     .to(
@@ -271,28 +258,25 @@ const clientsLoveOurWork = () => {
       scrollTrigger: {
         trigger: '#clients_love_our_work',
         toggleActions: 'play pause',
-        start: 'bottom 70%',
-        end: '+=650',
-        scrub: 0.1,
-        anticipatePin: 1,
-        markers: true
+        start: 'bottom 95%',
+        end: '+=600',
+        scrub: 0.5,
+        anticipatePin: 1
       }
     })
-    .to('#clients_first_line', { y: -80, duration: 7 })
-    .to('#clients_second_line', { y: -90, duration: 7 }, '<1')
+    .to('#client_lines', { y: -80, duration: 3 })
+
+    .to('#blue_card', { yPercent: -20, duration: 3 }, '<')
+
+    .to('#blue_card', { yPercent: -40, duration: 3 })
+    .to('#yellow_card', { yPercent: -102, duration: 3 }, '<')
+
+    .to('#blue_card', { yPercent: -60, duration: 3 })
+    .to('#yellow_card', { yPercent: -125, duration: 3 }, '<')
+    .to('#green_card', { yPercent: -200, duration: 3 }, '<')
     // 背景颜色变回正常颜色
-    .to('.background_layer', { background: '#f5f5f5', duration: 2 }, '<')
-
-    .to('#blue_card', { top: '-3rem', duration: 5 }, '<1')
-
-    .to('#blue_card', { top: '-6rem', duration: 5 })
-    .to('#yellow_card', { top: '-3rem', duration: 5 }, '<')
-
-    .to('#blue_card', { top: '-9rem', duration: 7 })
-    .to('#yellow_card', { top: '-6rem', duration: 7 }, '<')
-    .to('#green_card', { top: '-3rem', duration: 7 }, '<')
-
-    .to('#cards_layer', { y: -60, duration: 5 })
+    .to('.background_layer', { backgroundColor: '#f5f5f5', duration: 2 })
+    .to('#cards_layer', { y: -60, duration: 5 }, '<')
 
   tl_1.add(tl_2)
   tl_1.add(tl_3)

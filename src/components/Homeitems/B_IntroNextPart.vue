@@ -3,29 +3,27 @@
   <div
     data-speed="0.9"
     id="intro_text"
-    class="border-2 border-blue-400 px-[25px] sm:pb-[25px] md:px-[50px] lg:grid lg:grid-cols-5 lg:px-[8rem] lg:py-[2rem]"
+    class="px-[25px] sm:pb-[25px] md:px-[50px] lg:grid lg:grid-cols-5 lg:px-[8rem] lg:py-[2rem]"
   >
     <p
       data-speed="1.1"
       id="customers"
-      class="font-MabryPro border-2 border-red-600 text-[2rem] font-thin md:text-[3rem] lg:col-span-1 lg:text-center lg:text-[1.5rem] lg:tracking-wider"
+      class="font-MabryPro text-[2rem] font-thin md:text-[3rem] lg:col-span-1 lg:text-center lg:text-[1.5rem] lg:tracking-wider"
     >
       Customers
     </p>
-    <div id="" class="border-2 border-red-600 lg:col-span-3">
+    <div class="lg:col-span-3">
       <div
-        class="font-MabryPro flex flex-col border-2 border-yellow-300 text-[2rem] font-thin tracking-wider md:flex-row md:text-[3.5rem] lg:block lg:text-[6rem] lg:leading-[6rem]"
+        class="font-MabryPro flex flex-col text-[2rem] font-thin tracking-wider md:flex-row md:text-[3.5rem] lg:block lg:text-[6rem] lg:leading-[6rem]"
       >
-        <div class="overflow-hidden border-2">
+        <div class="overflow-hidden">
           <p id="need" class="need_connection">Need</p>
         </div>
-        <div class="overflow-hidden border-2">
+        <div class="overflow-hidden">
           <p id="connection" class="need_connection">Connection</p>
         </div>
       </div>
-      <p
-        class="font-MabryPro border-2 border-green-600 p-0 text-[1rem] font-thin uppercase lg:py-[1rem]"
-      >
+      <p class="font-MabryPro p-0 text-[1rem] font-thin uppercase lg:py-[1rem]">
         They want to buy brands they love and trust.
       </p>
     </div>
@@ -33,14 +31,10 @@
   </div>
 
   <!-- 02 / INTRO IMG / 简短案例展示-->
-  <div
-    data-speed="1"
-    id="intro_img_group"
-    class="block h-auto border-4 border-green-600 lg:flex lg:h-[140vh] lg:px-[11rem]"
-  >
+  <div data-speed="1" id="intro_img_group" class="block h-auto lg:flex lg:h-[140vh] lg:px-[11rem]">
     <!-- left_image -->
     <div
-      class="flex aspect-[2/3] w-full border-2 border-red-600 p-[25px] md:p-[50px] lg:aspect-auto lg:h-[22rem] lg:w-[15rem] lg:p-0"
+      class="flex aspect-[2/3] w-full p-[25px] md:p-[50px] lg:aspect-auto lg:h-[22rem] lg:w-[15rem] lg:p-0"
     >
       <div
         id="intro_left_img"
@@ -48,10 +42,7 @@
       ></div>
     </div>
     <!-- right_image -->
-    <div
-      data-speed="1.2"
-      class="m-0 flex w-full border-2 border-red-500 lg:mt-auto lg:ml-auto lg:w-[28rem]"
-    >
+    <div data-speed="1.2" class="m-0 flex w-full lg:mt-auto lg:ml-auto lg:w-[28rem]">
       <img
         src="/src/assets/images/brands-big-component/d-angelico.png"
         id="intro_right_img"

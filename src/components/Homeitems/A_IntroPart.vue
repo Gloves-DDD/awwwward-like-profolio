@@ -2,9 +2,9 @@
   <!-- 开头文本 -->
   <div
     id="intro_part"
-    class="h-auto w-full border-2 border-red-700 bg-red-100 p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]"
+    class="h-auto w-full bg-red-100 p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]"
   >
-    <div class="mt-[50px] w-full border-2 border-orange-800 lg:flex lg:justify-start">
+    <div class="mt-[50px] w-full lg:flex lg:justify-start">
       <p class="leading-tight">
         <span class="inline text-[2.5rem] font-normal tracking-tighter lg:block lg:text-[5rem]">
           Transiformative
@@ -15,7 +15,7 @@
         <span class="block text-[2rem] font-extralight"> For Product & Brands </span>
       </p>
       <!-- 小组件 -->
-      <div class="mt-[15rem] flex w-full justify-center border-2 lg:my-0 lg:ml-auto lg:w-auto">
+      <div class="mt-[15rem] flex w-full justify-center lg:my-0 lg:ml-auto lg:w-auto">
         <DownArrow class="lg:mt-auto lg:ml-auto" />
       </div>
     </div>
@@ -27,15 +27,15 @@
       loop
       muted
       src="/src/assets/Clouds.mp4"
-      class="static mt-[7rem] aspect-[3/2] w-full origin-top-left rounded-[1rem] object-cover md:rounded-[3rem] lg:h-[16rem] lg:w-[48rem] lg:rounded-[10rem]"
+      class="static mt-[7rem] aspect-[5/4] w-full origin-top-left rounded-[1rem] object-cover md:rounded-[3rem] lg:h-[16rem] lg:w-[48rem] lg:rounded-[10rem]"
     ></video>
   </div>
 
-  <div class="flex h-auto w-full border-4 border-red-400 p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
+  <div class="flex h-auto w-full p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"
-      class="m-0 flex h-auto w-full overflow-x-scroll border-4 border-blue-500 whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
+      class="m-0 flex h-auto w-full overflow-x-scroll whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
     >
       <div
         id="first_intro_card"
