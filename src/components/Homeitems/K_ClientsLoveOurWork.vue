@@ -159,8 +159,8 @@ gsap.registerPlugin(ScrollTrigger)
 const clientsLoveOurWork = () => {
   gsap.set('.background_layer', { background: '#ecfeff' })
   gsap.set('#blue_card', { yPercent: 0, transformOrigin: 'top' })
-  gsap.set('#yellow_card', { yPercent: 30, transformOrigin: 'top' })
-  gsap.set('#green_card', { yPercent: -70, transformOrigin: 'top' })
+  gsap.set('#yellow_card', { yPercent: 40, transformOrigin: 'top' })
+  gsap.set('#green_card', { yPercent: -60, transformOrigin: 'top' })
 
   // 入场动画
   var tl_1 = gsap
