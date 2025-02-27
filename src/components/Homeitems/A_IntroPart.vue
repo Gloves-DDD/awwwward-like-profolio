@@ -1,22 +1,15 @@
 <template>
   <!-- 开头文本 -->
-  <div
-    id="intro_part"
-    class="h-auto w-full bg-red-100 p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]"
-  >
-    <div class="mt-[50px] w-full lg:flex lg:justify-start">
-      <p class="leading-tight">
-        <span class="inline text-[2.5rem] font-normal tracking-tighter lg:block lg:text-[5rem]">
-          Transiformative
-        </span>
-        <span class="font-MabryPro text-[2.5rem] font-medium tracking-tighter lg:text-[4rem]">
-          Experiences
-        </span>
-        <span class="block text-[2rem] font-extralight"> For Product & Brands </span>
-      </p>
+  <div id="intro_part" class="h-auto bg-red-100 p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]">
+    <div class="mt-[100px] flex lg:mt-[40px]">
+      <div class="leading-tight">
+        <p class="text-[min(10vw,5rem)] font-normal tracking-tight">Transiformative</p>
+        <p class="font-MabryPro text-[min(10vw,4rem)] font-medium tracking-tight">Experiences</p>
+        <p class="text-[min(6vw,2rem)] font-extralight">For Product & Brands</p>
+      </div>
       <!-- 小组件 -->
-      <div class="mt-[15rem] flex w-full justify-center lg:my-0 lg:ml-auto lg:w-auto">
-        <DownArrow class="lg:mt-auto lg:ml-auto" />
+      <div v-if="mediaQuery.matches" class="ml-auto flex w-auto items-end">
+        <DownArrow />
       </div>
     </div>
 
@@ -75,6 +68,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DownArrow from './items/DownArrow.vue'
+import { mediaQuery } from '@/assets/utils/mediaquery'
 gsap.registerPlugin(ScrollTrigger)
 
 const videoAnimation = () => {
