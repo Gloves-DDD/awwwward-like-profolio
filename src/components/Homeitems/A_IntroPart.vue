@@ -28,7 +28,7 @@
     <div
       data-speed="0.9"
       id="intro_cards_container"
-      class="m-0 flex h-auto w-full overflow-x-scroll whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
+      class="m-0 flex h-auto w-full overflow-x-scroll p-1 whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
     >
       <div
         id="first_intro_card"

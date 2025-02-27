@@ -132,7 +132,7 @@
   >
     <p
       id="service_text"
-      class="font-MabryPro text-[2.5rem] font-medium tracking-wider text-neutral-100 uppercase lg:text-[1300%]"
+      class="font-MabryPro text-[16.5vw] font-medium tracking-wider text-neutral-100 uppercase"
     >
       services
     </p>

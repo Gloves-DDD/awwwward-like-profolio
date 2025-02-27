@@ -11,7 +11,7 @@
         class="border-b-2 border-black p-[0.5rem] md:p-[1rem] lg:px-[2rem]"
       >
         <p
-          class="font-MabryPro border-neutral-700 text-[0.75rem] font-thin tracking-widest text-white uppercase md:text-[1.25rem] md:leading-[2rem] lg:text-[2rem] lg:leading-[2rem]"
+          class="font-MabryPro border-neutral-700 text-[min(2rem,3.5vw)] font-thin tracking-widest text-white uppercase md:leading-[2rem]"
         >
           {{ item }}
         </p>
@@ -40,12 +40,10 @@
       <img
         src="/src/assets/images/we-do-imgs/edesign-logo.svg"
         alt="edesign-logo"
-        class="h-[7rem] lg:h-[9rem]"
+        class="h-[min(40vw,10rem)]"
       />
       <div class="p-[25px] lg:p-[50px]">
-        <p class="font-MabryPro text-[1.5rem] font-normal md:text-[2rem] lg:text-[3rem]">
-          Crush Your KPIs
-        </p>
+        <p class="font-MabryPro text-[min(10vw,3rem)] font-normal">Crush Your KPIs</p>
       </div>
       <div class="w-full">
         <Vue3Marquee v-if="marqueeIsLoaded" :duration="40">

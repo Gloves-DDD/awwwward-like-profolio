@@ -1,7 +1,7 @@
 <template>
   <div
     id="eye_grabbing"
-    class="flex w-full flex-col items-center  p-[25px] text-[2rem] leading-[3rem] tracking-normal md:p-[50px] lg:text-[6rem] lg:leading-[9rem] lg:tracking-wider"
+    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal md:p-[50px] lg:tracking-wider"
   >
     <div class="overflow-hidden transition-all">
       <p id="first_text_content" class="translate-y-0">We <span class="font-thin">Design</span></p>
@@ -11,14 +11,13 @@
       <EyeComponent class="second_text_content translate-y-0" />
       <p class="second_text_content translate-y-0">Grabbing</p>
     </div>
-    <div class="m-3 w-[60%] border-b-2 border-black lg:w-[30rem]">
+    <div class="m-3 w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
       <Vue3Marquee :duration="13">
-        <p class="text-[1.2rem] uppercase lg:text-[3rem]">¯content</p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="text-[1.2rem] uppercase lg:text-[3rem]">¯content</p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="text-[1.2rem] uppercase lg:text-[3rem]">¯content</p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <p class="mr-[4rem] text-[min(10vw,3rem)] uppercase">¯content</p>
+
+        <p class="mr-[4rem] text-[min(10vw,3rem)] uppercase">¯content</p>
+
+        <p class="mr-[4rem] text-[min(10vw,3rem)] uppercase">¯content</p>
       </Vue3Marquee>
     </div>
   </div>

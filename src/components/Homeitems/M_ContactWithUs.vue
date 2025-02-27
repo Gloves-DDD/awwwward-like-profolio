@@ -13,7 +13,7 @@
             id="contact_with_us_inner"
             class="flex flex-col items-start gap-4 lg:flex-row lg:items-center lg:whitespace-nowrap"
           >
-            <p class="text-[1rem] tracking-wider md:text-[1.5rem]">
+            <p class="text-[min(5vw,1.5rem)] tracking-wider">
               Connect with your audience at a core level.
             </p>
             <button
@@ -40,9 +40,7 @@
           agency.
         </p>
         <div id="contact_with_us_2" class="my-[1rem] lg:my-[2rem]">
-          <p
-            class="text-[1.5rem] leading-snug tracking-wide text-neutral-50 md:text-[2rem] lg:text-[3.5rem]"
-          >
+          <p class="text-[min(7vw,3.5rem)] leading-snug tracking-wide text-neutral-50">
             Our CPG team is ready towowify your brand andtransform your product into an
             emotion-conqueringpowerhouse.
           </p>

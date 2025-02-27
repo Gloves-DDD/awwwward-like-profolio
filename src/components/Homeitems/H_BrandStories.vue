@@ -3,41 +3,20 @@
     <div data-speed="1.1" id="brand_stories_text_container" class="translate-y-0 overflow-hidden">
       <p
         id="brand_stories_text_content"
-        class="translate-y-0 text-[1.5rem] leading-[6rem] tracking-normal md:text-[2.5rem] lg:text-[4.5rem] lg:leading-[9rem]"
+        class="translate-y-0 text-[min(8vw,4.5rem)] leading-[min(20vw,9rem)] tracking-normal"
       >
         Brand Stories Such As
       </p>
     </div>
     <div class="w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
       <Vue3Marquee :duration="70">
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯storytellers
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯ideators
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯innovators
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯weatherizers
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯flavorizers
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯all-around good product havers
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
-        <p class="font-MabryPro text-[1.2rem] font-thin tracking-wider uppercase lg:text-[3rem]">
-          ¯legends
-        </p>
-        <div class="w-[2.5rem] lg:w-[4rem]"></div>
+        <div v-for="item in brand_stories_marquee_value" :key="item.id">
+          <p
+            class="font-MabryPro mr-[4rem] text-[min(10vw,3rem)] font-thin tracking-wider uppercase"
+          >
+            {{ item }}
+          </p>
+        </div>
       </Vue3Marquee>
     </div>
   </div>
@@ -49,6 +28,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Vue3Marquee } from 'vue3-marquee'
 gsap.registerPlugin(ScrollTrigger)
 
+const brand_stories_marquee_value = [
+  '¯storytellers',
+  '¯ideators',
+  '¯innovators',
+  '¯weatherizers',
+  '¯flavorizers',
+  '¯all-around good product havers',
+  '¯legends'
+]
 const brandStories = () => {
   var tl = gsap
     .timeline({

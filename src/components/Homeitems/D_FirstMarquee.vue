@@ -192,7 +192,7 @@ function blackWindowContainer() {
         scrub: 1
       }
     })
-    .from('#black_window_center', { scale: 1.2 }, '<')
+    .fromTo('#black_window_center', { scale: 1.4 }, { scale: 1.2 }, '<')
 
   var tll = gsap.timeline().to(
     '#black_window_container',

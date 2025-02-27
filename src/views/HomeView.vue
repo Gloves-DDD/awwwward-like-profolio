@@ -23,7 +23,7 @@
   >
     <p class="font-MabryPro text-[0.7rem] tracking-wider">the reality</p>
     <p
-      class="font-MabryPro my-[1rem] text-[1rem] leading-tight font-normal tracking-wider md:text-[1.5rem] lg:my-[2rem] lg:text-[2rem]"
+      class="font-MabryPro my-[1rem] text-[min(5vw,2rem)] leading-tight font-normal tracking-wider lg:my-[2rem]"
     >
       Your audience sees your product as<br />
       more than just a product. It’s<br />

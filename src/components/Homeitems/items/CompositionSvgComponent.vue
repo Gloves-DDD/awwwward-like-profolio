@@ -1,10 +1,6 @@
 <template>
-  <div
-    ref="container"
-    class="relative overflow-hidden"
-    :style="{ width: `${width}px`, height: `${height}px` }"
-  >
-    <svg :viewBox="`0 0 ${width} ${height}`" class="h-full w-full cursor-pointer">
+  <div ref="container" class="relative h-full w-full overflow-hidden p-[25px] lg:h-auto lg:w-auto">
+    <svg :viewBox="`0 0 ${width} ${height}`" class="h-full w-full">
       <!-- border -->
       <g>
         <rect x="2" y="80" width="10" height="28" rx="5" class="fill-neutral-400" />

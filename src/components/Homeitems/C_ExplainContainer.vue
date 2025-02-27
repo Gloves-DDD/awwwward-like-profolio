@@ -6,7 +6,7 @@
   >
     <p
       id="explain"
-      class="font-MabryPro text-center text-[1rem] leading-tight font-thin tracking-wider uppercase lg:text-[1.4rem] lg:font-normal"
+      class="font-MabryPro text-center text-[min(1.4rem,1rem)] leading-tight font-thin tracking-wider uppercase lg:font-normal"
     >
       Crafting compelling, data-driven brand experiences that connect with audiences’ emotional core
       takes a wealth of research and understanding.

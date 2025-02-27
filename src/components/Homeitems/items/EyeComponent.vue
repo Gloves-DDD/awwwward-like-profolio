@@ -1,26 +1,16 @@
 <template>
   <div class="inline-flex items-center justify-center rounded-full bg-white">
-    <svg
-      ref="svgEl"
-      :viewBox="`0 0 ${size} ${size}`"
-      class="h-[3rem] w-[5.625rem] lg:h-[8rem] lg:w-[15rem]"
-    >
+    <svg ref="svgEl" :viewBox="`0 0 ${size} ${size}`" class="aspect-[9/5] w-[min(14rem,28vw)]">
       <!-- 眼白 -->
       <ellipse cx="50%" cy="50%" :rx="eyeWidth" :ry="eyeHeight" class="fill-white" />
       <!-- 瞳孔 -->
-      <circle
-        ref="pupil_1"
-        cx="50%"
-        cy="50%"
-        :r="pupilSize"
-        class="fill-green-800 transition-opacity duration-300"
-      />
+      <circle ref="pupil_1" cx="50%" cy="50%" :r="pupilSize" class="fill-green-800 duration-300" />
       <circle
         ref="pupil_2"
         cx="50%"
         cy="50%"
         :r="`${(pupilSize * 1) / 3}`"
-        class="fill-gray-900 transition-opacity duration-300"
+        class="fill-gray-900 duration-300"
       />
     </svg>
   </div>

@@ -6,9 +6,7 @@
   >
     <!-- Text Part -->
     <div id="we_love_our_clients_text_container" class="mb-[1rem] overflow-hidden lg:mb-[4rem]">
-      <p id="we_love_our_clients_text" class="text-[1.75rem] md:text-[2.5rem] lg:text-[4rem]">
-        We Love Our Clients
-      </p>
+      <p id="we_love_our_clients_text" class="text-[min(8vw,4.5rem)]">We Love Our Clients</p>
     </div>
 
     <!-- Marquee Part -->

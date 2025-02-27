@@ -8,13 +8,13 @@
     <p
       data-speed="1.1"
       id="customers"
-      class="font-MabryPro text-[2rem] font-thin md:text-[3rem] lg:col-span-1 lg:text-center lg:text-[1.5rem] lg:tracking-wider"
+      class="font-MabryPro text-[min(1.5rem,5vw)] font-thin tracking-wider lg:col-span-1 lg:text-center"
     >
       Customers
     </p>
     <div class="lg:col-span-3">
       <div
-        class="font-MabryPro flex flex-col text-[2rem] font-thin tracking-wider md:flex-row md:text-[3.5rem] lg:block lg:text-[6rem] lg:leading-[6rem]"
+        class="font-MabryPro flex flex-col text-[min(6rem,5vw)] leading-[min(6vw,6rem)] font-thin tracking-wider md:flex-row lg:block"
       >
         <div class="overflow-hidden">
           <p id="need" class="need_connection">Need</p>
@@ -23,7 +23,7 @@
           <p id="connection" class="need_connection">Connection</p>
         </div>
       </div>
-      <p class="font-MabryPro p-0 text-[1rem] font-thin uppercase lg:py-[1rem]">
+      <p class="font-MabryPro p-0 text-[min(3vw,1rem)] font-thin uppercase lg:py-[1rem]">
         They want to buy brands they love and trust.
       </p>
     </div>
