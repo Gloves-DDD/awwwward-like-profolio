@@ -17,7 +17,7 @@
               Connect with your audience at a core level.
             </p>
             <button
-              class="rounded-3xl bg-black px-[1rem] py-[0.5rem] text-[0.7rem] tracking-wider text-white lg:ml-auto"
+              class="cursor-pointer rounded-3xl bg-black px-[1rem] py-[0.5rem] text-[0.7rem] tracking-wider text-white lg:ml-auto"
             >
               Start a project
             </button>

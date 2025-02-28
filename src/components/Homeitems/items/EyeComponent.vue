@@ -25,7 +25,7 @@ const props = defineProps({
   eyeWidth: { type: Number, default: 270 }, // 眼白水平半径
   eyeHeight: { type: Number, default: 150 }, // 眼白垂直半径
   pupilSize: { type: Number, default: 100 }, // 瞳孔半径
-  smoothness: { type: Number, default: 1 } // 动画速度
+  smoothness: { type: Number, default: 1.5 } // 动画速度
 })
 
 const svgEl = ref(null)
@@ -80,7 +80,7 @@ const handleMouseMove = (e) => {
       cx: clamp(targetX, centerX - maxMoveX, centerX + maxMoveX),
       cy: clamp(targetY, centerY - maxMoveY, centerY + maxMoveY)
     },
-    ease: 'power2.out'
+    ease: 'sine.inout'
   })
   gsap.to(pupil_2.value, {
     duration: props.smoothness,
@@ -88,7 +88,7 @@ const handleMouseMove = (e) => {
       cx: clamp(targetX, centerX - maxMoveX, centerX + maxMoveX),
       cy: clamp(targetY, centerY - maxMoveY, centerY + maxMoveY)
     },
-    ease: 'power2.out'
+    ease: 'sine.inout'
   })
 }
 
