@@ -5,10 +5,10 @@
   >
     <AnimationCardComposition
       id="card_1"
-      brand-logo="/src/assets/images/eye-catch-section/wimpykid-logo.png"
+      brand-logo="/eye-catch-section/wimpykid-logo.png"
       brand-introduction="Web experience with character(s)."
       brand-name="Diary with a Wimpy kid"
-      brand-img="/src/assets/images/eye-catch-section/wimpykid.png"
+      brand-img="/eye-catch-section/wimpykid.png"
       background-color="#ffe92f"
       introtext-color="black"
       brand-tag="black"
@@ -17,10 +17,10 @@
     />
     <AnimationCardComposition
       id="card_2"
-      brand-logo="/src/assets/images/eye-catch-section/sabra-logo.png"
+      brand-logo="/eye-catch-section/sabra-logo.png"
       brand-introduction="Spreading deliciousness."
       brand-name="Sabra"
-      brand-img="/src/assets/images/eye-catch-section/sabra.png"
+      brand-img="/eye-catch-section/sabra.png"
       background-color="#eadcab"
       introtext-color="black"
       brand-tag="black"
@@ -29,10 +29,10 @@
     />
     <AnimationCardComposition
       id="card_3"
-      brand-logo="/src/assets/images/eye-catch-section/popweaver-logo.png"
+      brand-logo="/eye-catch-section/popweaver-logo.png"
       brand-introduction="A better butter movie snack."
       brand-name="Pop weaver"
-      brand-img="/src/assets/images/eye-catch-section/popweaver.png"
+      brand-img="/eye-catch-section/popweaver.png"
       background-color="#ff4500"
       introtext-color="white"
       brand-tag="white"
@@ -41,10 +41,10 @@
     />
     <AnimationCardComposition
       id="card_4"
-      brand-logo="/src/assets/images/eye-catch-section/brickfielder-logo.png"
+      brand-logo="/eye-catch-section/brickfielder-logo.png"
       brand-introduction="Taking a swing at fashion technology."
       brand-name="Brickfielder"
-      brand-img="/src/assets/images/eye-catch-section/brickfielder.png"
+      brand-img="/eye-catch-section/brickfielder.png"
       background-color="#262626"
       introtext-color="white"
       brand-tag="white"
@@ -53,10 +53,10 @@
     />
     <AnimationCardComposition
       id="card_5"
-      brand-logo="/src/assets/images/eye-catch-section/thirdlove-logo.png"
+      brand-logo="/eye-catch-section/thirdlove-logo.png"
       brand-introduction="Friendly, caring, supportive."
       brand-name="ThirdLove"
-      brand-img="/src/assets/images/eye-catch-section/thirdlove.png"
+      brand-img="/eye-catch-section/thirdlove.png"
       background-color="#ffc7b2"
       introtext-color="black"
       brand-tag="white"
@@ -65,10 +65,10 @@
     />
     <AnimationCardComposition
       id="card_6"
-      brand-logo="/src/assets/images/eye-catch-section/fastmail-logo.png"
+      brand-logo="/eye-catch-section/fastmail-logo.png"
       brand-introduction="Their policy is privacy."
       brand-name="Fastmail"
-      brand-img="/src/assets/images/eye-catch-section/fastmail.png"
+      brand-img="/eye-catch-section/fastmail.png"
       background-color="#ffffff"
       introtext-color="black"
       brand-tag="black"
