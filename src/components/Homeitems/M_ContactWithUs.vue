@@ -65,7 +65,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineAsyncComponent, ref, onMounted, onUnmounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
-// 懒加载
+// 延迟加载
 const contact_with_us_container = ref(null)
 const isLoaded = ref(false)
 

@@ -3,125 +3,85 @@
     id="cards_container"
     class="h-auto w-auto overflow-scroll border-2 border-red-600 px-[50px] whitespace-nowrap lg:h-screen lg:overflow-visible lg:whitespace-normal"
   >
-    <div
+    <AnimationCardComposition
       id="card_1"
-      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-yellow-400 p-[0.5rem]"
-    >
-      <div class="h-1/2 w-[100%] leading-tight tracking-wider">
-        <span class="px-2">Card.1</span>
-        <div class="mt-10">
-          <p class="px-1">
-            Web experience<br />
-            with character(s).
-          </p>
-          <span class="rounded-lg bg-neutral-800 p-1 text-[0.7rem] font-bold text-neutral-100"
-            >Diary with a Wimpy kid</span
-          >
-        </div>
-      </div>
-      <div class="h-1/2 w-[100%] rounded-b-2xl bg-purple-800"></div>
-    </div>
-
-    <div
+      brand-logo="/src/assets/images/eye-catch-section/wimpykid-logo.png"
+      brand-introduction="Web experience with character(s)."
+      brand-name="Diary with a Wimpy kid"
+      brand-img="/src/assets/images/eye-catch-section/wimpykid.png"
+      background-color="#ffe92f"
+      introtext-color="black"
+      brand-tag="black"
+      text-color="white"
+      link-address="https://wimpykid.com/"
+    />
+    <AnimationCardComposition
       id="card_2"
-      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-[#fbe7ab] p-[0.5rem]"
-    >
-      <div class="h-1/2 w-[100%] leading-tight tracking-wider">
-        <span class="px-2">Card.2</span>
-        <div class="mt-10">
-          <p class="px-1">
-            Spreading<br />
-            deliciousness.
-          </p>
-          <span class="rounded-lg bg-neutral-800 p-1 text-[0.7rem] font-bold text-neutral-100"
-            >Sabra</span
-          >
-        </div>
-      </div>
-      <div class="h-1/2 w-[100%] rounded-b-2xl bg-gray-300"></div>
-    </div>
-
-    <div
+      brand-logo="/src/assets/images/eye-catch-section/sabra-logo.png"
+      brand-introduction="Spreading deliciousness."
+      brand-name="Sabra"
+      brand-img="/src/assets/images/eye-catch-section/sabra.png"
+      background-color="#eadcab"
+      introtext-color="black"
+      brand-tag="black"
+      text-color="white"
+      link-address="https://sabra.com/"
+    />
+    <AnimationCardComposition
       id="card_3"
-      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-[#ed3902] p-[0.5rem]"
-    >
-      <div class="h-1/2 w-[100%] leading-tight tracking-wider text-neutral-100">
-        <span class="px-2">Card.3</span>
-        <div class="mt-10">
-          <p class="px-1">
-            A better butter<br />
-            movie snack.
-          </p>
-          <span class="rounded-lg bg-neutral-100 p-1 text-[0.7rem] font-bold text-neutral-800"
-            >Pop weaver</span
-          >
-        </div>
-      </div>
-      <div class="h-1/2 w-[100%] rounded-b-2xl bg-blue-950"></div>
-    </div>
-
-    <div
+      brand-logo="/src/assets/images/eye-catch-section/popweaver-logo.png"
+      brand-introduction="A better butter movie snack."
+      brand-name="Pop weaver"
+      brand-img="/src/assets/images/eye-catch-section/popweaver.png"
+      background-color="#ff4500"
+      introtext-color="white"
+      brand-tag="white"
+      text-color="black"
+      link-address="https://popweaver.edesigninteractive.com/"
+    />
+    <AnimationCardComposition
       id="card_4"
-      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-neutral-800 p-[0.5rem]"
-    >
-      <div class="h-1/2 w-[100%] leading-tight tracking-wider text-neutral-100">
-        <span class="px-2">Card.4</span>
-        <div class="mt-10">
-          <p class="px-1">
-            Taking a swing at<br />
-            fashion technology.
-          </p>
-          <span class="rounded-lg bg-neutral-100 p-1 text-[0.7rem] font-bold text-neutral-800"
-            >Brickfielder</span
-          >
-        </div>
-      </div>
-      <div class="h-1/2 w-[100%] rounded-b-2xl bg-black"></div>
-    </div>
-
-    <div
+      brand-logo="/src/assets/images/eye-catch-section/brickfielder-logo.png"
+      brand-introduction="Taking a swing at fashion technology."
+      brand-name="Brickfielder"
+      brand-img="/src/assets/images/eye-catch-section/brickfielder.png"
+      background-color="#262626"
+      introtext-color="white"
+      brand-tag="white"
+      text-color="black"
+      link-address="https://brickfielder.edesigninteractive.com/"
+    />
+    <AnimationCardComposition
       id="card_5"
-      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-[#f7d2b0] p-[0.5rem]"
-    >
-      <div class="h-1/2 w-[100%] leading-tight tracking-wider text-neutral-800">
-        <span class="px-2">Card.5</span>
-        <div class="mt-10">
-          <p class="px-1">
-            Friendly, caring,<br />
-            supportive.
-          </p>
-          <span class="rounded-lg bg-neutral-100 p-1 text-[0.7rem] font-bold text-neutral-800"
-            >ThirdLove</span
-          >
-        </div>
-      </div>
-      <div class="h-1/2 w-[100%] rounded-b-2xl bg-[#f1b2b2]"></div>
-    </div>
-
-    <div
+      brand-logo="/src/assets/images/eye-catch-section/thirdlove-logo.png"
+      brand-introduction="Friendly, caring, supportive."
+      brand-name="ThirdLove"
+      brand-img="/src/assets/images/eye-catch-section/thirdlove.png"
+      background-color="#ffc7b2"
+      introtext-color="black"
+      brand-tag="white"
+      text-color="black"
+      link-address="https://www.thirdlove.com/"
+    />
+    <AnimationCardComposition
       id="card_6"
-      class="m-[0.5rem] inline-block h-[21rem] w-[15rem] rounded-3xl bg-white p-[0.5rem]"
-    >
-      <div class="h-1/2 w-[100%] leading-tight tracking-wider">
-        <span class="px-2">Card.6</span>
-        <div class="mt-10">
-          <p class="px-1">
-            Their policy is<br />
-            privacy.
-          </p>
-          <span class="rounded-lg bg-neutral-800 p-1 text-[0.7rem] font-bold text-neutral-100"
-            >Fastmail</span
-          >
-        </div>
-      </div>
-      <div class="h-1/2 w-[100%] rounded-b-2xl bg-[#fee64d]"></div>
-    </div>
+      brand-logo="/src/assets/images/eye-catch-section/fastmail-logo.png"
+      brand-introduction="Their policy is privacy."
+      brand-name="Fastmail"
+      brand-img="/src/assets/images/eye-catch-section/fastmail.png"
+      background-color="#ffffff"
+      introtext-color="black"
+      brand-tag="black"
+      text-color="white"
+      link-address="https://www.fastmail.com/"
+    />
   </div>
 </template>
 
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import AnimationCardComposition from './items/AnimationCardComposition.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 const cardsContainer = () => {
