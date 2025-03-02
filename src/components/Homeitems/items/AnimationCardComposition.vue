@@ -1,7 +1,7 @@
 <template>
   <!-- border -->
   <a
-    class="m-[0.5rem] inline-flex h-[22rem] w-[16.5rem] cursor-pointer flex-col rounded-3xl p-[.75rem]"
+    class="m-[0.5rem] inline-flex h-[22rem] w-[16.5rem] cursor-pointer flex-col rounded-3xl p-[.75rem] lg:w-[14rem]"
     :style="`backgroundColor:${backgroundColor}`"
     :href="linkAddress"
   >

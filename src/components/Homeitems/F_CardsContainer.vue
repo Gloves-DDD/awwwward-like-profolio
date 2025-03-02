@@ -1,8 +1,9 @@
 <template>
   <div
     id="cards_container"
-    class="h-auto w-auto overflow-scroll border-2 border-red-600 px-[50px] whitespace-nowrap lg:h-screen lg:overflow-visible lg:whitespace-normal"
+    class="h-auto w-auto justify-center overflow-x-scroll border-y-2 border-red-600 px-[50px] whitespace-nowrap lg:flex lg:h-screen lg:flex-wrap lg:overflow-visible"
   >
+    <!-- 1 -->
     <AnimationCardComposition
       id="card_1"
       brand-logo="/eye-catch-section/wimpykid-logo.png"
@@ -15,6 +16,7 @@
       text-color="white"
       link-address="https://wimpykid.com/"
     />
+    <!-- 2 -->
     <AnimationCardComposition
       id="card_2"
       brand-logo="/eye-catch-section/sabra-logo.png"
@@ -27,6 +29,7 @@
       text-color="white"
       link-address="https://sabra.com/"
     />
+    <!-- 3 -->
     <AnimationCardComposition
       id="card_3"
       brand-logo="/eye-catch-section/popweaver-logo.png"
@@ -39,6 +42,7 @@
       text-color="black"
       link-address="https://popweaver.edesigninteractive.com/"
     />
+    <!-- 4 -->
     <AnimationCardComposition
       id="card_4"
       brand-logo="/eye-catch-section/brickfielder-logo.png"
@@ -51,6 +55,7 @@
       text-color="black"
       link-address="https://brickfielder.edesigninteractive.com/"
     />
+    <!-- 5 -->
     <AnimationCardComposition
       id="card_5"
       brand-logo="/eye-catch-section/thirdlove-logo.png"
@@ -63,6 +68,7 @@
       text-color="black"
       link-address="https://www.thirdlove.com/"
     />
+    <!-- 6 -->
     <AnimationCardComposition
       id="card_6"
       brand-logo="/eye-catch-section/fastmail-logo.png"
@@ -82,31 +88,26 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AnimationCardComposition from './items/AnimationCardComposition.vue'
+import { onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
 const cardsContainer = () => {
-  gsap.set('#cards_container', { position: 'relative' })
-  gsap.set('#card_1', { position: 'absolute', top: 100, left: -100, rotateZ: -30 })
-  gsap.set('#card_2', { position: 'absolute', top: 100, left: 0, rotateZ: 60 })
-  gsap.set('#card_3', { position: 'absolute', top: 100, left: 100, rotateZ: 45 })
-  gsap.set('#card_4', { position: 'absolute', top: 100, left: 1000, rotateZ: -70 })
-  gsap.set('#card_5', { position: 'absolute', top: 100, left: 1100, rotateZ: 75 })
-  gsap.set('#card_6', { position: 'absolute', top: 100, left: 1200, rotateZ: 85 })
+  gsap.set('#card_1', { yPercent: 0, xPercent: -200, rotateZ: -30 })
+  gsap.set('#card_2', { yPercent: 0, xPercent: -300, rotateZ: 60 })
+  gsap.set('#card_3', { yPercent: 0, xPercent: -500, rotateZ: 45 })
+
+  gsap.set('#card_4', { yPercent: 30, xPercent: 200, rotateZ: -70 })
+  gsap.set('#card_5', { yPercent: -90, xPercent: 380, rotateZ: 75 })
+  gsap.set('#card_6', { yPercent: -90, xPercent: 440, rotateZ: 85 })
 
   var triggerset = {
-    ease: 'none',
+    ease: 'sine.inOut',
     scrollTrigger: {
       trigger: '#cards_container',
       toggleActions: 'play pause',
       start: 'top 80%',
-      end: '+=1000',
-      scrub: 1,
-      markers: {
-        startColor: 'red',
-        endColor: 'red',
-        fontSize: '10px',
-        indent: 0
-      }
+      end: '+=1300',
+      scrub: 0.1
     }
   }
   var front = 2,
@@ -116,25 +117,27 @@ const cardsContainer = () => {
   var card_1 = gsap
     .timeline(triggerset)
     .to('#card_1', {
-      left: 100,
-      top: 60,
+      xPercent: -30,
+      yPercent: 30,
       rotateZ: -5,
       duration: front
     })
     .to('#card_1', {
       rotateZ: 15,
-      duration: middle
+      duration: middle,
+      overwrite: false
     })
     .to('#card_1', {
-      left: -200,
+      xPercent: -150,
+      yPercent: 50,
       duration: end
     })
 
   var card_2 = gsap
     .timeline(triggerset)
     .to('#card_2', {
-      left: 300,
-      top: 180,
+      xPercent: -50,
+      yPercent: 40,
       rotateZ: -15,
       duration: front
     })
@@ -143,16 +146,16 @@ const cardsContainer = () => {
       duration: middle
     })
     .to('#card_2', {
-      left: -100,
-      top: 100,
+      xPercent: -200,
+      yPercent: 20,
       duration: end
     })
 
   var card_3 = gsap
     .timeline(triggerset)
     .to('#card_3', {
-      left: 500,
-      top: 30,
+      xPercent: -90,
+      yPercent: 20,
       rotateZ: 30,
       duration: front
     })
@@ -161,66 +164,66 @@ const cardsContainer = () => {
       duration: middle
     })
     .to('#card_3', {
-      left: 200,
-      top: -100,
+      xPercent: -150,
+      yPercent: -50,
       duration: end
     })
 
   var card_4 = gsap
     .timeline(triggerset)
     .to('#card_4', {
-      left: 730,
-      top: 110,
+      xPercent: -110,
+      yPercent: 30,
       rotateZ: -40,
       duration: front
     })
     .to('#card_4', {
-      rotateZ: 40,
+      rotateZ: 30,
       duration: middle
     })
     .to('#card_4', {
-      left: 1100,
-      top: -100,
+      xPercent: 50,
+      yPercent: -20,
       duration: end
     })
 
   var card_5 = gsap
     .timeline(triggerset)
     .to('#card_5', {
-      left: 930,
-      top: 10,
+      xPercent: 170,
+      yPercent: -80,
       rotateZ: 3,
       duration: front
     })
     .to('#card_5', {
-      rotateZ: -32,
+      rotateZ: 40,
       duration: middle
     })
     .to('#card_5', {
-      left: 1300,
-      top: 100,
+      xPercent: 400,
+      yPercent: -70,
       duration: end
     })
 
   var card_6 = gsap
     .timeline(triggerset)
     .to('#card_6', {
-      left: 1100,
-      rotateZ: 45,
+      xPercent: 150,
+      yPercent: -70,
+      rotateZ: -30,
       duration: front
     })
     .to('#card_6', {
-      rotateZ: 35,
+      rotateZ: 10,
       duration: middle
     })
     .to('#card_6', {
-      left: 1300,
-      top: 100,
+      xPercent: 250,
+      yPercent: -50,
       duration: end
     })
 
   var tl = gsap.timeline()
-
   tl.add(card_1)
   tl.add(card_2)
   tl.add(card_3)
@@ -229,5 +232,84 @@ const cardsContainer = () => {
   tl.add(card_6)
   return tl
 }
+
+onMounted(() => {
+  let card_1 = document.getElementById('card_1')
+  let card_2 = document.getElementById('card_2')
+  let card_3 = document.getElementById('card_3')
+  let card_4 = document.getElementById('card_4')
+  let card_5 = document.getElementById('card_5')
+  let card_6 = document.getElementById('card_6')
+  // tl 1
+  let tl_card_1 = gsap
+    .timeline()
+    .to('#card_1', { rotateZ: 0, overwrite: false, duration: 0.5 })
+    .to('#card_2', { x: 100, overwrite: false, duration: 0.5 }, '<')
+  card_1.addEventListener('mouseenter', () => {
+    tl_card_1.play()
+  })
+  card_1.addEventListener('mouseleave', () => {
+    tl_card_1.reverse()
+  })
+  // tl 2
+  let tl_card_2 = gsap
+    .timeline()
+    .to('#card_2', { rotateZ: 0, overwrite: false, duration: 0.5 })
+    .to('#card_1', { x: -100, overwrite: false, duration: 0.5 }, '<')
+    .to('#card_3', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+  card_2.addEventListener('mouseenter', () => {
+    tl_card_2.play()
+  })
+  card_2.addEventListener('mouseleave', () => {
+    tl_card_2.reverse()
+  })
+  // tl 3
+  let tl_card_3 = gsap
+    .timeline()
+    .to('#card_3', { rotateZ: 0, overwrite: false, duration: 0.5 })
+    .to('#card_2', { x: -100, overwrite: false, duration: 0.5 }, '<')
+    .to('#card_4', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+  card_3.addEventListener('mouseenter', () => {
+    tl_card_3.play()
+  })
+  card_3.addEventListener('mouseleave', () => {
+    tl_card_3.reverse()
+  })
+  // tl 4
+  let tl_card_4 = gsap
+    .timeline()
+    .to('#card_4', { rotateZ: 0, overwrite: false, duration: 0.5 })
+    .to('#card_3', { x: -100, overwrite: false, duration: 0.5 }, '<')
+    .to('#card_5', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+  card_4.addEventListener('mouseenter', () => {
+    tl_card_4.play()
+  })
+  card_4.addEventListener('mouseleave', () => {
+    tl_card_4.reverse()
+  })
+  // tl 5
+  let tl_card_5 = gsap
+    .timeline()
+    .to('#card_5', { rotateZ: 0, overwrite: false, duration: 0.5 })
+    .to('#card_4', { x: -100, overwrite: false, duration: 0.5 }, '<')
+    .to('#card_6', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+  card_5.addEventListener('mouseenter', () => {
+    tl_card_5.play()
+  })
+  card_5.addEventListener('mouseleave', () => {
+    tl_card_5.reverse()
+  })
+  // tl 6
+  let tl_card_6 = gsap.timeline().to('#card_6', { rotateZ: 0, overwrite: false, duration: 0.5 })
+  card_6.addEventListener('mouseenter', () => {
+    tl_card_6.play()
+  })
+  card_6.addEventListener('mouseleave', () => {
+    tl_card_6.reverse()
+  })
+})
+
+onBeforeUnmount(() => {})
+
 defineExpose({ cardsContainer })
 </script>
