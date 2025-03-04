@@ -24,17 +24,21 @@
     ></video>
   </div>
 
-  <div class="flex h-auto w-full p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
+  <div class="h-auto w-full p-[25px] md:p-[50px] lg:h-[30rem] lg:p-0">
     <div
       data-speed="0.9"
       id="intro_cards_container"
-      class="m-0 flex h-auto w-full overflow-x-scroll p-1 whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
+      class="h-auto w-full p-3 whitespace-nowrap lg:mx-[8rem] lg:my-[4rem] lg:ml-auto lg:w-[20rem] lg:overflow-visible lg:whitespace-normal"
     >
       <div
         id="first_intro_card"
-        class="mx-2 flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-yellow-300 pt-[1rem] pb-[1.5rem] lg:absolute lg:translate-x-20 lg:translate-y-20"
+        class="mx-2 inline-flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-yellow-300 pb-[1.5rem] lg:absolute lg:translate-x-20 lg:translate-y-20"
       >
-        <img src="/src/assets/images/cards_component/frostking-logo.png" alt class="h-[3rem]" />
+        <img
+          src="/src/assets/images/cards_component/frostking-logo.png"
+          alt
+          class="absolute top-6 h-[3rem]"
+        />
 
         <a class="mt-auto rounded-md bg-white p-[.2rem] text-[.75rem] uppercase underline"
           >www.frostking.com</a
@@ -42,9 +46,13 @@
       </div>
       <div
         id="second_intro_card"
-        class="mx-2 flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-green-300 pt-[1rem] pb-[1.5rem] lg:absolute lg:translate-x-10 lg:translate-y-10"
+        class="mx-2 inline-flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-green-300 pb-[1.5rem] lg:absolute lg:translate-x-10 lg:translate-y-10"
       >
-        <img src="/src/assets/images/cards_component/popweaver-logo.png" alt class="" />
+        <img
+          src="/src/assets/images/cards_component/popweaver-logo.png"
+          alt
+          class="absolute top-6"
+        />
 
         <a class="mt-auto rounded-md bg-white p-[.2rem] text-[.75rem] uppercase underline"
           >www.popweaver.com</a
@@ -52,9 +60,13 @@
       </div>
       <div
         id="third_intro_card"
-        class="mx-2 flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-blue-300 pt-[1.5rem] pb-[1.5rem] lg:absolute"
+        class="mx-2 inline-flex h-[17rem] w-[13rem] shrink-0 flex-col items-center rounded-[1.5rem] bg-blue-300 pb-[1.5rem] lg:absolute"
       >
-        <img src="/src/assets/images/cards_component/fastmail-logo.png" alt class="h-[1.5rem]" />
+        <img
+          src="/src/assets/images/cards_component/fastmail-logo.png"
+          alt
+          class="absolute top-8 h-[1.5rem]"
+        />
 
         <a class="mt-auto rounded-md bg-white p-[.2rem] text-[.75rem] uppercase underline"
           >www.fastmail.com</a
@@ -69,7 +81,16 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DownArrow from './items/DownArrow.vue'
 import { mediaQuery } from '@/assets/utils/mediaquery'
+import 'overlayscrollbars/overlayscrollbars.css'
+import {
+  OverlayScrollbars,
+  ScrollbarsHidingPlugin,
+  SizeObserverPlugin,
+  ClickScrollPlugin
+} from 'overlayscrollbars'
+import { onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
+OverlayScrollbars.plugin(ScrollbarsHidingPlugin, SizeObserverPlugin, ClickScrollPlugin)
 
 const videoAnimation = () => {
   var tl = gsap.timeline({
@@ -130,23 +151,25 @@ const introCards = () => {
   return tl
 }
 defineExpose({ videoAnimation, introCards })
-</script>
 
-<style scoped>
-@media (min-width: 1024px) {
-  #perscontainer {
-    perspective: 100;
-    perspective-origin: 150% 150%;
-    transform-style: preserve-3d;
+onMounted(() => {
+  if (!mediaQuery.matches) {
+    OverlayScrollbars(document.querySelector('#intro_cards_container'), {
+      overflow: {
+        x: 'scroll',
+        y: 'scroll'
+      },
+      scrollbars: {
+        theme: 'os-theme-dark',
+        visibility: 'auto',
+        autoHide: 'move',
+        autoHideDelay: 500,
+        autoHideSuspend: false,
+        dragScroll: true,
+        clickScroll: false,
+        pointers: ['mouse', 'touch', 'pen']
+      }
+    })
   }
-  #first {
-    transform: translateX(4rem) translateY(4rem) translateZ(10px);
-  }
-  #second {
-    transform: translateX(2rem) translateY(2rem) translateZ(20px);
-  }
-  #third {
-    transform: translateX(0rem) translateY(0rem) translateZ(30px);
-  }
-}
-</style>
+})
+</script>

@@ -42,20 +42,14 @@
       ></div>
     </div>
     <!-- right_image -->
-    <div data-speed="1.2" class="m-0 flex w-full lg:mt-auto lg:ml-auto lg:w-[28rem]">
-      <img
-        src="/src/assets/images/brands-big-component/d-angelico.png"
-        id="intro_right_img"
-        class="m-auto w-full origin-center rounded-none brightness-100 lg:rounded-[3rem]"
-        alt=""
-      />
-    </div>
+    <SlideImg data-speed="1.2" id="intro_right_img" class="lg:mt-auto lg:ml-auto" />
   </div>
 </template>
 
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import SlideImg from './items/SlideImg.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 const introText = () => {

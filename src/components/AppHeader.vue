@@ -6,6 +6,11 @@
           <p class="text-1xl hvr-underline-from-left font-bold">Portfolio</p>
         </RouterLink>
       </li>
+      <li>
+        <RouterLink to="/testcomponent">
+          <p class="text-1xl hvr-underline-from-left font-bold">TestField</p>
+        </RouterLink>
+      </li>
     </ul>
   </nav>
 </template>

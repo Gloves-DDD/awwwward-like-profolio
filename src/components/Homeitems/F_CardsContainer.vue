@@ -85,11 +85,34 @@
 </template>
 
 <script setup>
+import { mediaQuery } from '@/assets/utils/mediaquery'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AnimationCardComposition from './items/AnimationCardComposition.vue'
 import { onBeforeUnmount, onMounted } from 'vue'
+import { OverlayScrollbars, ScrollbarsHidingPlugin, ClickScrollPlugin } from 'overlayscrollbars'
 gsap.registerPlugin(ScrollTrigger)
+
+OverlayScrollbars.plugin(ScrollbarsHidingPlugin, ClickScrollPlugin)
+onMounted(() => {
+  if (!mediaQuery.matches) {
+    OverlayScrollbars(document.querySelector('#cards_container'), {
+      overflow: {
+        x: 'scroll'
+      },
+      scrollbars: {
+        theme: 'os-theme-dark',
+        visibility: 'auto',
+        autoHide: 'move',
+        autoHideDelay: 500,
+        autoHideSuspend: false,
+        dragScroll: true,
+        clickScroll: false,
+        pointers: ['mouse', 'touch', 'pen']
+      }
+    })
+  }
+})
 
 const cardsContainer = () => {
   gsap.set('#card_1', { yPercent: 0, xPercent: -200, rotateZ: -30 })
@@ -232,81 +255,82 @@ const cardsContainer = () => {
   tl.add(card_6)
   return tl
 }
-
 onMounted(() => {
-  let card_1 = document.getElementById('card_1')
-  let card_2 = document.getElementById('card_2')
-  let card_3 = document.getElementById('card_3')
-  let card_4 = document.getElementById('card_4')
-  let card_5 = document.getElementById('card_5')
-  let card_6 = document.getElementById('card_6')
-  // tl 1
-  let tl_card_1 = gsap
-    .timeline()
-    .to('#card_1', { rotateZ: 0, overwrite: false, duration: 0.5 })
-    .to('#card_2', { x: 100, overwrite: false, duration: 0.5 }, '<')
-  card_1.addEventListener('mouseenter', () => {
-    tl_card_1.play()
-  })
-  card_1.addEventListener('mouseleave', () => {
-    tl_card_1.reverse()
-  })
-  // tl 2
-  let tl_card_2 = gsap
-    .timeline()
-    .to('#card_2', { rotateZ: 0, overwrite: false, duration: 0.5 })
-    .to('#card_1', { x: -100, overwrite: false, duration: 0.5 }, '<')
-    .to('#card_3', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
-  card_2.addEventListener('mouseenter', () => {
-    tl_card_2.play()
-  })
-  card_2.addEventListener('mouseleave', () => {
-    tl_card_2.reverse()
-  })
-  // tl 3
-  let tl_card_3 = gsap
-    .timeline()
-    .to('#card_3', { rotateZ: 0, overwrite: false, duration: 0.5 })
-    .to('#card_2', { x: -100, overwrite: false, duration: 0.5 }, '<')
-    .to('#card_4', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
-  card_3.addEventListener('mouseenter', () => {
-    tl_card_3.play()
-  })
-  card_3.addEventListener('mouseleave', () => {
-    tl_card_3.reverse()
-  })
-  // tl 4
-  let tl_card_4 = gsap
-    .timeline()
-    .to('#card_4', { rotateZ: 0, overwrite: false, duration: 0.5 })
-    .to('#card_3', { x: -100, overwrite: false, duration: 0.5 }, '<')
-    .to('#card_5', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
-  card_4.addEventListener('mouseenter', () => {
-    tl_card_4.play()
-  })
-  card_4.addEventListener('mouseleave', () => {
-    tl_card_4.reverse()
-  })
-  // tl 5
-  let tl_card_5 = gsap
-    .timeline()
-    .to('#card_5', { rotateZ: 0, overwrite: false, duration: 0.5 })
-    .to('#card_4', { x: -100, overwrite: false, duration: 0.5 }, '<')
-    .to('#card_6', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
-  card_5.addEventListener('mouseenter', () => {
-    tl_card_5.play()
-  })
-  card_5.addEventListener('mouseleave', () => {
-    tl_card_5.reverse()
-  })
-  // tl 6
-  let tl_card_6 = gsap.timeline().to('#card_6', { rotateZ: 0, overwrite: false, duration: 0.5 })
-  card_6.addEventListener('mouseenter', () => {
-    tl_card_6.play()
-  })
-  card_6.addEventListener('mouseleave', () => {
-    tl_card_6.reverse()
-  })
+  if (mediaQuery.matches) {
+    let card_1 = document.getElementById('card_1')
+    let card_2 = document.getElementById('card_2')
+    let card_3 = document.getElementById('card_3')
+    let card_4 = document.getElementById('card_4')
+    let card_5 = document.getElementById('card_5')
+    let card_6 = document.getElementById('card_6')
+    // tl 1
+    let tl_card_1 = gsap
+      .timeline()
+      .to('#card_1', { rotateZ: 0, overwrite: false, duration: 0.5 })
+      .to('#card_2', { x: 100, overwrite: false, duration: 0.5 }, '<')
+    card_1.addEventListener('mouseenter', () => {
+      tl_card_1.play()
+    })
+    card_1.addEventListener('mouseleave', () => {
+      tl_card_1.reverse()
+    })
+    // tl 2
+    let tl_card_2 = gsap
+      .timeline()
+      .to('#card_2', { rotateZ: 0, overwrite: false, duration: 0.5 })
+      .to('#card_1', { x: -100, overwrite: false, duration: 0.5 }, '<')
+      .to('#card_3', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+    card_2.addEventListener('mouseenter', () => {
+      tl_card_2.play()
+    })
+    card_2.addEventListener('mouseleave', () => {
+      tl_card_2.reverse()
+    })
+    // tl 3
+    let tl_card_3 = gsap
+      .timeline()
+      .to('#card_3', { rotateZ: 0, overwrite: false, duration: 0.5 })
+      .to('#card_2', { x: -100, overwrite: false, duration: 0.5 }, '<')
+      .to('#card_4', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+    card_3.addEventListener('mouseenter', () => {
+      tl_card_3.play()
+    })
+    card_3.addEventListener('mouseleave', () => {
+      tl_card_3.reverse()
+    })
+    // tl 4
+    let tl_card_4 = gsap
+      .timeline()
+      .to('#card_4', { rotateZ: 0, overwrite: false, duration: 0.5 })
+      .to('#card_3', { x: -100, overwrite: false, duration: 0.5 }, '<')
+      .to('#card_5', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+    card_4.addEventListener('mouseenter', () => {
+      tl_card_4.play()
+    })
+    card_4.addEventListener('mouseleave', () => {
+      tl_card_4.reverse()
+    })
+    // tl 5
+    let tl_card_5 = gsap
+      .timeline()
+      .to('#card_5', { rotateZ: 0, overwrite: false, duration: 0.5 })
+      .to('#card_4', { x: -100, overwrite: false, duration: 0.5 }, '<')
+      .to('#card_6', { x: 100, y: -50, overwrite: false, duration: 0.5 }, '<')
+    card_5.addEventListener('mouseenter', () => {
+      tl_card_5.play()
+    })
+    card_5.addEventListener('mouseleave', () => {
+      tl_card_5.reverse()
+    })
+    // tl 6
+    let tl_card_6 = gsap.timeline().to('#card_6', { rotateZ: 0, overwrite: false, duration: 0.5 })
+    card_6.addEventListener('mouseenter', () => {
+      tl_card_6.play()
+    })
+    card_6.addEventListener('mouseleave', () => {
+      tl_card_6.reverse()
+    })
+  }
 })
 
 onBeforeUnmount(() => {})
