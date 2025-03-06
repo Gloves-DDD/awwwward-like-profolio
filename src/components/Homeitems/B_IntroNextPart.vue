@@ -38,11 +38,11 @@
     >
       <div
         id="intro_left_img"
-        class="m-auto h-full w-full rounded-[2.5rem] border-[0.7rem] border-blue-600 bg-blue-100 brightness-100 lg:h-[22rem] lg:w-[15rem]"
+        class="m-auto h-full w-full rounded-[2.5rem] border-[0.7rem] border-blue-600 brightness-100 lg:h-[22rem] lg:w-[15rem]"
       ></div>
     </div>
     <!-- right_image -->
-    <SlideImg data-speed="1.2" id="intro_right_img" class="lg:mt-auto lg:ml-auto" />
+    <SlideImg data-speed="1.2" id="intro_right_img" class="brightness-100 lg:mt-auto lg:ml-auto" />
   </div>
 </template>
 
@@ -106,7 +106,8 @@ const introImg = () => {
     .from(
       '#intro_right_img',
       {
-        scale: 0.7
+        scale: 0.7,
+        opacity: 0
       },
       '>1'
     )

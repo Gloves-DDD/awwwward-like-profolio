@@ -64,7 +64,7 @@
           <!-- 3 -->
           <div class="mr-[2rem] flex flex-col items-center">
             <div class="flex h-[5rem] items-center align-middle">
-              <img src="/src/assets/images/we-do-imgs/triangle_1.svg" alt="" class="h-[4rem]" />
+              <img src="/src/assets/images/we-do-imgs/triangle.svg" alt="" class="h-[4rem]" />
             </div>
             <p class="font-MabryPro text-[1.5rem] font-thin tracking-wide">Inventory Turnover</p>
           </div>
@@ -115,13 +115,11 @@
 </template>
 
 <script setup>
-import Matter from 'matter-js'
-import decomp from 'poly-decomp'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
-import { svg, logo_body } from '@/assets/utils/svg.js'
 import { mediaQuery } from '@/assets/utils/mediaquery'
+import { matterJsCanvas, reset } from '@/assets/utils/Matter'
 
 gsap.registerPlugin(ScrollTrigger)
 const what_we_do = [
@@ -133,13 +131,6 @@ const what_we_do = [
   'Customer Loyalty Programs',
   'Mobile Experience & Games'
 ]
-var we_do_bodies = []
-var screen_width = window.innerWidth
-var screen_height = window.innerHeight
-
-// 动画的骨架动画应该外置暴露
-// 而延迟加载应该在组件内部解决
-// 但这也应该是基于得到媒体查询的结果上进行
 
 // 暴露给外部的动画骨架
 const weDo = () => {
@@ -184,220 +175,6 @@ const weDo = () => {
   return tl
 }
 defineExpose({ weDo })
-
-function matterJsCanvas() {
-  var canvas = document.getElementById('canvas')
-  // 0.创建模组alias
-  var Engine = Matter.Engine,
-    Bodies = Matter.Bodies,
-    Composite = Matter.Composite,
-    Common = Matter.Common,
-    Render = Matter.Render,
-    Runner = Matter.Runner
-  // 1.创建引擎
-  var engine = Engine.create({
-    gravity: {
-      y: 1
-    },
-    timing: {
-      timeScale: 1.5
-    },
-    collision: { slop: 0.01 }
-  })
-  // 2.创建渲染
-  var render = Render.create({
-    engine: engine,
-    canvas: canvas,
-    mouse: mouse,
-    options: {
-      width: screen_width,
-      height: screen_height,
-      background: '#f5f5f5',
-      wireframes: false
-    }
-  })
-  // 3.创建鼠标
-  var mouse = Matter.Mouse.create(render.canvas)
-  var mouseConstraint = Matter.MouseConstraint.create(engine, {
-    mouse: mouse,
-    constraint: {
-      stiffness: 0.2,
-      render: {
-        visible: false
-      }
-    }
-  })
-  Composite.add(engine.world, mouseConstraint)
-  mouse.element.removeEventListener('wheel', mouse.mousewheel)
-  mouse.element.removeEventListener('DOMMouseScroll', mouse.mousewheel)
-
-  // 4.创建物体
-  Common.setDecomp(decomp)
-  //all_main_bodies
-  var color_option = [
-    '#AEADAE',
-    '#F0524F',
-    '#4EA661',
-    '#D6C1A4',
-    '#FCCC2E',
-    '#CF80B5',
-    '#FCCC2E',
-    '#795CA7'
-  ]
-  for (let i = 0; i < svg.length; i++) {
-    let mergedVertices = svg[i].flat()
-    let we_do_body = Bodies.fromVertices(
-      screen_width / 2,
-      100,
-      mergedVertices,
-      {
-        density: 0.5,
-        friction: 0.05,
-        frictionStatic: 1,
-        frictionAir: 0.01,
-        restitution: 0.5,
-        render: {
-          fillStyle: color_option[i]
-        },
-        decomp: {
-          decomp: decomp,
-          options: {
-            removeCollinearPoints: false, // 保留共线点
-            precision: 0.001 // 提高计算精度
-          }
-        }
-      },
-      false,
-      0.01,
-      10,
-      0.5
-    )
-    Matter.Body.scale(we_do_body, 0.9, 0.9)
-    Matter.Body.setVelocity(we_do_body, { x: 5, y: 5 })
-    we_do_bodies.push(we_do_body)
-  }
-  Composite.add(engine.world, we_do_bodies)
-  //center body
-  var center_logo_body = Bodies.fromVertices(screen_width / 2, screen_height / 2, logo_body, {
-    density: 0.01,
-    friction: 0.01,
-    frictionStatic: 0.5,
-    frictionAir: 0.01,
-    isStatic: true,
-    render: {
-      fillStyle: '#262626'
-    },
-    decomp: true
-  })
-  Composite.add(engine.world, center_logo_body)
-  // wall bodies
-  var offset = 1
-  var wallSize = 10
-  var wallbg = 'white'
-  var wall_option = {
-    isStatic: true,
-    render: {
-      fillStyle: wallbg
-    }
-  }
-  var wall_top = Bodies.rectangle(
-    window.innerWidth / 2,
-    -window.innerHeight,
-    window.innerWidth + 2 * offset,
-    wallSize,
-    wall_option
-  )
-  var wall_left = Bodies.rectangle(
-    -offset,
-    0,
-    wallSize,
-    window.innerHeight * 2 + 2 * offset,
-    wall_option
-  )
-  var wall_right = Bodies.rectangle(
-    window.innerWidth + offset,
-    0,
-    wallSize,
-    window.innerHeight * 2 + 2 * offset,
-    wall_option
-  )
-  var wall_bottom = Bodies.rectangle(
-    window.innerWidth / 2,
-    window.innerHeight + offset,
-    window.innerWidth + 2 * offset,
-    wallSize,
-    wall_option
-  )
-  var walls = Composite.create({ bodies: [wall_top, wall_left, wall_right, wall_bottom] })
-  Composite.add(engine.world, walls)
-
-  // 5.运行渲染器
-  Render.run(render)
-
-  // 6.创建运行器
-  var runner = Runner.create()
-  Runner.run(runner, engine)
-  for (let i = 0; i < we_do_bodies.length; i++) {
-    Matter.Events.on(runner, 'afterUpdate', function () {
-      var bodies_lable = [
-        'Sales and Market Share',
-        'Purchase Frequency',
-        'Cross-Shopping Rate',
-        'Inventory Turnover',
-        'Brand Loyalty',
-        'Share of Voice',
-        'Review Ratings',
-        'Loyalty Program Subscribers'
-      ]
-      var mouse_x = mouseConstraint.mouse.position.x
-      var mouse_y = mouseConstraint.mouse.position.y
-
-      if (
-        mouse_x >= we_do_bodies[i].bounds.min.x &&
-        mouse_x <= we_do_bodies[i].bounds.max.x &&
-        mouse_y >= we_do_bodies[i].bounds.min.y &&
-        mouse_y <= we_do_bodies[i].bounds.max.y
-      ) {
-        var canvas = document.getElementById('canvas')
-        var ctx = canvas.getContext('2d')
-        ctx.fillStyle = '#000000'
-        ctx.font = '2rem Sans-Serif'
-        ctx.textAlign = 'center'
-        ctx.fillText(bodies_lable[i], we_do_bodies[i].position.x, we_do_bodies[i].position.y)
-      }
-    })
-  }
-}
-function reset() {
-  for (let i = 0; i < we_do_bodies.length; i++) {
-    if (i === 0 || i === 5) {
-      Matter.Body.set(we_do_bodies[i], 'position', {
-        x: screen_width / 5,
-        y: -50 * ((i % 2) * 5)
-      })
-    } else if (i === 2 || i === 1) {
-      Matter.Body.set(we_do_bodies[i], 'position', {
-        x: (screen_width * 2) / 5,
-        y: -50 * ((i % 2) * 5)
-      })
-    } else if (i === 4 || i === 7) {
-      Matter.Body.set(we_do_bodies[i], 'position', {
-        x: (screen_width * 3) / 5,
-        y: -50 * ((i % 2) * 5)
-      })
-    } else if (i === 6 || i === 3) {
-      Matter.Body.set(we_do_bodies[i], 'position', {
-        x: (screen_width * 4) / 5,
-        y: -50 * ((i % 2) * 5)
-      })
-    } else {
-      Matter.Body.set(we_do_bodies[i], 'position', {
-        x: screen_width / 2,
-        y: -50 * ((i % 2) * 5)
-      })
-    }
-  }
-}
 
 // 延迟加载
 defineAsyncComponent(() =>

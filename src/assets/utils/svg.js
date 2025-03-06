@@ -1,116 +1,68 @@
 import { parseSVG, makeAbsolute } from 'svg-path-parser'
 import decomp from 'poly-decomp'
+import bottleA from '@/assets/images/we-do-imgs/bottle_1.svg?raw'
+import bottleB from '@/assets/images/we-do-imgs/bottle_1.svg?raw'
+import ellipseA from '@/assets/images/we-do-imgs/ellipse_1.svg?raw'
+import ellipseB from '@/assets/images/we-do-imgs/ellipse_2.svg?raw'
+import packA from '@/assets/images/we-do-imgs/pack_1.svg?raw'
+import packB from '@/assets/images/we-do-imgs/pack_2.svg?raw'
+import starA from '@/assets/images/we-do-imgs/star_1.svg?raw'
+import ellipseC from '@/assets/images/we-do-imgs/ellipse_3.svg?raw'
+import logo from '@/assets/images/we-do-imgs/edesign-logo.svg?raw'
 
-const svg_doc_string = `
-    //bottle_1
-    <svg width="330" height="100" data-text="Share of Voice" viewBox="0 0 330.45 99.64" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-	    <path  fill="#AEADAE" d="M330.06,36.44c-4.67-22.95-29.58-4.77-44.27-6.79c-2.4,0-4.87-0.01-7.27-0.02c-44.95-1.51-82.96-35-129.2-28.88	C112.19,0.66,74.44,0.57,37.32,0.49C7.24-1.95-2.88,15.29,0.68,43.31c0.64,12.97-1.59,26.74,1.11,39.44c10.25,23.14,41.02,14.76,61.16,16.38c19.72,0.04,40.59,0.09,60.31,0.13c10.81,0.02,23.66,0.05,34.46,0.07	c44.77,3.93,81.96-30.83,126.56-28.31c11.06-1.17,21.13,4.11,31.72,5.4C336.5,75.93,328.75,49.9,330.06,36.44z" />
-    </svg>
-
-    //bottle_2
-    <svg width="330" height="100" data-text="Brand Loyalty" viewBox="0 0 330.45 99.64" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-        <path fill="#F0524F" d="M330.06,36.44c-4.67-22.95-29.58-4.77-44.27-6.79c-2.4,0-4.87-0.01-7.27-0.02c-44.95-1.51-82.96-35-129.2-28.88C112.19,0.66,74.44,0.57,37.32,0.49C7.24-1.95-2.88,15.29,0.68,43.31c0.64,12.97-1.59,26.74,1.11,39.44c10.25,23.14,41.02,14.76,61.16,16.38c19.72,0.04,40.59,0.09,60.31,0.13c10.81,0.02,23.66,0.05,34.46,0.07c44.77,3.93,81.96-30.83,126.56-28.31c11.06-1.17,21.13,4.11,31.72,5.4C336.5,75.93,328.75,49.9,330.06,36.44z"/>
-    </svg>
-
-    //ellipse_1
-    <svg width="270" height="154" data-text="Inventory Turnover" viewBox="0 0 269.83 154.41" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-	    <path fill="#4EA661" d="M185.93,0.43C179.8,0.4,88.05,0,81.92,0C-28.64,0-25.94,154.02,81.84,154.4c8.63,0.03,98.06-0.02,103.56,0C296.88,154.4,298.89,0.43,185.93,0.43z" />
-    </svg>
-
-    //ellipse_2
-    <svg width="270" height="154" data-text="Cross-Shopping Rate" viewBox="0 0 269.83 154.41" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-	    <path fill="#D6C1A4" d="M185.93,0.43C179.8,0.4,88.05,0,81.92,0C-28.64,0-25.94,154.02,81.84,154.4c8.63,0.03,98.06-0.02,103.56,0C296.88,154.4,298.89,0.43,185.93,0.43z" />
-    </svg>
-
-    //pack_1
-    <svg width="241" height="132" data-text="Purchase Frequency" viewBox="0 0 241 132.3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-        <path fill="#FCCC2E" d="M241,100.3c-1.6-4.7-7.2-7.4-10.3-11.1c2.9-2.8,5.9-5.7,8.8-8.4c7.1-7.8-15.2-12.2-5.7-17.9c12.5-9.3,4.9-11.9-3.5-20c8.5-8.4,15.8-10.8,2.8-20.4c-5.6-3.7-2.9-5.8,0.8-9.2c15-14-7.5-13.3-18.7-13.3C205,0,203.1,6.8,186,6.8c-42.2,0-120.7,0.4-139.4,0.4c-12.3,0-20.9-7-34-7c-17.8,0-9,10.3-2.3,18.1c2.6,2.4-3.4,4.9-4.8,7.1c-15.8,11.3,12.7,14.3,2.1,21.3C-4.9,56,2.7,58.5,11,66.7C6.7,71.4-4.7,77.6,4.5,83.6c1.9,2.8,9.4,5.6,4.5,8.4c-10.6,9-10.2,10.3,0.4,19.3c8.9,5.9-33.9,20.8,12.8,20.8c9.9,0,20.4-6.2,33.9-6.2c29.6,0,53.9-0.2,83.5-0.3c17,0,33.3,0,50.3,0c16.4,0,21.9,6.9,33.6,6.9c26.4,0.2,13.2-11.9,6.9-19.6C233.6,108.7,240.4,105.8,241,100.3z"/>
-    </svg>
-
-    //pack_2
-    <svg width="241" height="132" data-text="Sales and Market Share" viewBox="0 0 241 132.3" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-        <path fill="#CF80B5" d="M241,100.3c-1.6-4.7-7.2-7.4-10.3-11.1c2.9-2.8,5.9-5.7,8.8-8.4c7.1-7.8-15.2-12.2-5.7-17.9c12.5-9.3,4.9-11.9-3.5-20c8.5-8.4,15.8-10.8,2.8-20.4c-5.6-3.7-2.9-5.8,0.8-9.2c15-14-7.5-13.3-18.7-13.3C205,0,203.1,6.8,186,6.8c-42.2,0-120.7,0.4-139.4,0.4c-12.3,0-20.9-7-34-7c-17.8,0-9,10.3-2.3,18.1c2.6,2.4-3.4,4.9-4.8,7.1c-15.8,11.3,12.7,14.3,2.1,21.3C-4.9,56,2.7,58.5,11,66.7C6.7,71.4-4.7,77.6,4.5,83.6c1.9,2.8,9.4,5.6,4.5,8.4c-10.6,9-10.2,10.3,0.4,19.3c8.9,5.9-33.9,20.8,12.8,20.8c9.9,0,20.4-6.2,33.9-6.2c29.6,0,53.9-0.2,83.5-0.3c17,0,33.3,0,50.3,0c16.4,0,21.9,6.9,33.6,6.9c26.4,0.2,13.2-11.9,6.9-19.6C233.6,108.7,240.4,105.8,241,100.3z"/>
-    </svg>
-
-    //star_1
-    <svg width="216" height="207" data-text="Loyalty Program Subscribers" viewBox="0 0 215.63 207.32" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-        <path fill="#FCCC2E" d="M215.58 80.4c-2.4-20.84-28.66-18.39-43.85-23.9-14.36-2.08-24.24-6.78-30.79-20.3C123.16 7.08 105-21.58 81.95 23.39 70.39 41.5 67.18 55.64 43.25 58.86c-30.42 6.93-62.07 16.25-29.54 49.3 7.85 11.74 23.59 20.99 24.1 36.11-3.52 63.77-5.88 78.21 60.12 47.67 30.76-17.91 96.78 61.02 83.63-33.82-.43-10.74-4.25-23.29 4.48-31.82 7.87-12.75 30.8-31.61 29.54-45.9z" />
-    </svg>
-
-    //triangle_1
-    <svg width="270" height="154" data-text="Inventory Turnover" viewBox="0 0 269.83 154.41" xmlns="http://www.w3.org/2000/svg" xml:space="preserve">
-	    <path fill="#4EA661" d="M185.93,0.43C179.8,0.4,88.05,0,81.92,0C-28.64,0-25.94,154.02,81.84,154.4c8.63,0.03,98.06-0.02,103.56,0C296.88,154.4,298.89,0.43,185.93,0.43z" />
-    </svg>
-`
-const logo_svg_element = `<svg xmlns="http://www.w3.org/2000/svg" fill="none" data-width="260" data-height="263" width="260" height="263" class="edesign-logo" viewBox="0 0 260 263">
-    <path fill="#202020" d="M256.436 41.013c-6.165-2.834-12.665-1.626-19.5 3.71-6.836 5.25-12.204 16.296-16.565 33.176v.084c-2.181 24.216-8.681 34.802-19.416 31.426-10.736-3.376-19.752-11.128-26.881-23.424-11.448-19.63-19.835-33.885-25.035-42.847-4.949-8.627-9.1-15.171-12.413-19.714-3.103-4.752-4.865-7.252-5.2-7.753-1.468-2.167-3.019-4.584-4.487-7.252-.797-1.459-1.719-2.75-3.019-4.043-3.02-3-6.584-4.46-10.736-4.376-4.235-.084-7.716 1.375-10.652 4.21-2.851 2.834-4.235 6.293-3.9 10.086.252 3.793 1.3 7.127 3.188 10.086 1.048 1.46 2.096 3.21 3.103 4.919 7.297 12.754 14.551 25.591 21.848 38.345.713 1.376 3.019 6.21 6.919 14.546 3.733 7.836 5.913 12.755 6.5 14.713-.083 2.918-1.803 3.877-5.2 2.751-1.719-1.042-5.787-4.126-12.035-9.294-6.332-5.169-11.113-9.295-14.216-12.504-3.187-3.376-6.668-6.46-10.316-9.378-3.733-2.918-7.549-6.377-11.449-10.337-1.132-1.042-4.403-4.126-9.603-9.294-4.151-4.127-7.003-6.878-8.597-8.378-.335-.334-2.18-2.084-5.535-5.168-2.097-2.001-4.487-4.043-7.297-6.46-2.852-2.585-5.787-4.127-8.68-4.752h-1.72c-.797 0-1.635 0-2.432.083-3.187.417-5.997 1.792-8.387 4.21-3.02 3-4.487 6.627-4.403 10.962-.084 2 .335 3.792 1.383 5.793.965 1.709 2.349 3.543 4.068 5.252 2.013 1.792 4.068 3.876 6.332 6.293 8.387 8.628 20.465 21.966 34.681 35.762 17.78 17.255 26.336 28.092 30.697 33.01 4.235 4.918 2.18 8.336.419 10.17-1.719 1.709-4.151 1.459-7.297-.709-2.935-2.167-9.016-6.126-18.116-11.628-7.548-4.585-22.016-14.713-43.696-30.343-2.433-1.96-4.949-4.043-7.633-6.21-1.048-.75-2.013-1.626-3.02-2.501-3.396-2.501-6.667-3.793-10.148-3.793-4.235 0-7.967 1.459-10.903 4.418-2.851 3-4.403 6.627-4.403 10.837 0 3.793 2.768 8.294 8.22 13.546 7.548 6.127 12.035 9.753 13.587 11.295l23.819 16.797c8.303 6.127 27.887 17.756 41.768 31.968 4.151 4.21-2.852 10.587-15.517 5.419-22.1-9.545-36.483-15.755-43.319-18.715-5.451-2.417-11.448-4.834-18.116-6.96-3.732 0-6.836 1.292-9.352 3.876-2.642 2.626-3.858 5.794-3.774 9.336-.084 3.543 1.132 6.628 3.816 9.295 1.468 1.459 3.48 2.834 5.997 4.21.42.333 1.468.958 3.187 1.709 2.516 1.292 8.303 4.459 17.32 9.669 8.932 5.169 22.1 14.463 39.587 28.176 8.219 6.294 15.013 11.712 20.464 16.297l13.881 11.295c2.684 2.042 5.2 3.876 7.632 5.585 10.316 7.252 23.232 11.879 38.665 14.213 17.487 1.709 31.996-3.876 43.403-17.047 11.448-13.171 22.603-24.466 33.716-33.677 11.113-9.295 18.2-29.718 18.619-54.268.336-26.967 4.781-60.31 8.597-77.566 5.032-23.007 7.716-36.261 1.552-39.096" />
-</svg>`
-var decomp_bodies = []
 const parser = new DOMParser()
 
-const svgs_doc = parser.parseFromString(svg_doc_string, 'text/html')
-for (let i = 0; i < svgs_doc.body.children.length; i++) {
-  let svgs_elements = svgs_doc.body.children[i]
-  let svgs_d = svgs_elements.querySelector('path').getAttribute('d')
-  let svgs_vertices = parseSVGPath(svgs_d)
-  let decomp_body = decomp.quickDecomp(svgs_vertices)
+//export 所有svg的坐标集
+var svgElements = [bottleA, bottleB, ellipseA, ellipseB, packA, packB, starA, ellipseC]
+var domSvgElements = []
+var decomp_bodies = []
+for (let i = 0; i < svgElements.length; i++) {
+  const domSvgElement = parser.parseFromString(svgElements[i], 'image/svg+xml')
+  domSvgElements.push(domSvgElement)
+}
+
+for (let i = 0; i < domSvgElements.length; i++) {
+  let dom_svg_element = domSvgElements[i]
+  let dom_svg_path_d = dom_svg_element.querySelector('path').getAttribute('d')
+  let svg_vertices = parseSVGPath(dom_svg_path_d)
+  let decomp_body = decomp.quickDecomp(svg_vertices)
   decomp_bodies.push(decomp_body)
 }
-export const svg = decomp_bodies
+export const svg_coordinates = decomp_bodies
 
-const logo_svg_doc = parser.parseFromString(logo_svg_element, 'text/html')
-let logo_svg = logo_svg_doc.body.children[0]
+//export logo的坐标集
+const logo_svg = parser.parseFromString(logo, 'text/html')
 let logo_svg_d = logo_svg.querySelector('path').getAttribute('d')
 let logo_vertices = parseSVGPath(logo_svg_d)
-export const logo_body = decomp.quickDecomp(logo_vertices)
+console.log(logo_vertices)
+export const logo_coordinates = decomp.decomp(logo_vertices)
 
-// 提取顶点
+// 函数：提取SVG元素的坐标顶点
 function parseSVGPath(pathData) {
   const commands = makeAbsolute(parseSVG(pathData))
   const vertices = []
-  commands.forEach((command) => {
-    switch (command.code) {
-      case 'M': {
-        vertices.push({ x: command.x, y: command.y })
-        break
-      }
-      case 'H': {
-        vertices.push({ x: command.x0, y: command.y0 })
-        vertices.push({ x: command.x, y: command.y })
-        break
-      }
-      case 'L': {
-        vertices.push({ x: command.x0, y: command.y0 })
-        vertices.push({ x: command.x, y: command.y })
-        break
-      }
-      case 'C': {
-        const cPoints = subdivideCubic(command)
-        cPoints.forEach((p) => vertices.push({ x: p.x, y: p.y }))
-        break
-      }
-      case 'Z': {
-        vertices.push({ x: command.x, y: command.y })
-        break
-      }
-      case 'V': {
-        vertices.push({ x: command.x0, y: command.y0 })
-        vertices.push({ x: command.x, y: command.y })
-        break
-      }
-      default: {
-        console.warn(`未处理的命令: ${command.code}`)
-        break
-      }
+  for (let i = 0; i < commands.length; i++) {
+    if (
+      commands[i].code === 'M' ||
+      commands[i].code === 'L' ||
+      commands[i].code === 'V' ||
+      commands[i].code === 'H' ||
+      commands[i].code === 'T' ||
+      commands[i].code === 'Z'
+    ) {
+      vertices.push({ x: commands[i].x, y: commands[i].y })
+    } else if (commands[i].code === 'C') {
+      const cPoints = subdivideCubic(commands[i])
+      var cleanedPolygon = roundPoints(removeDuplicates(cPoints))
+      cleanedPolygon.forEach((p) => vertices.push({ x: p.x, y: p.y }))
     }
-  })
-
+  }
   return vertices
 }
-// 处理三次贝塞尔曲线C的函数图像
-function subdivideCubic(command, segments = 20) {
+// 函数：提取三次贝塞尔曲线C的函数坐标顶点
+function subdivideCubic(command, segments = 14) {
   const points = []
-  for (let i = 0; i <= segments; i++) {
+  for (let i = 1; i <= segments; i++) {
     const t = i / segments
     const x =
       (1 - t) ** 3 * command.x0 +
@@ -125,4 +77,17 @@ function subdivideCubic(command, segments = 20) {
     points.push({ x, y })
   }
   return points
+}
+// 移除重复顶点
+function removeDuplicates(points, tolerance = 0.1) {
+  return points.filter((point, index) => {
+    const prev = points[index - 1]
+    return !prev || Math.abs(point.x - prev.x) > tolerance || Math.abs(point.y - prev.y) > tolerance
+  })
+}
+function roundPoints(points, decimals = 2) {
+  return points.map((p) => ({
+    x: Number(p.x.toFixed(decimals)),
+    y: Number(p.y.toFixed(decimals))
+  }))
 }

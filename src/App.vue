@@ -2,7 +2,7 @@
   <div id="smooth-wrapper">
     <AppHeader />
     <div id="smooth-content">
-      <RouterView class="scrollbar-thin scrollbar-thumb-sky-700 scrollbar-track-sky-300" />
+      <RouterView />
     </div>
   </div>
 </template>

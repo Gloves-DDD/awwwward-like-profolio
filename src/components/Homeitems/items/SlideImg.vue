@@ -35,7 +35,7 @@
       <img
         src="@/assets/images/brands-big-component/d-angelico.png"
         alt
-        class="h-auto w-full opacity-0 brightness-50 lg:h-screen"
+        class="h-auto w-full opacity-0 brightness-0 lg:h-screen"
       />
     </div>
   </div>
@@ -127,18 +127,15 @@ const startAutoplay = () => {
   autoplayTimer = setInterval(nextSlide, props.interval)
 }
 
-const img_group_tl = gsap.timeline().to('.img-group', { scale: 2 })
 // mouseenter
 const pauseAutoplay = () => {
   clearInterval(autoplayTimer)
-  img_group_tl.play()
 }
 // mouseleave
 const resumeAutoplay = () => {
   if (props.autoplay) {
     autoplayTimer = setInterval(nextSlide, props.interval)
   }
-  img_group_tl.reverse()
 }
 const nextSlide = () => {
   const newIndex = (currentIndex.value + 1) % images.length

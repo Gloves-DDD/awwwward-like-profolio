@@ -29,7 +29,7 @@
       </g>
       <!-- 3 三角形 -->
       <g :transform="`translate(${width / 2} ${(height * 11) / 20})`">
-        <image x="-100" y="-50" width="200" href="/src/assets/images/we-do-imgs/triangle_1.svg" />
+        <image x="-100" y="-50" width="200" :href="TriangleUrl" />
       </g>
 
       <!-- 4 固定底部图形（颜色变化） -->
@@ -52,6 +52,7 @@
 <script setup>
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { gsap } from 'gsap'
+import TriangleUrl from '/src/assets/images/we-do-imgs/triangle.svg'
 
 const props = defineProps({
   width: {

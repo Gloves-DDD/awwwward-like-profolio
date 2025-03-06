@@ -37,6 +37,7 @@
     <circle cx="100" cy="100" r="35" class="fill-none stroke-white" />
   </svg>
 </template>
+
 <script setup>
 import gsap from 'gsap'
 function rotateCircle() {
