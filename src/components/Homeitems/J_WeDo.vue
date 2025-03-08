@@ -118,8 +118,8 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
-import { mediaQuery } from '@/assets/utils/mediaquery'
-import { matterJsCanvas, reset } from '@/assets/utils/Matter'
+import { mediaQuery } from '@/utils/mediaquery'
+import { matterJsCanvas, reset } from '@/utils/Matter'
 
 gsap.registerPlugin(ScrollTrigger)
 const what_we_do = [

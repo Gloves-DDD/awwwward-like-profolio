@@ -85,7 +85,7 @@
 </template>
 
 <script setup>
-import { mediaQuery } from '@/assets/utils/mediaquery'
+import { mediaQuery } from '@/utils/mediaquery'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AnimationCardComposition from './items/AnimationCardComposition.vue'

@@ -20,17 +20,27 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import lottie from 'lottie-web'
+import { getDeviceTier } from '@/utils/deviceTier'
 
 const animation = ref(null)
 const showLoader = ref(true)
 const minimumShowTime = 1500 // 最小展示时间（毫秒）
 let loadStartTime = Date.now()
+const selectRenderer = () => {
+  const tier = getDeviceTier()
+
+  return {
+    high: 'svg', // 高性能设备：矢量渲染
+    medium: 'canvas', // 中端设备：位图渲染
+    low: 'html' // 低端设备：DOM 回退
+  }[tier]
+}
 
 // 初始化动画
 const initAnimation = () => {
   animation.value = lottie.loadAnimation({
     container: document.getElementById('lottie-loader'),
-    renderer: 'svg',
+    renderer: selectRenderer(),
     loop: false,
     autoplay: true,
     path: '/src/assets/animations/loading.json',
@@ -58,6 +68,16 @@ const handleLoadFinish = () => {
       animation.value = null
     }
   }, remainingTime)
+
+  // 首屏 FCP 优化
+  const paintObserver = new PerformanceObserver((list) => {
+    for (const entry of list.getEntries()) {
+      if (entry.name === 'first-contentful-paint') {
+        console.log('FCP:', entry.startTime)
+      }
+    }
+  })
+  paintObserver.observe({ type: 'paint', buffered: true })
 }
 
 // 主加载监听

@@ -80,7 +80,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import DownArrow from './items/DownArrow.vue'
-import { mediaQuery } from '@/assets/utils/mediaquery'
+import { mediaQuery } from '@/utils/mediaquery'
 import 'overlayscrollbars/overlayscrollbars.css'
 import {
   OverlayScrollbars,

@@ -132,7 +132,7 @@
 import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { mediaQuery } from '@/assets/utils/mediaquery'
+import { mediaQuery } from '@/utils/mediaquery'
 import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
 import RotateLogoComponent from './items/RotateLogoComponent.vue'
 
