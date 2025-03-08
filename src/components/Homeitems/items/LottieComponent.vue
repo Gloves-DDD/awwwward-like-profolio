@@ -20,22 +20,17 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 import lottie from 'lottie-web'
-import { getDeviceTier } from '@/utils/deviceTier'
 
 const animation = ref(null)
 const showLoader = ref(true)
 const minimumShowTime = 1500 // 最小展示时间（毫秒）
 let loadStartTime = Date.now()
+
+// 根据设备类型动态选择渲染器
 const selectRenderer = () => {
-  const tier = getDeviceTier()
-
-  return {
-    high: 'svg', // 高性能设备：矢量渲染
-    medium: 'canvas', // 中端设备：位图渲染
-    low: 'html' // 低端设备：DOM 回退
-  }[tier]
+  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+  return isMobile ? 'canvas' : 'svg' // 移动端优先使用 Canvas
 }
-
 // 初始化动画
 const initAnimation = () => {
   animation.value = lottie.loadAnimation({
@@ -103,3 +98,12 @@ onBeforeUnmount(() => {
   }
 })
 </script>
+
+<style>
+#lottie-container {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+</style>
