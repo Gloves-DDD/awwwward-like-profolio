@@ -33,12 +33,10 @@
   <!-- 02 / INTRO IMG / 简短案例展示-->
   <div data-speed="1" id="intro_img_group" class="block h-auto lg:flex lg:h-[140vh] lg:px-[11rem]">
     <!-- left_image -->
-    <div
-      class="flex aspect-[2/3] w-full p-[25px] md:p-[50px] lg:aspect-auto lg:h-[22rem] lg:w-[15rem] lg:p-0"
-    >
+    <div class="flex h-auto w-auto p-[25px] md:p-[50px] lg:h-[22rem] lg:w-[15rem] lg:p-0">
       <div
         id="intro_left_img"
-        class="m-auto h-full w-full rounded-[2.5rem] border-[0.7rem] border-blue-600 brightness-100 lg:h-[22rem] lg:w-[15rem]"
+        class="m-auto aspect-[15/22] w-[min(45vw,15rem)] rounded-[2.5rem] border-[0.7rem] border-blue-600 brightness-100"
       ></div>
     </div>
     <!-- right_image -->

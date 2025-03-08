@@ -23,5 +23,18 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        // 将 Lottie 相关资源独立打包
+        manualChunks: {
+          lottie: ['lottie-web']
+        }
+      }
+    }
+  },
+  optimizeDeps: {
+    include: ['lottie-web']
   }
 })
