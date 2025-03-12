@@ -55,7 +55,7 @@
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted } from 'vue'
 import { mediaQuery } from '@/utils/mediaquery'
 import A_IntroPart from '@/components/Homeitems/A_IntroPart.vue'
 import B_IntroNextPart from '@/components/Homeitems/B_IntroNextPart.vue'
@@ -69,23 +69,9 @@ import J_WeDo from '@/components/Homeitems/J_WeDo.vue'
 import K_ClientsLoveOurWork from '@/components/Homeitems/K_ClientsLoveOurWork.vue'
 import L_WeLoveOurClients from '@/components/Homeitems/L_WeLoveOurClients.vue'
 import M_ContactWithUs from '@/components/Homeitems/M_ContactWithUs.vue'
-
 gsap.registerPlugin(ScrollTrigger)
 gsap.registerPlugin(ScrollSmoother)
-const refA = ref(null),
-  refB = ref(null),
-  refC = ref(null),
-  refD = ref(null),
-  refE = ref(null),
-  refF = ref(null),
-  refH = ref(null),
-  refI = ref(null),
-  refJ = ref(null),
-  refK = ref(null),
-  refL = ref(null),
-  refM = ref(null)
 
-let ctx
 onMounted(() => {
   if (mediaQuery.matches) {
     ScrollSmoother.create({
@@ -94,29 +80,7 @@ onMounted(() => {
       smoothTouch: 0.1,
       speed: 0.65
     })
-    ctx = gsap.context(() => {
-      gsap
-        .timeline()
-        .add(refA.value.videoAnimation())
-        .add(refA.value.introCards())
-        .add(refB.value.introText())
-        .add(refB.value.introImg())
-        .add(refC.value.explain())
-        .add(refD.value.SVGMarqueeTransition())
-        .add(refD.value.blackWindowContainer())
-        .add(refE.value.eyeGrabbing())
-        .add(refF.value.cardsContainer())
-        .add(refH.value.brandStories())
-        .add(refI.value.slideContainer())
-        .add(refJ.value.weDo())
-        .add(refK.value.clientsLoveOurWork())
-        .add(refL.value.weLoveOurClients())
-        .add(refM.value.contactWithUs())
-    })
   }
-})
-onUnmounted(() => {
-  ctx.revert()
 })
 </script>
 

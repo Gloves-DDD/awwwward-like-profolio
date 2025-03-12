@@ -117,11 +117,11 @@
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
+import { defineAsyncComponent, onBeforeUnmount, onMounted, onUnmounted, ref } from 'vue'
 import { mediaQuery } from '@/utils/mediaquery'
 import { matterJsCanvas, reset } from '@/utils/Matter'
-
 gsap.registerPlugin(ScrollTrigger)
+
 const what_we_do = [
   'rebranding',
   'Product Campaigns & Promotions',
@@ -132,57 +132,14 @@ const what_we_do = [
   'Mobile Experience & Games'
 ]
 
-// 暴露给外部的动画骨架
-const weDo = () => {
-  gsap.set('#bg_logo', { transformOrigin: 'center', scale: 8, opacity: 0 })
-
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#we_do',
-        toggleActions: 'play pause',
-        start: 'top top',
-        end: '+=700',
-        scrub: 1,
-        pin: true,
-        fastScrollEnd: true,
-        anticipatePin: 1
-      }
-    })
-    .to('#bg_logo', {
-      opacity: 1,
-      duration: 2
-    })
-    .to('#we_do_list', {
-      opacity: 0
-    })
-    .to('#bg_logo', {
-      scale: 1,
-      duration: 4
-    })
-    .to('.transition_group', {
-      scale: 0.01,
-      opacity: 0,
-      duration: 8,
-      onStart: () => {
-        reset()
-      }
-    })
-    .to('#bg_logo', {
-      duration: 12
-    })
-  return tl
-}
-defineExpose({ weDo })
-
-// 延迟加载
+// 按需加载
 defineAsyncComponent(() =>
   import('vue3-marquee').then((module) => {
     return module.Vue3Marquee
   })
 )
 
+// 延迟加载
 const we_do_container = ref(null)
 const marqueeIsLoaded = ref(false)
 let observer
@@ -206,5 +163,53 @@ onUnmounted(() => {
   if (observer) {
     observer.disconnect()
   }
+})
+
+let weDoAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  weDoAnimation.add('(min-width: 1025px)', () => {
+    gsap.set('#bg_logo', { transformOrigin: 'center', scale: 8, opacity: 0 })
+
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#we_do',
+          toggleActions: 'play pause',
+          start: 'top top',
+          end: '+=700',
+          scrub: 1,
+          pin: true,
+          fastScrollEnd: true,
+          anticipatePin: 1
+        }
+      })
+      .to('#bg_logo', {
+        opacity: 1,
+        duration: 2
+      })
+      .to('#we_do_list', {
+        opacity: 0
+      })
+      .to('#bg_logo', {
+        scale: 1,
+        duration: 4
+      })
+      .to('.transition_group', {
+        scale: 0.05,
+        opacity: 0,
+        duration: 8,
+        onStart: () => {
+          reset()
+        }
+      })
+      .to('#bg_logo', {
+        duration: 12
+      })
+  })
+})
+onBeforeUnmount(() => {
+  weDoAnimation.revert()
 })
 </script>

@@ -154,134 +154,136 @@
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
-const clientsLoveOurWork = () => {
-  gsap.set('.background_layer', { background: '#ecfeff' })
-  gsap.set('#blue_card', { yPercent: 0, transformOrigin: 'top' })
-  gsap.set('#yellow_card', { yPercent: 40, transformOrigin: 'top' })
-  gsap.set('#green_card', { yPercent: -60, transformOrigin: 'top' })
+let clientsLoveOurWorkAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  clientsLoveOurWorkAnimation.add('(min-width: 1025px)', () => {
+    gsap.set('.background_layer', { background: '#ecfeff' })
+    gsap.set('#blue_card', { yPercent: 0, transformOrigin: 'top' })
+    gsap.set('#yellow_card', { yPercent: 40, transformOrigin: 'top' })
+    gsap.set('#green_card', { yPercent: -60, transformOrigin: 'top' })
 
-  // 入场动画
-  var tl_1 = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#clients_love_our_work',
-        toggleActions: 'play pause',
-        start: 'top 90%',
-        end: '+=400',
-        anticipatePin: 1
-      }
-    })
-    .from('#clients_first_line', {
-      opacity: 0,
-      y: -60
-    })
-    .from(
-      '#clients_second_line',
-      {
+    // 入场动画
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#clients_love_our_work',
+          toggleActions: 'play pause',
+          start: 'top 90%',
+          end: '+=400',
+          anticipatePin: 1
+        }
+      })
+      .from('#clients_first_line', {
         opacity: 0,
-        y: 60
-      },
-      '<'
-    )
+        y: -60
+      })
+      .from(
+        '#clients_second_line',
+        {
+          opacity: 0,
+          y: 60
+        },
+        '<'
+      )
 
-  // 动画
-  var tl_2 = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#clients_love_our_work',
-        toggleActions: 'play pause',
-        start: 'top top',
-        end: '+=800',
-        scrub: 1,
-        fastScrollEnd: true,
-        pin: true,
-        anticipatePin: 1
-      }
-    })
-    //黄色入场
-    .to('#yellow_card', {
-      yPercent: -85
-    })
-    //同时蓝色缩小
-    .to(
-      '#blue_card',
-      {
-        scale: 0.95
-      },
-      '<'
-    )
-    //同时背景变黄
-    .to(
-      '.background_layer',
-      {
-        backgroundColor: '#fbf9c2'
-      },
-      '<'
-    )
-    //绿色入场
-    .to('#green_card', {
-      yPercent: -180
-    })
-    //同时蓝色再变小
-    .to(
-      '#blue_card',
-      {
-        scale: 0.9
-      },
-      '<'
-    )
-    //同时黄色变小
-    .to(
-      '#yellow_card',
-      {
-        scale: 0.95
-      },
-      '<'
-    )
-    //同时背景变绿
-    .to(
-      '.background_layer',
-      {
-        backgroundColor: '#cbdfb1'
-      },
-      '<'
-    )
+    // 动画
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#clients_love_our_work',
+          toggleActions: 'play pause',
+          start: 'top top',
+          end: '+=800',
+          scrub: 1,
+          fastScrollEnd: true,
+          pin: true,
+          anticipatePin: 1
+        }
+      })
+      //黄色入场
+      .to('#yellow_card', {
+        yPercent: -85
+      })
+      //同时蓝色缩小
+      .to(
+        '#blue_card',
+        {
+          scale: 0.95
+        },
+        '<'
+      )
+      //同时背景变黄
+      .to(
+        '.background_layer',
+        {
+          backgroundColor: '#fbf9c2'
+        },
+        '<'
+      )
+      //绿色入场
+      .to('#green_card', {
+        yPercent: -180
+      })
+      //同时蓝色再变小
+      .to(
+        '#blue_card',
+        {
+          scale: 0.9
+        },
+        '<'
+      )
+      //同时黄色变小
+      .to(
+        '#yellow_card',
+        {
+          scale: 0.95
+        },
+        '<'
+      )
+      //同时背景变绿
+      .to(
+        '.background_layer',
+        {
+          backgroundColor: '#cbdfb1'
+        },
+        '<'
+      )
 
-  // 离场动画
-  var tl_3 = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#clients_love_our_work',
-        toggleActions: 'play pause',
-        start: 'bottom 95%',
-        end: '+=600',
-        scrub: 0.5,
-        anticipatePin: 1
-      }
-    })
-    .to('#client_lines', { y: -80, duration: 3 })
+    // 离场动画
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#clients_love_our_work',
+          toggleActions: 'play pause',
+          start: 'bottom 95%',
+          end: '+=600',
+          scrub: 0.5,
+          anticipatePin: 1
+        }
+      })
+      .to('#client_lines', { y: -80, duration: 3 })
 
-    .to('#blue_card', { yPercent: -20, duration: 3 }, '<')
+      .to('#blue_card', { yPercent: -20, duration: 3 }, '<')
 
-    .to('#blue_card', { yPercent: -40, duration: 3 })
-    .to('#yellow_card', { yPercent: -102, duration: 3 }, '<')
+      .to('#blue_card', { yPercent: -40, duration: 3 })
+      .to('#yellow_card', { yPercent: -102, duration: 3 }, '<')
 
-    .to('#blue_card', { yPercent: -60, duration: 3 })
-    .to('#yellow_card', { yPercent: -125, duration: 3 }, '<')
-    .to('#green_card', { yPercent: -200, duration: 3 }, '<')
-    // 背景颜色变回正常颜色
-    .to('.background_layer', { backgroundColor: '#f5f5f5', duration: 2 })
-    .to('#cards_layer', { y: -60, duration: 5 }, '<')
-
-  tl_1.add(tl_2)
-  tl_1.add(tl_3)
-
-  return tl_1
-}
-defineExpose({ clientsLoveOurWork })
+      .to('#blue_card', { yPercent: -60, duration: 3 })
+      .to('#yellow_card', { yPercent: -125, duration: 3 }, '<')
+      .to('#green_card', { yPercent: -200, duration: 3 }, '<')
+      // 背景颜色变回正常颜色
+      .to('.background_layer', { backgroundColor: '#f5f5f5', duration: 2 })
+      .to('#cards_layer', { y: -60, duration: 5 }, '<')
+  })
+})
+onBeforeUnmount(() => {
+  clientsLoveOurWorkAnimation.revert()
+})
 </script>

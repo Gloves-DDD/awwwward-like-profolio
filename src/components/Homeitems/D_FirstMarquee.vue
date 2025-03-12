@@ -80,7 +80,7 @@
           <p class="mr-[4rem] text-[2rem] text-white uppercase">❉ parts that represent a whole</p>
         </Vue3Marquee>
       </div>
-      <div id="text_next_svg_marquee" class="h-auto w-full border-4 border-black bg-neutral-800">
+      <div id="text_next_svg_marquee" class="h-auto w-full border-t-2 border-black bg-neutral-800">
         <div class="p-[25px] md:p-[50px] lg:p-[4rem]">
           <p class="font-MabryPro text-sm text-white uppercase">rethink your product story</p>
           <p
@@ -135,86 +135,88 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { mediaQuery } from '@/utils/mediaquery'
 import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
 import RotateLogoComponent from './items/RotateLogoComponent.vue'
-
+import { onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
-function SVGMarqueeTransition() {
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#svg_marquee_container',
-        toggleActions: 'play pause',
-        start: 'middle middle',
-        end: '+=300',
-        pin: true,
-        scrub: 0.5
-      }
-    })
-    .to('#svg_marquee', {
-      scale: 1,
-      borderRadius: 0,
-      duration: 5
-    })
-    .to(
-      '#color_marquee',
-      {
-        opacity: 0,
-        duration: 3
-      },
-      '<'
-    )
-    .from('#text_next_intro_marquee', {
-      opacity: 0,
-      duration: 1
-    })
-    .from(
-      '#text_next_svg_marquee',
-      {
+//动画部分
+let firstMarqueeAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  firstMarqueeAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#svg_marquee_container',
+          toggleActions: 'play pause',
+          start: 'middle middle',
+          end: '+=300',
+          pin: true,
+          scrub: 0.5
+        }
+      })
+      .to('#svg_marquee', {
+        scale: 1,
+        borderRadius: 0,
+        duration: 7
+      })
+      .to(
+        '#color_marquee',
+        {
+          opacity: 0,
+          duration: 3
+        },
+        '<'
+      )
+      .from('#text_next_intro_marquee', {
         opacity: 0,
         duration: 1
+      })
+      .from(
+        '#text_next_svg_marquee',
+        {
+          opacity: 0,
+          duration: 1
+        },
+        '<'
+      )
+  })
+  firstMarqueeAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '#black_window_container',
+          toggleActions: 'play pause',
+          start: 'top 90%',
+          end: '+=300',
+          anticipatePin: 1,
+          scrub: 1
+        }
+      })
+      .fromTo('#black_window_center', { scale: 1.4 }, { scale: 1 }, '<')
+
+    gsap.timeline().to(
+      '#black_window_container',
+      {
+        scale: 0.5,
+        borderRadius: '2.5rem',
+        filter: 'brightness(0)',
+        scrollTrigger: {
+          trigger: '#black_window_warpper',
+          toggleActions: 'play pause',
+          start: 'center center',
+          end: '+=500',
+          fastScrollEnd: true,
+          pin: true,
+          scrub: 0
+        }
       },
-      '<'
+      '<2'
     )
-
-  return tl
-}
-function blackWindowContainer() {
-  var tl = gsap
-    .timeline({
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '#black_window_container',
-        toggleActions: 'play pause',
-        start: 'top 90%',
-        end: '+=300',
-        anticipatePin: 1,
-        scrub: 1
-      }
-    })
-    .fromTo('#black_window_center', { scale: 1.4 }, { scale: 1.2 }, '<')
-
-  var tll = gsap.timeline().to(
-    '#black_window_container',
-    {
-      scale: 0.5,
-      borderRadius: '2.5rem',
-      filter: 'brightness(0)',
-      scrollTrigger: {
-        trigger: '#black_window_warpper',
-        toggleActions: 'play pause',
-        start: 'center center',
-        end: '+=500',
-        fastScrollEnd: true,
-        pin: true,
-        scrub: 0
-      }
-    },
-    '<2'
-  )
-
-  tl.add(tll)
-  return tl
-}
-defineExpose({ SVGMarqueeTransition, blackWindowContainer })
+  })
+})
+onBeforeUnmount(() => {
+  firstMarqueeAnimation.revert()
+})
 </script>

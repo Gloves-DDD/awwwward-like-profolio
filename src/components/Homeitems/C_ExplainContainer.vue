@@ -17,25 +17,31 @@
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
-const explain = () => {
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#explain_container',
-        toggleActions: 'play pause',
-        start: 'top 70%',
-        end: '+=300',
-        scrub: 1
-      }
-    })
-    .from('#explain', {
-      y: '8rem'
-    })
-
-  return tl
-}
-defineExpose({ explain })
+//动画部分
+let explainContainerAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  explainContainerAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#explain_container',
+          toggleActions: 'play pause',
+          start: 'top 70%',
+          end: '+=300',
+          scrub: 1
+        }
+      })
+      .from('#explain', {
+        y: '8rem'
+      })
+  })
+})
+onBeforeUnmount(() => {
+  explainContainerAnimation.revert()
+})
 </script>

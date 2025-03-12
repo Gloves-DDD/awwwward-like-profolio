@@ -25,6 +25,7 @@
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { onBeforeUnmount, onMounted } from 'vue'
 import { Vue3Marquee } from 'vue3-marquee'
 gsap.registerPlugin(ScrollTrigger)
 
@@ -37,30 +38,35 @@ const brand_stories_marquee_value = [
   '¯all-around good product havers',
   '¯legends'
 ]
-const brandStories = () => {
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#brand_stories',
-        toggleActions: 'play pause',
-        start: 'top 90%',
-        end: '+=400',
-        scrub: 1
-      }
-    })
-    .from('#brand_stories_text_content', {
-      yPercent: 100
-    })
-    .from(
-      '#brand_stories_text_container',
-      {
-        yPercent: -100
-      },
-      '<'
-    )
 
-  return tl
-}
-defineExpose({ brandStories })
+let brandStoriesAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  brandStoriesAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#brand_stories',
+          toggleActions: 'play pause',
+          start: 'top 90%',
+          end: '+=400',
+          scrub: 1
+        }
+      })
+      .from('#brand_stories_text_content', {
+        yPercent: 100
+      })
+      .from(
+        '#brand_stories_text_container',
+        {
+          yPercent: -100
+        },
+        '<'
+      )
+  })
+})
+onBeforeUnmount(() => {
+  brandStoriesAnimation.revert()
+})
 </script>

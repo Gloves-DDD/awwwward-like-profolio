@@ -62,19 +62,18 @@
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { defineAsyncComponent, ref, onMounted, onUnmounted } from 'vue'
+import { defineAsyncComponent, ref, onMounted, onUnmounted, onBeforeUnmount } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
-// 延迟加载
-const contact_with_us_container = ref(null)
-const isLoaded = ref(false)
-
+// 按需加载
 defineAsyncComponent(() =>
   import('vue3-marquee').then((module) => {
     return module.Vue3Marquee
   })
 )
-
+// 延迟加载
+const contact_with_us_container = ref(null)
+const isLoaded = ref(false)
 let observer
 onMounted(() => {
   observer = new IntersectionObserver(
@@ -98,6 +97,7 @@ onUnmounted(() => {
   }
 })
 
+// 动画需求变量
 const logo_imgs = [
   { src: '/cpg-contact-section/css-design-awards.png', id: '13' },
   { src: '/cpg-contact-section/davey-awards.png', id: '20' },
@@ -107,43 +107,49 @@ const logo_imgs = [
   { src: '/cpg-contact-section/w.png', id: '05' },
   { src: '/cpg-contact-section/w3.png', id: '25' }
 ]
-function contactWithUs() {
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#contact_with_us',
-        toggleActions: 'play pause',
-        start: 'top 60%',
-        end: '+=800',
-        scrub: 1,
-        anticipatePin: 1
-      }
-    })
-    .from('#contact_with_us_outter', {
-      opacity: 0,
-      // width: '4rem'
-      scaleX: 0.1
-    })
-    .from('#contact_with_us_inner', {
-      opacity: 0
-    })
-    .from(
-      '#contact_with_us_container_next_text',
-      {
+
+let contactWithUsAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  contactWithUsAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#contact_with_us',
+          toggleActions: 'play pause',
+          start: 'top 60%',
+          end: '+=800',
+          scrub: 1,
+          anticipatePin: 1
+        }
+      })
+      .from('#contact_with_us_outter', {
         opacity: 0,
-        y: 30
-      },
-      '<'
-    )
-    .from('#contact_with_us_1', {
-      opacity: 0
-    })
-    .from('#contact_with_us_2', {
-      opacity: 0
-    })
-    .to('.background_layer', { backgroundColor: '#262626' })
-  return tl
-}
-defineExpose({ contactWithUs })
+        // width: '4rem'
+        scaleX: 0.1
+      })
+      .from('#contact_with_us_inner', {
+        opacity: 0
+      })
+      .from(
+        '#contact_with_us_container_next_text',
+        {
+          opacity: 0,
+          y: 30
+        },
+        '<'
+      )
+      .from('#contact_with_us_1', {
+        opacity: 0
+      })
+      .from('#contact_with_us_2', {
+        opacity: 0
+      })
+      .to('.background_layer', { backgroundColor: '#262626' })
+  })
+})
+onBeforeUnmount(() => {
+  contactWithUsAnimation.revert()
+})
 </script>

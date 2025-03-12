@@ -29,6 +29,7 @@
 
 <script setup>
 import { gsap } from 'gsap'
+import { onBeforeUnmount, onMounted } from 'vue'
 import { Vue3Marquee } from 'vue3-marquee'
 
 const imgs = [
@@ -48,47 +49,52 @@ const imgs = [
   '/we-love-our-clients/wimpy-kid.png',
   '/we-love-our-clients/yen-press.png'
 ]
-function weLoveOurClients() {
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#we_love_our_clients',
-        toggleActions: 'play pause',
-        start: 'top 40%',
-        end: '+=600',
-        scrub: 0.5,
-        anticipatePin: 1
-      }
-    })
 
-    // text位移入场
-    .from(
-      '#we_love_our_clients_text',
-      {
-        y: '-7rem',
-        duration: 3
-      },
-      '<'
-    )
-    // marquee位移入场
-    .from(
-      '#we_love_our_clients_marquee_container',
-      {
-        width: '7rem',
-        opacity: 0,
-        duration: 3
-      },
-      '<'
-    )
-    // text位移离场
-    .to('#we_love_our_clients_text', { y: '7rem', duration: 4 }, '>3')
-    // marquee位移离场
-    .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 4 }, '<')
-    // 背景渐变
-    .to('.background_layer', { background: '#3d7353', duration: 5 }, '<2')
+let weLoveOurClientsAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  weLoveOurClientsAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#we_love_our_clients',
+          toggleActions: 'play pause',
+          start: 'top 40%',
+          end: '+=600',
+          scrub: 0.5,
+          anticipatePin: 1
+        }
+      })
 
-  return tl
-}
-defineExpose({ weLoveOurClients })
+      // text位移入场
+      .from(
+        '#we_love_our_clients_text',
+        {
+          y: '-7rem',
+          duration: 3
+        },
+        '<'
+      )
+      // marquee位移入场
+      .from(
+        '#we_love_our_clients_marquee_container',
+        {
+          width: '7rem',
+          opacity: 0,
+          duration: 3
+        },
+        '<'
+      )
+      // text位移离场
+      .to('#we_love_our_clients_text', { y: '7rem', duration: 4 }, '>3')
+      // marquee位移离场
+      .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 4 }, '<')
+      // 背景渐变
+      .to('.background_layer', { background: '#3d7353', duration: 5 }, '<2')
+  })
+})
+onBeforeUnmount(() => {
+  weLoveOurClientsAnimation.revert()
+})
 </script>

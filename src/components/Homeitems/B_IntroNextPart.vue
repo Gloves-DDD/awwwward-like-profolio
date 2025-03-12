@@ -14,7 +14,7 @@
     </p>
     <div class="lg:col-span-3">
       <div
-        class="font-MabryPro flex flex-col text-[min(6rem,5vw)] leading-[min(6vw,6rem)] font-thin tracking-wider md:flex-row lg:block"
+        class="font-MabryPro flex flex-col text-[min(8vw,14rem)] leading-[min(10vw,6rem)] font-thin tracking-wider md:flex-row lg:block"
       >
         <div class="overflow-hidden">
           <p id="need" class="need_connection">Need</p>
@@ -48,82 +48,88 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SlideImg from './items/SlideImg.vue'
+import { onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 
-const introText = () => {
-  gsap.set('.need_connection', {
-    y: '-10rem'
-  })
+//动画部分
+let introNextPartAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  introNextPartAnimation.add('(min-width: 1025px)', () => {
+    gsap.set('.need_connection', {
+      y: '-10rem'
+    })
 
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#intro_text',
-        toggleActions: 'play pause',
-        start: 'top 90%',
-        end: '+=400',
-        scrub: 1
-      }
-    })
-    .from('#customers', {
-      opacity: 0
-    })
-    .to(
-      '#need',
-      {
-        y: 0
-      },
-      '<'
-    )
-    .to(
-      '#connection',
-      {
-        y: 0
-      },
-      '<0.1'
-    )
-  return tl
-}
-const introImg = () => {
-  var tl = gsap
-    .timeline({
-      ease: 'sine.inOut',
-      scrollTrigger: {
-        trigger: '#intro_img_group',
-        toggleActions: 'play pause',
-        start: 'top 80%',
-        end: '+=1200',
-        scrub: 1
-      }
-    })
-    .from('#intro_left_img', {
-      opacity: 0,
-      height: 0
-    })
-    .from(
-      '#intro_right_img',
-      {
-        scale: 0.7,
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#intro_text',
+          toggleActions: 'play pause',
+          start: 'top 90%',
+          end: '+=400',
+          scrub: 1
+        }
+      })
+      .from('#customers', {
         opacity: 0
-      },
-      '>1'
-    )
-    .to(
-      '#intro_left_img',
-      {
+      })
+      .to(
+        '#need',
+        {
+          y: 0
+        },
+        '<'
+      )
+      .to(
+        '#connection',
+        {
+          y: 0
+        },
+        '<0.1'
+      )
+  })
+  introNextPartAnimation.add('(min-width: 1025px)', () => {
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#intro_img_group',
+          toggleActions: 'play pause',
+          start: 'top 80%',
+          end: '+=1200',
+          scrub: 1
+        }
+      })
+      .from('#intro_left_img', {
+        opacity: 0,
+        height: 0
+      })
+      .from(
+        '#intro_right_img',
+        {
+          scale: 0.7,
+          opacity: 0
+        },
+        '>1'
+      )
+      .to(
+        '#intro_left_img',
+        {
+          scale: 0.7,
+          filter: 'brightness(0)',
+          borderRadius: 25
+        },
+        '>1'
+      )
+      .to('#intro_right_img', {
         scale: 0.7,
         filter: 'brightness(0)',
-        borderRadius: 25
-      },
-      '>1'
-    )
-    .to('#intro_right_img', {
-      scale: 0.7,
-      filter: 'brightness(0)',
-      borderRadius: 50
-    })
-  return tl
-}
-defineExpose({ introText, introImg })
+        borderRadius: 50
+      })
+  })
+})
+onBeforeUnmount(() => {
+  introNextPartAnimation.revert()
+})
 </script>

@@ -88,70 +88,11 @@ import {
   SizeObserverPlugin,
   ClickScrollPlugin
 } from 'overlayscrollbars'
-import { onMounted } from 'vue'
+import { onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 OverlayScrollbars.plugin(ScrollbarsHidingPlugin, SizeObserverPlugin, ClickScrollPlugin)
 
-const videoAnimation = () => {
-  var tl = gsap.timeline({
-    ease: 'sine.inOut',
-    scrollTrigger: {
-      trigger: '#intro_part',
-      toggleActions: 'play pause',
-      start: 'top top',
-      end: '+=500',
-      scrub: 1.5
-    }
-  })
-  tl.to('#intro_video', {
-    yPercent: 50,
-    height: '20rem',
-    width: '30rem',
-    borderRadius: 50
-  })
-  return tl
-}
-const introCards = () => {
-  var tl = gsap.timeline({
-    ease: 'sine.inOut',
-    scrollTrigger: {
-      trigger: '#intro_cards_container',
-      toggleActions: 'play pause',
-      start: 'top 70%',
-      end: '+=350',
-      scrub: 1.5
-    }
-  })
-  tl.from('#first_intro_card', {
-    x: 750,
-    y: -400,
-    opacity: 0.2,
-    duration: 3
-  })
-    .from(
-      '#second_intro_card',
-      {
-        x: 750,
-        y: -400,
-        opacity: 0.2,
-        duration: 3
-      },
-      '<1'
-    )
-    .from(
-      '#third_intro_card',
-      {
-        x: 750,
-        y: -400,
-        opacity: 0.2,
-        duration: 3
-      },
-      '<1'
-    )
-  return tl
-}
-defineExpose({ videoAnimation, introCards })
-
+//小设备-滚动条
 onMounted(() => {
   if (!mediaQuery.matches) {
     OverlayScrollbars(document.querySelector('#intro_cards_container'), {
@@ -171,5 +112,75 @@ onMounted(() => {
       }
     })
   }
+})
+
+//动画部分
+let introPartAnimation = gsap.matchMedia()
+onMounted(() => {
+  //动画骨架
+  introPartAnimation.add('(min-width: 1025px)', () => {
+    //左边的视频元素
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#intro_part',
+          toggleActions: 'play pause',
+          start: 'top top',
+          end: '+=500',
+          scrub: 1.5
+        }
+      })
+      .to('#intro_video', {
+        yPercent: 50,
+        height: '20rem',
+        width: '30rem',
+        borderRadius: 50
+      })
+  })
+  introPartAnimation.add('(min-width: 1025px)', () => {
+    //右边的卡片组合
+
+    gsap
+      .timeline({
+        ease: 'sine.inOut',
+        scrollTrigger: {
+          trigger: '#intro_cards_container',
+          toggleActions: 'play pause',
+          start: 'top 70%',
+          end: '+=350',
+          scrub: 1.5
+        }
+      })
+      .from('#first_intro_card', {
+        x: 750,
+        y: -400,
+        opacity: 0.2,
+        duration: 3
+      })
+      .from(
+        '#second_intro_card',
+        {
+          x: 750,
+          y: -400,
+          opacity: 0.2,
+          duration: 3
+        },
+        '<1'
+      )
+      .from(
+        '#third_intro_card',
+        {
+          x: 750,
+          y: -400,
+          opacity: 0.2,
+          duration: 3
+        },
+        '<1'
+      )
+  })
+})
+onBeforeUnmount(() => {
+  introPartAnimation.revert()
 })
 </script>
