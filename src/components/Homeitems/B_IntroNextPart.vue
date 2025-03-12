@@ -40,22 +40,16 @@
       ></div>
     </div>
     <!-- right_image -->
-    <AsyncSlideImg data-speed="1.2" id="intro_right_img" class="brightness-100 lg:mt-auto lg:ml-auto" />
+    <SlideImg data-speed="1.2" id="intro_right_img" class="brightness-100 lg:mt-auto lg:ml-auto" />
   </div>
 </template>
 
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { defineAsyncComponent, onBeforeUnmount, onMounted } from 'vue'
+import { onBeforeUnmount, onMounted } from 'vue'
+import SlideImg from './items/SlideImg.vue'
 gsap.registerPlugin(ScrollTrigger)
-
-//定义所需异步组件
-const AsyncSlideImg = defineAsyncComponent({
-  loader: () => import('./items/SlideImg.vue'), // 组件加载器
-  delay: 200, // 延迟显示加载状态的时间（ms）
-  timeout: 3000 // 超时时间
-})
 
 //动画部分
 let introNextPartAnimation = gsap.matchMedia()

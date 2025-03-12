@@ -94,7 +94,6 @@ OverlayScrollbars.plugin(ScrollbarsHidingPlugin, SizeObserverPlugin, ClickScroll
 //定义所需异步组件
 const AsyncDownArrow = defineAsyncComponent({
   loader: () => import('./items/DownArrow.vue'), // 组件加载器
-  delay: 200, // 延迟显示加载状态的时间（ms）
   timeout: 3000 // 超时时间
 })
 
