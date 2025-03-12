@@ -97,14 +97,12 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import AnimationCardComposition from './items/AnimationCardComposition.vue'
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { OverlayScrollbars, ScrollbarsHidingPlugin, ClickScrollPlugin } from 'overlayscrollbars'
-
+OverlayScrollbars.plugin(ScrollbarsHidingPlugin, ClickScrollPlugin)
 gsap.registerPlugin(ScrollTrigger)
 ScrollTrigger.defaults({
   limitCallbacks: true, // 避免频繁回调
   syncInterval: 0.1 // 同步间隔（秒）
 })
-
-OverlayScrollbars.plugin(ScrollbarsHidingPlugin, ClickScrollPlugin)
 
 let beforeEnterRotation = []
 let beforeEnterRotation_1 = ref()
@@ -120,6 +118,7 @@ beforeEnterRotation.push(beforeEnterRotation_5)
 let beforeEnterRotation_6 = ref()
 beforeEnterRotation.push(beforeEnterRotation_6)
 
+//动画部分
 let cardsContainerAnimation = gsap.matchMedia()
 onMounted(() => {
   //动画骨架
@@ -366,15 +365,5 @@ onMounted(() => {
 })
 onBeforeUnmount(() => {
   cardsContainerAnimation.revert()
-})
-
-//动画部分
-let Animation = gsap.matchMedia()
-onMounted(() => {
-  //动画骨架
-  Animation.add('(min-width: 1025px)', () => {})
-})
-onBeforeUnmount(() => {
-  Animation.revert()
 })
 </script>

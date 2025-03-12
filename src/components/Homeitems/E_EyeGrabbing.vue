@@ -8,7 +8,7 @@
     </div>
     <div class="m-3 flex items-center gap-4 overflow-hidden">
       <p class="second_text_content translate-y-0">Eye</p>
-      <EyeComponent class="second_text_content translate-y-0" />
+      <AsyncEyeComponent class="second_text_content translate-y-0" />
       <p class="second_text_content translate-y-0">Grabbing</p>
     </div>
     <div class="m-3 w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
@@ -27,9 +27,15 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { Vue3Marquee } from 'vue3-marquee'
-import EyeComponent from './items/EyeComponent.vue'
-import { onBeforeUnmount, onMounted } from 'vue'
+import { defineAsyncComponent, onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
+
+//定义所需异步组件
+const AsyncEyeComponent = defineAsyncComponent({
+  loader: () => import('./items/EyeComponent.vue'), // 组件加载器
+  delay: 200, // 延迟显示加载状态的时间（ms）
+  timeout: 3000 // 超时时间
+})
 
 // 动画部分
 let eyeGrabbingAnimation = gsap.matchMedia()

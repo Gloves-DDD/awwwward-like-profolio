@@ -119,9 +119,9 @@
             </p>
           </div>
           <!-- Center -->
-          <CompositionSvgComponent id="black_window_center" />
+          <AsyncCompositionsSvgComponent id="black_window_center" />
           <!-- Right -->
-          <RotateLogoComponent id="rotate_circle" />
+          <AsyncRotateLogoComponent id="rotate_circle" />
         </div>
       </div>
     </div>
@@ -133,10 +133,20 @@ import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { mediaQuery } from '@/utils/mediaquery'
-import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
-import RotateLogoComponent from './items/RotateLogoComponent.vue'
-import { onBeforeUnmount, onMounted } from 'vue'
+import { defineAsyncComponent, onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
+
+//定义所需异步组件
+const AsyncCompositionsSvgComponent = defineAsyncComponent({
+  loader: () => import('./items/CompositionSvgComponent.vue'), // 组件加载器
+  delay: 200, // 延迟显示加载状态的时间（ms）
+  timeout: 3000 // 超时时间
+})
+const AsyncRotateLogoComponent = defineAsyncComponent({
+  loader: () => import('./items/RotateLogoComponent.vue'), // 组件加载器
+  delay: 200, // 延迟显示加载状态的时间（ms）
+  timeout: 3000 // 超时时间
+})
 
 //动画部分
 let firstMarqueeAnimation = gsap.matchMedia()

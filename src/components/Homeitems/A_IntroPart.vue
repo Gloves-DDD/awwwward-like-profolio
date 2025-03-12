@@ -9,7 +9,7 @@
       </div>
       <!-- 小组件 -->
       <div v-if="mediaQuery.matches" class="ml-auto flex w-auto items-end">
-        <DownArrow />
+        <AsyncDownArrow />
       </div>
     </div>
 
@@ -79,7 +79,6 @@
 <script setup>
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import DownArrow from './items/DownArrow.vue'
 import { mediaQuery } from '@/utils/mediaquery'
 import 'overlayscrollbars/overlayscrollbars.css'
 import {
@@ -88,9 +87,16 @@ import {
   SizeObserverPlugin,
   ClickScrollPlugin
 } from 'overlayscrollbars'
-import { onBeforeUnmount, onMounted } from 'vue'
+import { defineAsyncComponent, onBeforeUnmount, onMounted } from 'vue'
 gsap.registerPlugin(ScrollTrigger)
 OverlayScrollbars.plugin(ScrollbarsHidingPlugin, SizeObserverPlugin, ClickScrollPlugin)
+
+//定义所需异步组件
+const AsyncDownArrow = defineAsyncComponent({
+  loader: () => import('./items/DownArrow.vue'), // 组件加载器
+  delay: 200, // 延迟显示加载状态的时间（ms）
+  timeout: 3000 // 超时时间
+})
 
 //小设备-滚动条
 onMounted(() => {

@@ -107,7 +107,7 @@ const logo_imgs = [
   { src: '/cpg-contact-section/w.png', id: '05' },
   { src: '/cpg-contact-section/w3.png', id: '25' }
 ]
-
+//动画部分
 let contactWithUsAnimation = gsap.matchMedia()
 onMounted(() => {
   //动画骨架

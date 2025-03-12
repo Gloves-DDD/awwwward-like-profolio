@@ -183,6 +183,8 @@ const slide_container_items = [
     background: 'bg-lime-50'
   }
 ]
+
+//动画部分
 let slideServicesAnimation = gsap.matchMedia()
 onMounted(() => {
   //动画骨架

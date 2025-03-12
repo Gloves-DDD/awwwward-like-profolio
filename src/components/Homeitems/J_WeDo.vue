@@ -165,6 +165,7 @@ onUnmounted(() => {
   }
 })
 
+//动画部分
 let weDoAnimation = gsap.matchMedia()
 onMounted(() => {
   //动画骨架
