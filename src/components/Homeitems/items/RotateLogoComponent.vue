@@ -1,5 +1,6 @@
 <template>
   <svg
+    id="rotate_circle"
     version="1.1"
     baseProfile="full"
     width="200"
@@ -23,7 +24,8 @@
     </defs>
     <use href="#rotate_text_path" x="100" y="100" width="50" height="50" />
 
-    <!-- 图像结构 -->
+    <!-- 实际图像 -->
+    <!-- 外圈文字 -->
     <text fill="white">
       <textPath
         class="tracking-[6.5px]"
@@ -40,15 +42,13 @@
 
 <script setup>
 import gsap from 'gsap'
-function rotateCircle() {
-  var tl = gsap.to('#rotate_circle', {
+import { onMounted } from 'vue'
+onMounted(() => {
+  gsap.to('#rotate_circle', {
     rotate: 360,
     repeat: -1,
     duration: 10,
     ease: 'none'
   })
-  return tl
-}
-var first_marquee = gsap.timeline()
-first_marquee.add(rotateCircle)
+})
 </script>

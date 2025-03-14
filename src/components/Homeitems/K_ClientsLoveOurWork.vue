@@ -178,10 +178,12 @@ onMounted(() => {
           anticipatePin: 1
         }
       })
+      // 第一行文字淡入
       .from('#clients_first_line', {
         opacity: 0,
         y: -60
       })
+      // 第二行文字淡入
       .from(
         '#clients_second_line',
         {
@@ -191,7 +193,7 @@ onMounted(() => {
         '<'
       )
 
-    // 动画
+    // 卡片自下而上入场
     gsap
       .timeline({
         ease: 'sine.inOut',
@@ -207,10 +209,9 @@ onMounted(() => {
         }
       })
       //黄色入场
-      .to('#yellow_card', {
-        yPercent: -85
-      })
-      //同时蓝色缩小
+      .fromTo('#yellow_card', { opacity: 0 }, { opacity: 1 })
+      .to('#yellow_card', { yPercent: -85 }, '')
+      //同时-蓝色缩小
       .to(
         '#blue_card',
         {
@@ -218,7 +219,7 @@ onMounted(() => {
         },
         '<'
       )
-      //同时背景变黄
+      //同时-背景变黄
       .to(
         '.background_layer',
         {
@@ -230,7 +231,7 @@ onMounted(() => {
       .to('#green_card', {
         yPercent: -180
       })
-      //同时蓝色再变小
+      //同时-蓝色再变小
       .to(
         '#blue_card',
         {
@@ -238,7 +239,7 @@ onMounted(() => {
         },
         '<'
       )
-      //同时黄色变小
+      //同时-黄色变小
       .to(
         '#yellow_card',
         {

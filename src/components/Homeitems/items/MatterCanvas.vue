@@ -38,7 +38,7 @@ const {
   targetEl,
   () =>
     import('matter-js').then((m) => {
-      console.log('Matter.js 版本:', m.version)
+      console.log('已加载 Matter.js 版本:', m.version)
       return m
     }),
   { threshold: 0.1 }

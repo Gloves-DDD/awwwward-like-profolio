@@ -121,7 +121,7 @@
           <!-- Center -->
           <CompositionSvgComponent id="black_window_center" />
           <!-- Right -->
-          <RotateLogoComponent id="rotate_circle" />
+          <RotateLogoComponent />
         </div>
       </div>
     </div>
@@ -143,6 +143,7 @@ let firstMarqueeAnimation = gsap.matchMedia()
 onMounted(() => {
   //动画骨架
   firstMarqueeAnimation.add('(min-width: 1025px)', () => {
+    //入场动画：marquee变成全屏，并转入text
     gsap
       .timeline({
         ease: 'sine.inOut',
