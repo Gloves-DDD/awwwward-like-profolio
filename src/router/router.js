@@ -1,28 +1,32 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { defineAsyncComponent } from 'vue'
-import LottieComponent from '@/components/Homeitems/items/LottieComponent.vue'
-
-// 异步组件加载器工厂函数
-const asyncComponent = (path) =>
-  defineAsyncComponent({
-    loader: () => import(/* webpackChunkName: "views-[request]" */ `@/views/${path}.vue`),
-    loadingComponent: LottieComponent,
-    delay: 100 // 延迟100ms后显示加载动画（避免快速加载时的闪烁）
-  })
+import HomePage from '@/views/HomePage.vue'
+import TestComponentPage from '@/views/TestComponentPage.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: asyncComponent('HomeView')
+      component: HomePage
     },
     {
-      path: '/testcomponent',
-      name: 'testcomponent',
-      component: asyncComponent('TestComponentView')
+      path: '/test',
+
+      component: TestComponentPage
     }
   ]
 })
+
+// 路由性能监控
+router.beforeEach((to, from, next) => {
+  window.performance.mark('route_start')
+  next()
+})
+
+router.afterEach(() => {
+  window.performance.measure('route_duration', 'route_start')
+  const duration = window.performance.getEntriesByName('route_duration')[0]?.duration.toFixed(1)
+  console.log(`%cRoute loaded in ${duration}ms`, 'color: #00ff88;')
+})
+
 export default router

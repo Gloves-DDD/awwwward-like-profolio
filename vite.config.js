@@ -1,5 +1,4 @@
 import { fileURLToPath, URL } from 'node:url'
-
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
@@ -27,10 +26,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       output: {
-        // 将 Lottie 相关资源独立打包
-        manualChunks: {
-          lottie: ['lottie-web']
-        }
+        manualChunks: {}
       }
     }
   },

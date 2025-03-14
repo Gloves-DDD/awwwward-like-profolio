@@ -1,9 +1,17 @@
 <template>
-  <LottieComponent />
   <div id="smooth-wrapper">
     <NavHeader />
     <div id="smooth-content">
-      <RouterView />
+      <RouterView v-slot="{ Component }">
+        <template v-if="Component">
+          <KeepAlive>
+            <Suspense @pending="isLoading = true" @resolve="isLoading = false">
+              <div class="router_root">
+                <component :is="Component" />
+              </div>
+            </Suspense> </KeepAlive
+        ></template>
+      </RouterView>
     </div>
   </div>
 </template>
@@ -11,11 +19,11 @@
 <script setup>
 import { RouterView } from 'vue-router'
 import { OverlayScrollbars, ScrollbarsHidingPlugin, ClickScrollPlugin } from 'overlayscrollbars'
-// import { defineAsyncComponent } from 'vue'
 import 'overlayscrollbars/overlayscrollbars.css'
-import LottieComponent from './components/Homeitems/items/LottieComponent.vue'
 import NavHeader from './components/NavHeader.vue'
+import { ref } from 'vue'
 
+const isLoading = ref(false)
 //全局滚动条
 OverlayScrollbars.plugin(ScrollbarsHidingPlugin, ClickScrollPlugin)
 OverlayScrollbars(document.body, {

@@ -34,7 +34,6 @@ export const svg_coordinates = decomp_bodies
 const logo_svg = parser.parseFromString(logo, 'text/html')
 let logo_svg_d = logo_svg.querySelector('path').getAttribute('d')
 let logo_vertices = parseSVGPath(logo_svg_d)
-console.log(logo_vertices)
 export const logo_coordinates = decomp.decomp(logo_vertices)
 
 // 函数：提取SVG元素的坐标顶点

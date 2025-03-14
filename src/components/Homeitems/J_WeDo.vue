@@ -31,8 +31,8 @@
         />
       </div>
       <!-- 转场后 Canvas -->
-      <div class="absolute top-0 left-0 -z-10 flex h-screen w-screen items-center justify-center">
-        <canvas id="canvas" width="100vw" height="auto"></canvas>
+      <div class="absolute top-0 left-0 -z-10">
+        <MatterCanvas />
       </div>
     </div>
     <div v-else class="flex flex-col items-center py-[64px]">
@@ -119,7 +119,7 @@ import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineAsyncComponent, onBeforeUnmount, onMounted, onUnmounted, ref } from 'vue'
 import { mediaQuery } from '@/utils/mediaquery'
-import { matterJsCanvas, reset } from '@/utils/Matter'
+import MatterCanvas from './items/MatterCanvas.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 const what_we_do = [
@@ -142,21 +142,13 @@ defineAsyncComponent(() =>
 // 延迟加载
 const we_do_container = ref(null)
 const marqueeIsLoaded = ref(false)
-let observer
+let observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting && !marqueeIsLoaded.value) {
+    marqueeIsLoaded.value = true
+    observer.unobserve(we_do_container.value)
+  }
+})
 onMounted(() => {
-  observer = new IntersectionObserver((entries) => {
-    if (mediaQuery.matches) {
-      if (entries[0].isIntersecting) {
-        matterJsCanvas()
-        observer.unobserve(we_do_container.value)
-      }
-    } else {
-      if (entries[0].isIntersecting && !marqueeIsLoaded.value) {
-        marqueeIsLoaded.value = true
-        observer.unobserve(we_do_container.value)
-      }
-    }
-  })
   observer.observe(we_do_container.value)
 })
 onUnmounted(() => {
@@ -200,10 +192,7 @@ onMounted(() => {
       .to('.transition_group', {
         scale: 0.05,
         opacity: 0,
-        duration: 8,
-        onStart: () => {
-          reset()
-        }
+        duration: 8
       })
       .to('#bg_logo', {
         duration: 12

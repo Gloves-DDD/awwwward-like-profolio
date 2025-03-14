@@ -7,7 +7,7 @@
         </RouterLink>
       </li>
       <li>
-        <RouterLink to="/testcomponent">
+        <RouterLink to="/test">
           <p class="text-1xl hvr-underline-from-left font-bold">TestField</p>
         </RouterLink>
       </li>

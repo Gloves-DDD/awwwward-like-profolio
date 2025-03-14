@@ -19,7 +19,6 @@
 
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue'
-import lottie from 'lottie-web'
 
 const animation = ref(null)
 const showLoader = ref(true)
@@ -32,8 +31,9 @@ const selectRenderer = () => {
   return isMobile ? 'canvas' : 'svg' // 移动端优先使用 Canvas
 }
 // 初始化动画
-const initAnimation = () => {
-  animation.value = lottie.loadAnimation({
+const initAnimation = async () => {
+  const Lottie = await import('lottie-web')
+  animation.value = Lottie.loadAnimation({
     container: document.getElementById('lottie-loader'),
     renderer: selectRenderer(),
     loop: false,

@@ -1,6 +1,6 @@
 <template>
   <!-- 开头文本 -->
-  <div id="intro_part" class="h-auto bg-red-100 p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]">
+  <div id="intro_part" class="h-auto bg-[#fbd5ec] p-[25px] md:p-[50px] lg:h-screen lg:p-[7rem]">
     <div class="mt-[100px] flex lg:mt-[40px]">
       <div class="leading-tight">
         <p class="text-[min(10vw,5rem)] font-normal tracking-tight">Transiformative</p>
