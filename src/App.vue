@@ -1,6 +1,6 @@
 <template>
-  <div id="smooth-wrapper">
-    <NavHeader />
+  <div id="smooth-wrapper" class="bg-neutral-100">
+    <NavHeader class="z-50" />
     <div id="smooth-content">
       <RouterView v-slot="{ Component }">
         <template v-if="Component">

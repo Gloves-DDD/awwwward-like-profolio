@@ -1,9 +1,10 @@
 <template>
   <div class="flex h-screen w-screen items-center justify-center">
-    <MatterCanvas></MatterCanvas>
+    <BlendMix class="border-4" />
   </div>
+  <div class="h-screen border-4"></div>
 </template>
 
 <script setup>
-import MatterCanvas from '@/components/Homeitems/items/MatterCanvas.vue'
+import BlendMix from '@/components/Homeitems/items/BlendMix.vue'
 </script>
