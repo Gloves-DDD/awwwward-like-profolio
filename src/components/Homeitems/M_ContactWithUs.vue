@@ -16,11 +16,7 @@
             <p class="text-[min(5vw,1.5rem)] tracking-wider">
               Connect with your audience at a core level.
             </p>
-            <button
-              class="cursor-pointer rounded-3xl bg-black px-[1rem] py-[0.5rem] text-[0.7rem] tracking-wider text-white lg:ml-auto"
-            >
-              Start a project
-            </button>
+            <ModalWarpper />
           </div>
         </div>
       </div>
@@ -63,6 +59,7 @@
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { defineAsyncComponent, ref, onMounted, onUnmounted, onBeforeUnmount } from 'vue'
+import ModalWarpper from '../TestItems/ModalWarpper.vue'
 gsap.registerPlugin(ScrollTrigger)
 
 // 按需加载

@@ -1,8 +1,4 @@
 @import 'tailwindcss';
-@plugin 'tailwind-scrollbar' {
-  preferredstrategy: 'pseudoelements';
-  nocompatible: true;
-}
 @theme {
   --font-display: 'Mabry Pro', 'sans-serif';
   --font-sans:

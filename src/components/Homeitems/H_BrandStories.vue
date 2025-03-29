@@ -1,5 +1,8 @@
 <template>
-  <div id="brand_stories" class="slide_services flex w-full flex-col items-center lg:pb-[4rem]">
+  <div
+    id="brand_stories"
+    class="slide_services flex w-full flex-col items-center select-none lg:pb-[4rem]"
+  >
     <div data-speed="1.1" id="brand_stories_text_container" class="translate-y-0 overflow-hidden">
       <p
         id="brand_stories_text_content"

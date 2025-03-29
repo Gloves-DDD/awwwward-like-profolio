@@ -8,7 +8,7 @@
       <div
         data-speed="1"
         id="svg_marquee"
-        class="aspect-[3/2] h-auto w-full rounded-[1rem] bg-neutral-800 pt-[1rem] pb-[2rem] lg:aspect-auto lg:h-screen lg:w-screen lg:scale-50 lg:rounded-[2.5rem] lg:py-[2rem]"
+        class="aspect-[3/2] h-auto w-full rounded-[1rem] bg-neutral-800 pt-[1rem] pb-[2rem] select-none lg:aspect-auto lg:h-screen lg:w-screen lg:scale-50 lg:rounded-[2.5rem] lg:py-[2rem]"
       >
         <div id="svg_marquee_opacity_warpper" class="h-full md:pb-[1rem] lg:pb-[6rem]">
           <Vue3Marquee id="represent_marquee" :duration="25">
@@ -109,7 +109,7 @@
           class="flex h-auto w-full flex-col items-center justify-evenly bg-neutral-800 brightness-100 lg:h-screen lg:w-screen lg:flex-row"
         >
           <!-- Left -->
-          <div id="black_window_left" class="my-[2rem] flex items-center">
+          <div id="black_window_left" class="my-[2rem] flex items-center select-none">
             <p
               class="font-MabryPro text-center text-[1.5rem] font-normal text-white uppercase lg:text-nowrap"
             >

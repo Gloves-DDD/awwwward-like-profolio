@@ -3,7 +3,7 @@
   <div
     data-speed="0.9"
     id="intro_text"
-    class="px-[25px] sm:pb-[25px] md:px-[50px] lg:grid lg:grid-cols-5 lg:px-[8rem] lg:py-[2rem]"
+    class="px-[25px] select-none sm:pb-[25px] md:px-[50px] lg:grid lg:grid-cols-5 lg:px-[8rem] lg:py-[2rem]"
   >
     <p
       data-speed="1.1"

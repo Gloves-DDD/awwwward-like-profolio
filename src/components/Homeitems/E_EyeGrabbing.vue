@@ -1,7 +1,7 @@
 <template>
   <div
     id="eye_grabbing"
-    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal md:p-[50px] lg:tracking-wider"
+    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal select-none md:p-[50px] lg:tracking-wider"
   >
     <div class="overflow-hidden transition-all">
       <p id="first_text_content" class="translate-y-0">We <span class="font-thin">Design</span></p>

@@ -7,7 +7,7 @@
     height="200"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    class="m-[2rem] md:scale-[0.8] lg:scale-[1]"
+    class="m-[2rem] select-none md:scale-[0.8] lg:scale-[1]"
   >
     <!-- 素材定义 -->
     <defs>
