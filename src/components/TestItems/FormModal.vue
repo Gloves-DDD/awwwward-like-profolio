@@ -51,10 +51,12 @@ const handleKeydown = (e) => {
         @click="handleBackdropClick"
         @keydown.esc="handleKeydown"
       >
-        <div class="relative h-auto w-[78%] rounded-[2.75rem] bg-[#fbd5ec] p-8 shadow-xl">
+        <div
+          class="relative h-auto w-[max(78%,90vw)] rounded-[min(2.75rem,5vw)] bg-[#fbd5ec] p-8 shadow-xl"
+        >
           <!-- 头部 -->
           <div class="flex items-center justify-between">
-            <h3 class="text-[min(1.75rem,4vw)] font-normal">
+            <h3 class="text-[min(1.75rem,5vw)] font-normal">
               Ready to Transform Your Brand Experience?
             </h3>
             <div class="flex items-center justify-center rounded-full bg-neutral-900">
@@ -67,12 +69,14 @@ const handleKeydown = (e) => {
               </button>
             </div>
           </div>
-          <p class="mt-1 text-[1rem]">Request a proposal or arrange a call with our team</p>
+          <p class="mt-1 text-[min(1rem,4vw)]">
+            Request a proposal or arrange a call with our team
+          </p>
 
           <!-- 内容区 -->
           <div class="grid flex-1 grid-cols-1 gap-8 p-[min(1.5rem,3vw)] lg:grid-cols-2">
             <!-- left -->
-            <div class="flex flex-col gap-7">
+            <div class="flex flex-col gap-[min(1.75rem,5vw)]">
               <div class="flex items-center gap-5">
                 <p class="w-[5rem] text-end text-[.75rem]">Full Name:</p>
                 <input v-model="fullNameValue" class="w-[70%] rounded-full bg-neutral-50 p-3" />
@@ -91,7 +95,7 @@ const handleKeydown = (e) => {
               </div>
             </div>
             <!-- right -->
-            <div class="flex flex-col gap-7">
+            <div class="flex flex-col gap-[min(1.75rem,5vw)]">
               <div class="flex items-center gap-5">
                 <p class="w-[5rem] text-end text-[.75rem]">Website:</p>
                 <input v-model="fullNameValue" class="w-[70%] rounded-full bg-neutral-50 p-3" />
