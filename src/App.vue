@@ -4,9 +4,11 @@
     :options="{
       lerp: 0.05,
       smoothWheel: true,
-      syncTouch: true,
+      smoothTouch: false,
+      syncTouch: false,
       autoRaf: false,
-      orientation: 'vertical'
+      orientation: 'vertical',
+      gestureOrientation: 'vertical'
     }"
     root
   >
