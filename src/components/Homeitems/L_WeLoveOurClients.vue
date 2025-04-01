@@ -91,7 +91,7 @@ onMounted(() => {
       // marquee位移离场
       .to('#we_love_our_clients_marquee_container', { y: '5rem', opacity: 0, duration: 4 }, '<')
       // 背景渐变
-      .to('.background_layer', { background: '#3d7353', duration: 5 }, '<2')
+      .to('.background_layer', { background: '#3d7353', duration: 2 }, '<2')
   })
 })
 onBeforeUnmount(() => {

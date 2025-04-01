@@ -2,7 +2,7 @@
   <VueLenis
     ref="lenisRef"
     :options="{
-      lerp: 0.1,
+      lerp: 0.05,
       smoothWheel: true,
       syncTouch: true,
       autoRaf: false,
@@ -41,7 +41,6 @@ gsap.registerPlugin(ScrollTrigger)
 const lenisRef = ref()
 watchEffect((onInvalidate) => {
   const update = (time) => lenisRef.value?.lenis?.raf(time * 1000)
-  console.log(update)
   gsap.ticker.add(update)
   gsap.ticker.lagSmoothing(0)
   //

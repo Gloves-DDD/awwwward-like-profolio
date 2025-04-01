@@ -52,7 +52,7 @@
         <!-- button -->
         <div class="order-3 flex flex-1 justify-center lg:mt-[3.5rem]">
           <a
-            class="flex h-[2.5rem] items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle"
+            class="flex h-[2.5rem] cursor-pointer items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle transition hover:scale-105"
           >
             <p class="font-MabryPro text-[0.7rem] font-thin tracking-wider text-white underline">
               Read more in Clutch
@@ -94,7 +94,7 @@
         <!-- button -->
         <div class="order-3 flex flex-1 justify-center lg:mt-[3.5rem]">
           <a
-            class="flex h-[2.5rem] items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle"
+            class="flex h-[2.5rem] cursor-pointer items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle transition hover:scale-105"
           >
             <p class="font-MabryPro text-[0.7rem] font-thin tracking-wider text-white underline">
               Read more in Clutch
@@ -137,7 +137,7 @@
         <!-- button -->
         <div class="order-3 flex flex-1 justify-center lg:mt-[3.5rem]">
           <a
-            class="flex h-[2.5rem] items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle"
+            class="flex h-[2.5rem] cursor-pointer items-center rounded-3xl bg-black px-[1.5rem] py-[1rem] align-middle transition hover:scale-105"
           >
             <p class="font-MabryPro text-[0.7rem] font-thin tracking-wider text-white underline">
               Read more in Clutch
@@ -209,8 +209,8 @@ onMounted(() => {
         }
       })
       //黄色入场
-      .fromTo('#yellow_card', { opacity: 0 }, { opacity: 1 })
-      .to('#yellow_card', { yPercent: -85 }, '')
+      .fromTo('#yellow_card', { opacity: 0 }, { opacity: 1, duration: 0.01 })
+      .to('#yellow_card', { yPercent: -85 })
       //同时-蓝色缩小
       .to(
         '#blue_card',
@@ -228,6 +228,7 @@ onMounted(() => {
         '<'
       )
       //绿色入场
+      .fromTo('#green_card', { opacity: 0 }, { opacity: 1, duration: 0.01 })
       .to('#green_card', {
         yPercent: -180
       })
