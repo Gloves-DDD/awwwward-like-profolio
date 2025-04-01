@@ -1,7 +1,17 @@
 <template>
-  <div id="smooth-wrapper" class="bg-neutral-100">
-    <NavHeader class="z-50" />
-    <div id="smooth-content">
+  <VueLenis
+    ref="lenisRef"
+    :options="{
+      lerp: 0.1,
+      smoothWheel: true,
+      syncTouch: true,
+      autoRaf: false,
+      orientation: 'vertical'
+    }"
+    root
+  >
+    <div class="bg-neutral-100">
+      <NavHeader class="z-50" />
       <RouterView v-slot="{ Component }">
         <template v-if="Component">
           <KeepAlive>
@@ -9,19 +19,36 @@
               <div class="router_root">
                 <component :is="Component" />
               </div>
-            </Suspense> </KeepAlive
-        ></template>
-      </RouterView>
-    </div>
-  </div>
+            </Suspense>
+          </KeepAlive>
+        </template>
+      </RouterView></div
+  ></VueLenis>
 </template>
 
 <script setup>
 import { RouterView } from 'vue-router'
+import { ref, watchEffect } from 'vue'
+import { VueLenis } from 'lenis/vue'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { OverlayScrollbars, ScrollbarsHidingPlugin, ClickScrollPlugin } from 'overlayscrollbars'
 import 'overlayscrollbars/overlayscrollbars.css'
 import NavHeader from './components/NavHeader.vue'
-import { ref } from 'vue'
+
+gsap.registerPlugin(ScrollTrigger)
+
+const lenisRef = ref()
+watchEffect((onInvalidate) => {
+  const update = (time) => lenisRef.value?.lenis?.raf(time * 1000)
+  console.log(update)
+  gsap.ticker.add(update)
+  gsap.ticker.lagSmoothing(0)
+  //
+  onInvalidate(() => {
+    gsap.ticker.remove(update)
+  })
+})
 
 const isLoading = ref(false)
 //全局滚动条

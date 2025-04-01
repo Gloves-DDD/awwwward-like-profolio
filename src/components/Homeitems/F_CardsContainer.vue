@@ -1,7 +1,7 @@
 <template>
   <div
     id="cards_container"
-    class="h-auto w-auto justify-center overflow-x-scroll border-red-600 px-[50px] whitespace-nowrap lg:flex lg:h-screen lg:flex-wrap lg:overflow-visible"
+    class="h-auto w-auto justify-center overflow-x-scroll border-red-600 px-[50px] whitespace-nowrap lg:flex lg:h-screen lg:flex-wrap lg:overflow-clip"
   >
     <!-- 1 -->
     <AnimationCardComposition

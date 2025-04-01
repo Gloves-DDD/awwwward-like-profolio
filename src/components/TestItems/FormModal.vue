@@ -60,19 +60,17 @@ const handleKeydown = (e) => {
             <div class="flex items-center justify-center rounded-full bg-neutral-900">
               <button
                 @click="closeModal"
-                class="text-[min(1.5rem,5vw)] text-[#fbd5ec]"
+                class="h-[4rem] w-[4rem] text-[min(1.5rem,5vw)] text-[#fbd5ec]"
                 aria-label="Close"
               >
-                <i
-                  class="fa-solid fa-xmark px-[8.75px] py-[4.4px] transition-transform hover:rotate-90"
-                ></i>
+                <i class="fa-solid fa-xmark scale-150 transition-transform hover:rotate-90"></i>
               </button>
             </div>
           </div>
           <p class="mt-1 text-[1rem]">Request a proposal or arrange a call with our team</p>
 
           <!-- 内容区 -->
-          <div class="grid flex-1 grid-cols-1 gap-8 p-6 lg:grid-cols-2">
+          <div class="grid flex-1 grid-cols-1 gap-8 p-[min(1.5rem,3vw)] lg:grid-cols-2">
             <!-- left -->
             <div class="flex flex-col gap-7">
               <div class="flex items-center gap-5">

@@ -56,9 +56,6 @@
 <script setup>
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import { ScrollSmoother } from 'gsap/ScrollSmoother'
-import { onMounted } from 'vue'
-import { mediaQuery } from '@/utils/mediaquery'
 import A_IntroPart from '@/components/Homeitems/A_IntroPart.vue'
 import B_IntroNextPart from '@/components/Homeitems/B_IntroNextPart.vue'
 import C_ExplainContainer from '@/components/Homeitems/C_ExplainContainer.vue'
@@ -73,17 +70,4 @@ import L_WeLoveOurClients from '@/components/Homeitems/L_WeLoveOurClients.vue'
 import M_ContactWithUs from '@/components/Homeitems/M_ContactWithUs.vue'
 
 gsap.registerPlugin(ScrollTrigger)
-gsap.registerPlugin(ScrollSmoother)
-
-//scroll smoother
-onMounted(() => {
-  if (mediaQuery.matches) {
-    ScrollSmoother.create({
-      smooth: 1,
-      effects: true,
-      smoothTouch: 0.1,
-      speed: 0.65
-    })
-  }
-})
 </script>
