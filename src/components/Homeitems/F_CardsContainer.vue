@@ -135,7 +135,7 @@ onMounted(() => {
         trigger: '#cards_container',
         toggleActions: 'play pause',
         start: 'top 80%',
-        end: '+=1300',
+        end: 'bottom 20%',
         scrub: true
       }
     }
@@ -316,18 +316,24 @@ onMounted(() => {
       gsap.context(() => {
         let hoverTween = null
         const handleEnter = () => {
+          // 如果已有动画则先终止
+          if (hoverTween) hoverTween.kill()
           hoverTween = gsap.to(element, {
             rotateZ: 0,
-            duration: 0.3,
-            paused: false
+            duration: 0.8,
+            ease: 'power3.out',
+            overwrite: 'auto'
           })
         }
         const handleLeave = () => {
+          // 查找需要动画的对象序列
           let index = cards.findIndex((item) => item === element)
+          // 如果已有动画则先终止
+          if (hoverTween) hoverTween.kill()
           hoverTween = gsap.to(element, {
             rotateZ: beforeEnterRotation[index].value,
-            duration: 0.3,
-            paused: false
+            duration: 1.2,
+            ease: 'elastic.out(1, 0.5)'
           })
         }
 

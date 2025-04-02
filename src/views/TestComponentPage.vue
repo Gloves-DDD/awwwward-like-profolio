@@ -1,9 +1,9 @@
 <template>
-  <div class="flex h-screen w-screen items-center justify-center border-2">
-    <ModalWarpper />
+  <div class="flex h-screen w-screen items-center justify-center">
+    <TestRotation />
   </div>
 </template>
 
 <script setup>
-import ModalWarpper from '@/components/TestItems/ModalWarpper.vue'
+import TestRotation from '@/components/TestItems/TestRotation.vue'
 </script>
