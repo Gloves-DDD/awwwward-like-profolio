@@ -150,7 +150,9 @@ const slide_container_items = [
     src: '/src/assets/images/marketing-seo-services/thirdlove.png',
     name: 'ThirdLove',
     slogan: 'Fighting back against a daily struggle for 80% of women.',
+    
     introduction:
+
       'ThirdLove is a team of innovators challenging the norm of back, neck, and breast pain for the 80% of women whose bras just do not fit them. We teamed with ThirdLove to build Fitting Room, an intelligent, algorithm-driven quiz that helps customers find the perfect bra fit for their bodies. With the emotional pull to stop settling for discomfort, they’ve made a name for themselves, selling millions of bras and opening 10 physical locations.',
     background: 'bg-pink-50'
   },
