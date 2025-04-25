@@ -3,6 +3,7 @@
     id="clients_love_our_work"
     class="background_layer flex h-auto flex-col items-center bg-cyan-50 p-[25px] md:p-[50px] lg:h-screen lg:w-screen lg:p-[2rem]"
   >
+    <!-- Text Part -->
     <div
       id="client_lines"
       class="flex flex-col items-center text-[1.75rem] leading-[3rem] md:text-[2.5rem] md:leading-[4rem] lg:text-[4rem] lg:leading-[6rem]"
@@ -18,9 +19,9 @@
       </p>
     </div>
 
-    <!-- cards part -->
+    <!-- Cards Part -->
     <div id="cards_layer" class="m-4 flex w-full flex-col justify-center lg:w-[54rem]">
-      <!-- 1 blue card -->
+      <!-- first: blue card -->
       <div
         id="blue_card"
         class="mb-[30px] flex flex-col flex-wrap items-center justify-center rounded-[1.5rem] bg-[#73c7ff] p-[30px] lg:m-0 lg:flex-row lg:justify-between lg:rounded-[3rem] lg:px-[3rem] lg:py-[1rem]"

@@ -6,7 +6,6 @@
       class="flex h-auto w-full items-center justify-center p-[25px] md:p-[50px] lg:h-screen lg:w-screen lg:p-0"
     >
       <div
-        data-speed="1"
         id="svg_marquee"
         class="aspect-[3/2] h-auto w-full rounded-[1rem] bg-neutral-800 pt-[1rem] pb-[2rem] select-none lg:aspect-auto lg:h-screen lg:w-screen lg:scale-50 lg:rounded-[2.5rem] lg:py-[2rem]"
       >
@@ -73,6 +72,7 @@
 
     <!-- marquee转场后 / P2-->
     <div id="text_next_intro_marquee" class="lg:absolute lg:top-[27rem]">
+      <!-- MQ<=1024 不渲染动画/渲染Marquee组件 -->
       <div v-show="!mediaQuery.matches" class="h-[6rem] bg-neutral-800 pt-[2.5rem]">
         <Vue3Marquee :duration="15">
           <p class="mr-[4rem] text-[2rem] text-white uppercase">❉ parts that represent a whole</p>
@@ -80,6 +80,7 @@
           <p class="mr-[4rem] text-[2rem] text-white uppercase">❉ parts that represent a whole</p>
         </Vue3Marquee>
       </div>
+      <!-- MQ>1024 渲染动画 -->
       <div id="text_next_svg_marquee" class="h-auto w-full border-t-2 border-black bg-neutral-800">
         <div class="p-[25px] md:p-[50px] lg:p-[4rem]">
           <p class="font-MabryPro text-sm text-white uppercase">rethink your product story</p>
@@ -104,7 +105,6 @@
         class="z-10 flex h-auto w-screen items-center justify-center lg:h-screen"
       >
         <div
-          data-speed="1"
           id="black_window_container"
           class="flex h-auto w-full flex-col items-center justify-evenly bg-neutral-800 brightness-100 lg:h-screen lg:w-screen lg:flex-row"
         >
@@ -131,8 +131,8 @@
 <script setup>
 import { Vue3Marquee } from 'vue3-marquee'
 import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { mediaQuery } from '@/utils/mediaquery'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { onBeforeUnmount, onMounted } from 'vue'
 import CompositionSvgComponent from './items/CompositionSvgComponent.vue'
 import RotateLogoComponent from './items/RotateLogoComponent.vue'
@@ -143,7 +143,7 @@ let firstMarqueeAnimation = gsap.matchMedia()
 onMounted(() => {
   //动画骨架
   firstMarqueeAnimation.add('(min-width: 1025px)', () => {
-    //入场动画：marquee变成全屏，并转入text
+    //第一段动画(入场动画)：marquee变成全屏，并转入text
     gsap
       .timeline({
         ease: 'sine.inOut',
@@ -181,8 +181,8 @@ onMounted(() => {
         },
         '<'
       )
-  })
-  firstMarqueeAnimation.add('(min-width: 1025px)', () => {
+
+    //第二段动画：中段元素放大与缩放
     gsap
       .timeline({
         ease: 'none',
@@ -197,6 +197,7 @@ onMounted(() => {
       })
       .fromTo('#black_window_center', { scale: 1.4 }, { scale: 1 }, '<')
 
+    //第三段动画(离场动画)：缩放 变暗 圆角变小
     gsap.timeline().to(
       '#black_window_container',
       {

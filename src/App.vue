@@ -64,6 +64,9 @@ OverlayScrollbars(document.body, {
     dragScroll: true,
     clickScroll: false,
     pointers: ['mouse', 'touch', 'pen']
+  },
+  overflow: {
+    x: 'hidden'
   }
 })
 </script>

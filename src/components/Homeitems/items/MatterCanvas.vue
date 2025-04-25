@@ -46,6 +46,16 @@ const {
 var screen_width = window.innerWidth
 var screen_height = window.innerHeight
 var we_do_bodies = []
+var bodies_lable = [
+  'Sales and Market Share',
+  'Purchase Frequency',
+  'Cross-Shopping Rate',
+  'Inventory Turnover',
+  'Brand Loyalty',
+  'Share of Voice',
+  'Review Ratings',
+  'Loyalty Program Subscribers'
+]
 
 const setupMatter = () => {
   if (!matterJs.value) return
@@ -153,21 +163,10 @@ const setupMatter = () => {
   var runner = Runner.create()
   Runner.run(runner, engine)
 
-  for (let i = 0; i < we_do_bodies.length; i++) {
-    Events.on(runner, 'afterUpdate', function () {
-      var bodies_lable = [
-        'Sales and Market Share',
-        'Purchase Frequency',
-        'Cross-Shopping Rate',
-        'Inventory Turnover',
-        'Brand Loyalty',
-        'Share of Voice',
-        'Review Ratings',
-        'Loyalty Program Subscribers'
-      ]
-      var mouse_x = mouseConstraint.mouse.position.x
-      var mouse_y = mouseConstraint.mouse.position.y
-
+  Events.on(runner, 'afterUpdate', () => {
+    var mouse_x = mouseConstraint.mouse.position.x
+    var mouse_y = mouseConstraint.mouse.position.y
+    for (let i = 0; i < we_do_bodies.length; i++) {
       if (
         mouse_x >= we_do_bodies[i].bounds.min.x &&
         mouse_x <= we_do_bodies[i].bounds.max.x &&
@@ -180,8 +179,8 @@ const setupMatter = () => {
         ctx.textAlign = 'center'
         ctx.fillText(bodies_lable[i], we_do_bodies[i].position.x, we_do_bodies[i].position.y)
       }
-    })
-  }
+    }
+  })
 
   function createCenterBody() {
     var center_logo_body = Bodies.fromVertices(
@@ -246,35 +245,6 @@ const setupMatter = () => {
     var walls = Composite.create({ bodies: [wall_top, wall_left, wall_right, wall_bottom] })
     return walls
   }
-
-  // for (let i = 0; i < we_do_bodies.length; i++) {
-  //   if (i === 0 || i === 5) {
-  //     Body.set(we_do_bodies[i], 'position', {
-  //       x: screen_width / 5,
-  //       y: -50 * ((i % 2) * 5)
-  //     })
-  //   } else if (i === 2 || i === 1) {
-  //     Body.set(we_do_bodies[i], 'position', {
-  //       x: (screen_width * 2) / 5,
-  //       y: -50 * ((i % 2) * 5)
-  //     })
-  //   } else if (i === 4 || i === 7) {
-  //     Body.set(we_do_bodies[i], 'position', {
-  //       x: (screen_width * 3) / 5,
-  //       y: -50 * ((i % 2) * 5)
-  //     })
-  //   } else if (i === 6 || i === 3) {
-  //     Body.set(we_do_bodies[i], 'position', {
-  //       x: (screen_width * 4) / 5,
-  //       y: -50 * ((i % 2) * 5)
-  //     })
-  //   } else {
-  //     Body.set(we_do_bodies[i], 'position', {
-  //       x: screen_width / 2,
-  //       y: -50 * ((i % 2) * 5)
-  //     })
-  //   }
-  // }
 }
 
 // 监听加载完成

@@ -128,11 +128,11 @@
 
   <div
     id="services_container"
-    class="flex w-full justify-center overflow-hidden border-4 border-x-0 border-t-0 border-b-black bg-neutral-800 p-[25px] md:p-[50px]"
+    class="slide_services flex w-full justify-center overflow-hidden border-4 border-x-0 border-t-0 border-b-black bg-neutral-800 p-[25px] md:p-[50px]"
   >
     <p
       id="service_text"
-      class="select-none font-MabryPro text-[16.5vw] font-medium tracking-wider text-neutral-100 uppercase"
+      class="font-MabryPro text-[16.5vw] font-medium tracking-wider text-neutral-100 uppercase select-none"
     >
       services
     </p>
@@ -223,8 +223,7 @@ onMounted(() => {
           end: '+=1800',
           scrub: 1,
           pin: true,
-          anticipatePin: 1,
-          markers: true
+          anticipatePin: 1
         }
       })
       .to('#slide_texts_1', { yPercent: -100, opacity: 0 })

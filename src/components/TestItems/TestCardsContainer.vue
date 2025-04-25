@@ -1,7 +1,7 @@
 <template>
   <div
     id="cards-box"
-    class="flex h-screen min-w-screen items-center justify-evenly overflow-x-scroll px-[50px] lg:gap-12 lg:overflow-visible"
+    class="flex h-screen min-w-screen items-center justify-evenly overflow-x-scroll border-2 border-red-600 px-[50px] lg:gap-12 lg:overflow-clip"
   >
     <!-- 1 -->
     <div class="cards-container relative overflow-visible">
@@ -99,11 +99,13 @@
 <script setup>
 import AnimationCardComposition from '/src/components/Homeitems/items/AnimationCardComposition.vue'
 import { onBeforeUnmount, onMounted } from 'vue'
+// import { OverlayScrollbars, ScrollbarsHidingPlugin, ClickScrollPlugin } from 'overlayscrollbars'
 import { animate, createScope, createTimeline, eases, onScroll, utils } from 'animejs'
 
+// OverlayScrollbars.plugin(ScrollbarsHidingPlugin, ClickScrollPlugin)
 const scope = createScope({
   mediaQueries: {
-    isLarge: '(min-width: 1025px)'
+    isLarge: '(min-width: 1024px)'
   }
 })
 const mainTl = createTimeline()
@@ -111,15 +113,15 @@ onMounted(() => {
   scope.add((self) => {
     if (self.matches.isLarge) {
       utils.$('.cards-container').forEach(($cardContainer, index) => {
-        const $brandCard = $cardContainer.querySelector('.brand-cards')
         // 设置初始值
-        utils.set($cardContainer, { rotateZ: utils.random(-3, 3) * 10 })
+        utils.set($cardContainer, { rotateZ: utils.random(-5, 5) * 5 })
         utils.set($cardContainer, {
           translateX: index <= 2 ? -500 * (index + 1) : 500 * (6 - index),
           translateY: index <= 2 ? 10 * (index + 1) * 0.25 : -10 * (6 - index) * 0.25
         })
         const cardsContainerTl = createTimeline({
           autoplay: onScroll({
+            debug: true,
             sync: 0.5,
             enter: 'bottom -=150',
             leave: 'top +=300'
@@ -134,7 +136,7 @@ onMounted(() => {
         })
         //第二段动画
         cardsContainerTl.add($cardContainer, {
-          rotateZ: utils.random(-3, 3) * 5,
+          rotateZ: utils.random(-3, 3) * 10,
           ease: eases.outQuad,
           duration: 5,
           composition: 'blend'
@@ -151,31 +153,6 @@ onMounted(() => {
         } else {
           mainTl.sync(cardsContainerTl, '<<')
         }
-
-        $cardContainer.addEventListener('mouseenter', () => {
-          animate($cardContainer, {
-            width: 200,
-            duration: 400,
-            ease: eases.outQuad
-          })
-          animate($brandCard, {
-            translateX: 70,
-            duration: 400,
-            ease: eases.outQuad
-          })
-        })
-        $cardContainer.addEventListener('mouseleave', () => {
-          animate($cardContainer, {
-            width: 0,
-            duration: 400,
-            ease: eases.outQuad
-          })
-          animate($brandCard, {
-            translateX: 0,
-            duration: 400,
-            ease: eases.outQuad
-          })
-        })
       })
     }
   })

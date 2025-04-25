@@ -1,5 +1,5 @@
 <template>
-  <div class="inline-flex items-center justify-center rounded-full bg-white">
+  <div class="rounded-full bg-white">
     <svg ref="svgEl" :viewBox="`0 0 ${size} ${size}`" class="aspect-[9/5] w-[min(10rem,20vw)]">
       <!-- 眼白 -->
       <ellipse cx="50%" cy="50%" :rx="eyeWidth" :ry="eyeHeight" class="fill-white" />
@@ -25,7 +25,7 @@ const props = defineProps({
   eyeWidth: { type: Number, default: 270 }, // 眼白水平半径
   eyeHeight: { type: Number, default: 150 }, // 眼白垂直半径
   pupilSize: { type: Number, default: 100 }, // 瞳孔半径
-  smoothness: { type: Number, default: 0.5 } // 动画速度
+  smoothness: { type: Number, default: 0.05 } // 动画速度
 })
 
 const svgEl = ref(null)
@@ -73,14 +73,13 @@ const handleMouseMove = (e) => {
   const targetX = centerX + Math.cos(angle) * distance
   const targetY = centerY + Math.sin(angle) * distance
 
-  // 使用GSAP平滑动画
   gsap.to(pupil_1.value, {
     duration: props.smoothness,
     attr: {
       cx: clamp(targetX, centerX - maxMoveX, centerX + maxMoveX),
       cy: clamp(targetY, centerY - maxMoveY, centerY + maxMoveY)
     },
-    ease: 'none'
+    ease: 'sine.out'
   })
   gsap.to(pupil_2.value, {
     duration: props.smoothness,
@@ -88,7 +87,7 @@ const handleMouseMove = (e) => {
       cx: clamp(targetX, centerX - maxMoveX, centerX + maxMoveX),
       cy: clamp(targetY, centerY - maxMoveY, centerY + maxMoveY)
     },
-    ease: 'none'
+    ease: 'sine.out'
   })
 }
 

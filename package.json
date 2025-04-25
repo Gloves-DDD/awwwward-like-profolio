@@ -19,6 +19,7 @@
     "@fortawesome/vue-fontawesome": "^3.0.8",
     "@tailwindcss/vite": "^4.0.8",
     "@vueuse/core": "^10.11.0",
+    "animejs": "^4.0.1",
     "gsap": "npm:gsap-trial@^3.12.5",
     "lenis": "^1.2.3",
     "lottie-web": "^5.12.2",

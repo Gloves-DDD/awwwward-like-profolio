@@ -1,16 +1,19 @@
 <template>
   <div
     id="eye_grabbing"
-    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal select-none md:p-[50px] lg:tracking-wider"
+    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal select-none md:p-[50px] lg:scale-[min(1,5)] lg:tracking-wider"
   >
-    <div class="overflow-hidden transition-all">
-      <p id="first_text_content" class="translate-y-0">We <span class="font-thin">Design</span></p>
+    <!-- 第一行文字 -->
+    <div class="overflow-hidden">
+      <p id="first_text_content" class="">We <span class="font-thin">Design</span></p>
     </div>
+    <!-- 第二行文字 + 眼睛组件 -->
     <div class="m-3 flex items-center gap-4 overflow-hidden">
-      <p class="second_text_content translate-y-0">Eye</p>
-      <EyeComponent class="second_text_content translate-y-0" />
-      <p class="second_text_content translate-y-0">Grabbing</p>
+      <p class="second_text_content">Eye</p>
+      <EyeComponent class="second_text_content" />
+      <p class="second_text_content">Grabbing</p>
     </div>
+    <!-- 第三行 Marquee -->
     <div class="m-3 w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
       <Vue3Marquee :duration="13">
         <p class="mr-[4rem] text-[min(10vw,3rem)] uppercase">¯content</p>
@@ -48,12 +51,12 @@ onMounted(() => {
         }
       })
       .from('#first_text_content', {
-        yPercent: 100
+        yPercent: 130
       })
       .from(
         '.second_text_content',
         {
-          yPercent: 100
+          yPercent: 130
         },
         '<'
       )

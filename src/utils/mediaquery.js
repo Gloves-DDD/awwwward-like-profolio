@@ -1,1 +1,1 @@
-export const mediaQuery = window.matchMedia('(min-width: 1024px)')
+export const mediaQuery = window.matchMedia('(min-width: 1025px)')

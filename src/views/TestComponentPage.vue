@@ -1,9 +1,11 @@
 <template>
-  <div class="flex h-screen w-screen items-center justify-center">
-    <TestRotation />
+  <div class="h-screen"></div>
+  <div class="flex h-screen w-screen items-center justify-center overflow-y-visible border-2">
+    <TestCardsContainer />
   </div>
+  <div class="h-screen"></div>
 </template>
 
 <script setup>
-import TestRotation from '@/components/TestItems/TestRotation.vue'
+import TestCardsContainer from '@/components/TestItems/TestCardsContainer.vue'
 </script>

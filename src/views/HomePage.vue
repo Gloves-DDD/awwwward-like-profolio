@@ -54,8 +54,6 @@
 </template>
 
 <script setup>
-import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import A_IntroPart from '@/components/Homeitems/A_IntroPart.vue'
 import B_IntroNextPart from '@/components/Homeitems/B_IntroNextPart.vue'
 import C_ExplainContainer from '@/components/Homeitems/C_ExplainContainer.vue'
@@ -68,6 +66,4 @@ import J_WeDo from '@/components/Homeitems/J_WeDo.vue'
 import K_ClientsLoveOurWork from '@/components/Homeitems/K_ClientsLoveOurWork.vue'
 import L_WeLoveOurClients from '@/components/Homeitems/L_WeLoveOurClients.vue'
 import M_ContactWithUs from '@/components/Homeitems/M_ContactWithUs.vue'
-
-gsap.registerPlugin(ScrollTrigger)
 </script>

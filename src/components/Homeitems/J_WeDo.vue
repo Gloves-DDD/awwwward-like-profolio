@@ -1,6 +1,6 @@
 <template>
   <div ref="we_do_container" id="we_do" class="lg:relative lg:h-screen lg:w-screen">
-    <!-- 转场前-文本元素 -->
+    <!-- A 文本列表 -->
     <div
       id="we_do_list"
       class="transition_group slide_services z-10 flex h-full w-full flex-col justify-evenly bg-neutral-800 p-[25px] md:p-[50px] lg:absolute lg:top-0 lg:left-0"
@@ -17,11 +17,11 @@
         </p>
       </div>
     </div>
+    <!-- A → B 动画转场-->
     <div
       v-if="mediaQuery.matches"
-      class="absolute top-0 left-0 z-0 flex items-center justify-center"
+      class="absolute top-0 left-0 z-0 flex items-center justify-center lg:relative"
     >
-      <!-- 转场中 logo -->
       <div id="logo_warpper" class="transition_group h-screen w-screen overflow-hidden">
         <img
           id="bg_logo"
@@ -30,11 +30,13 @@
           class="h-full w-full"
         />
       </div>
-      <!-- 转场后 Canvas -->
+      <!-- B → C -->
       <div class="absolute top-0 left-0 -z-10">
         <MatterCanvas />
       </div>
     </div>
+
+    <!-- A → D :Marquee-->
     <div v-else class="flex flex-col items-center py-[64px]">
       <!-- logo -->
       <img
@@ -132,14 +134,13 @@ const what_we_do = [
   'Mobile Experience & Games'
 ]
 
-// 按需加载
+// 按需加载 Marquee
 defineAsyncComponent(() =>
   import('vue3-marquee').then((module) => {
     return module.Vue3Marquee
   })
 )
-
-// 延迟加载
+// 延迟加载 Marquee
 const we_do_container = ref(null)
 const marqueeIsLoaded = ref(false)
 let observer = new IntersectionObserver((entries) => {
