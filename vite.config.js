@@ -25,9 +25,17 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
+      external: ['lenis', 'vue3-marquee'],
       output: {
         manualChunks: {}
       }
+    }
+  },
+  css: {
+    // 对第三方库使用 PostCSS
+    transformer: 'postcss',
+    postcss: {
+      include: [/node_modules\/(lenis|vue3-marquee)/]
     }
   },
   optimizeDeps: {

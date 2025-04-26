@@ -52,7 +52,7 @@ const handleKeydown = (e) => {
         @keydown.esc="handleKeydown"
       >
         <div
-          class="relative h-auto w-[max(78%,90vw)] rounded-[min(2.75rem,5vw)] bg-[#fbd5ec] p-8 shadow-xl"
+          class="relative h-auto w-[max(4/5,90vw)] rounded-[min(2.75rem,5vw)] bg-[#fbd5ec] p-8 shadow-xl"
         >
           <!-- 头部 -->
           <div class="flex items-center justify-between">

@@ -35,7 +35,7 @@
         · · · BRAND STROY TELLING AT ITS BEST
       </textPath>
     </text>
-    <use href="#white_logo_path" x="370" y="370" class="scale-[20%]" />
+    <use href="#white_logo_path" x="370" y="370" class="scale-20" />
     <circle cx="100" cy="100" r="35" class="fill-none stroke-white" />
   </svg>
 </template>

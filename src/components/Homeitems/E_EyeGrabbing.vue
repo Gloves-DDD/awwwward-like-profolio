@@ -1,7 +1,7 @@
 <template>
   <div
     id="eye_grabbing"
-    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal select-none md:p-[50px] lg:scale-[min(1,5)] lg:tracking-wider"
+    class="flex w-full flex-col items-center p-[25px] text-[min(10vw,6rem)] leading-[min(15vw,9rem)] tracking-normal select-none md:p-[50px] lg:scale-100 lg:tracking-wider"
   >
     <!-- 第一行文字 -->
     <div class="overflow-hidden">
@@ -14,7 +14,7 @@
       <p class="second_text_content">Grabbing</p>
     </div>
     <!-- 第三行 Marquee -->
-    <div class="m-3 w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
+    <div class="m-3 w-[3/5] border-b-2 border-black pb-5 lg:w-[30rem]">
       <Vue3Marquee :duration="13">
         <p class="mr-[4rem] text-[min(10vw,3rem)] uppercase">¯content</p>
 

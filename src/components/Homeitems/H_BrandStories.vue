@@ -11,7 +11,7 @@
         Brand Stories Such As
       </p>
     </div>
-    <div class="w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
+    <div class="w-[3/5] border-b-2 border-black pb-5 lg:w-[30rem]">
       <Vue3Marquee :duration="70">
         <div v-for="item in brand_stories_marquee_value" :key="item.id">
           <p
