@@ -5,7 +5,7 @@
   >
     <!-- 第一行文字 -->
     <div class="overflow-hidden">
-      <p id="first_text_content" class="">We <span class="font-thin">Design</span></p>
+      <p id="first_text_content">We <span class="font-thin">Design</span></p>
     </div>
     <!-- 第二行文字 + 眼睛组件 -->
     <div class="m-3 flex items-center gap-4 overflow-hidden">
@@ -14,7 +14,7 @@
       <p class="second_text_content">Grabbing</p>
     </div>
     <!-- 第三行 Marquee -->
-    <div class="m-3 w-[3/5] border-b-2 border-black pb-5 lg:w-[30rem]">
+    <div class="m-3 w-[60%] border-b-2 border-black pb-5 lg:w-[30rem]">
       <Vue3Marquee :duration="13">
         <p class="mr-[4rem] text-[min(10vw,3rem)] uppercase">¯content</p>
 

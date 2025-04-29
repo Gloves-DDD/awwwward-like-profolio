@@ -1,7 +1,7 @@
 <template>
   <div
     id="cards-box"
-    class="flex h-screen min-w-screen items-center justify-evenly overflow-x-scroll px-[50px] lg:gap-12 lg:overflow-visible"
+    class="m-3 flex h-[25rem] w-screen items-center justify-evenly overflow-x-scroll px-[50px] lg:h-screen lg:gap-12 lg:overflow-visible"
   >
     <!-- 1 -->
     <div class="cards-container relative overflow-visible">
@@ -134,7 +134,7 @@ onMounted(() => {
         })
         //第二段动画
         cardsContainerTl.add($cardContainer, {
-          rotateZ: utils.random(-3, 3) * 5,
+          rotateZ: utils.random(-3, 3) * 7,
           ease: eases.outQuad,
           duration: 5,
           composition: 'blend'
